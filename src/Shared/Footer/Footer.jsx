@@ -179,7 +179,7 @@ export default function Footer() {
             </Link>
 
             <Link
-              to="#"
+              to="/terms-and-conditions"
               className="hover:text-cyan-300"
             >
               Terms & Conditions
