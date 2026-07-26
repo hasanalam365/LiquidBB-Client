@@ -5,6 +5,10 @@ import WhoThis from './WhoThis'
 import WhatYouLearn from './WhatYouLearn'
 import CourseHighlights from './CourseHighlights'
 import WhoChoose from './WhoChoose'
+import Benefits from './Benefits'
+import StudentVoice from './StudentVoice'
+import EnquiryNow from './EnquiryNow'
+import AdvisorForm from './AdvisorForm'
 
 const Homes = () => {
   return (
@@ -12,9 +16,13 @@ const Homes = () => {
       <Banner/>
       <Overview/>
       <WhoThis/>
+      <EnquiryNow/>
       <WhatYouLearn/>
       <CourseHighlights/>
       <WhoChoose/>
+      <Benefits/>
+      <StudentVoice/>
+      <AdvisorForm/>
 
     </div>
   )
