@@ -122,7 +122,7 @@ export default function Footer() {
                 />
 
                 <span className="text-sm text-white/60">
-                  info@facesonfacesacademy.co.uk
+                  support@facesonfaces.com
                 </span>
 
               </div>
@@ -135,12 +135,12 @@ export default function Footer() {
                 />
 
                 <span className="text-sm text-white/60">
-                  +44 20 0000 0000
+                  +44 08009991751
                 </span>
 
               </div>
 
-              <div className="flex items-start gap-3">
+              {/* <div className="flex items-start gap-3">
 
                 <MapPin
                   size={17}
@@ -153,7 +153,7 @@ export default function Footer() {
                   United Kingdom
                 </span>
 
-              </div>
+              </div> */}
 
             </div>
 
