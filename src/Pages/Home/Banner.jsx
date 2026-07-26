@@ -102,13 +102,7 @@ const Banner = () => {
 
             </button>
 
-            <button className="flex items-center gap-3 py-4 font-medium text-white transition bg-transparent border rounded-xl border-cyan-400/30 px-7 hover:border-cyan-300 hover:bg-cyan-400/10">
-
-              <MessageCircle size={18} />
-
-              Speak With An Advisor
-
-            </button>
+           
 
           </div>
 

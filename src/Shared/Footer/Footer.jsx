@@ -172,7 +172,7 @@ export default function Footer() {
           <div className="flex gap-6">
 
             <Link
-              to="#"
+              to="/privacy-policy"
               className="hover:text-cyan-300"
             >
               Privacy Policy

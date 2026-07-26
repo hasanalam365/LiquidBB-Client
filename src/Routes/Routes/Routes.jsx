@@ -1,12 +1,7 @@
-
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../../Layouts/MainLayout/MainLayout";
-
-import DashboardLayout from "../../Layouts/Dashboard/DashboardLayout";
 import Homes from "../../Pages/Home/Homes";
-
-
-
+import PrivacyPolicy from "../../Pages/TermsAndPolicy/PrivacyPolicy";
 
 
 
@@ -20,22 +15,14 @@ export const router = createBrowserRouter([
                 path: '/',
                 element:<Homes/>
             },
+            {
+                path: '/privacy-policy',
+                element: <PrivacyPolicy/>
+            }
           
            
         ]
     },
-    {
-        path: '/dashboard',
-        element: 
-            <DashboardLayout></DashboardLayout>,
-        
-        children:[
-            {
-                path: '/dashboard',
-                element: <>dashboard</>
-            },
-           
-        ]
-    }
+  
     
 ]);
