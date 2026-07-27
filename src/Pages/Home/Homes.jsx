@@ -17,12 +17,12 @@ const Homes = () => {
       <Overview/>
       <WhoThis/>
       <EnquiryNow/>
-      <WhatYouLearn/>
-      <CourseHighlights/>
-      <WhoChoose/>
-      <Benefits/>
+      {/* <WhatYouLearn/> */}
+      {/* <CourseHighlights/> */}
+      {/* <WhoChoose/> */}
+      {/* <Benefits/> */}
       <StudentVoice/>
-      <AdvisorForm/>
+      {/* <AdvisorForm/> */}
 
     </div>
   )

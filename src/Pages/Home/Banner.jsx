@@ -1,99 +1,119 @@
 import React from "react";
-import { Check, ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 
 const Banner = () => {
-  const features = [
-    "Beginner Friendly",
-    "2 Days Intensive Training",
-    "Live Models",
-    "Expert Trainers",
-    "International Certification",
-    "Lifetime Support",
-  ];
-
   return (
-    <section className="relative overflow-hidden bg-[#050B0D]">
-      {/* Background Glow */}
-      <div className="absolute inset-0">
-        <div className="absolute -top-32 left-1/2 h-[600px] w-[900px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[180px]" />
+    <section className="relative overflow-hidden bg-[#05080A]">
 
-        <div className="absolute top-0 left-0 h-[450px] w-[450px] rounded-full bg-cyan-400/5 blur-[170px]" />
+      {/* ========================= BACKGROUND ========================= */}
 
-        <div className="absolute bottom-0 right-0 h-[400px] w-[400px] rounded-full bg-cyan-500/5 blur-[160px]" />
+      <div className="absolute inset-0 overflow-hidden">
 
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(75,230,255,.08),transparent_60%)]" />
+        {/* Main Glow */}
+
+        <div className="absolute left-1/2 top-[-250px] h-[700px] w-[900px] -translate-x-1/2 rounded-full bg-cyan-400/10 blur-[170px]" />
+
+        {/* Left Glow */}
+
+        <div className="absolute -left-40 top-0 h-[500px] w-[500px] rounded-full bg-cyan-500/5 blur-[170px]" />
+
+        {/* Right Glow */}
+
+        <div className="absolute -right-40 bottom-0 h-[500px] w-[500px] rounded-full bg-cyan-400/5 blur-[180px]" />
+
+        {/* Extra Glow */}
+
+        <div className="absolute left-1/3 top-1/3 h-[300px] w-[300px] rounded-full bg-cyan-300/5 blur-[120px]" />
+
+        {/* Grid */}
+
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px)
+            `,
+            backgroundSize: "70px 70px",
+          }}
+        />
+
       </div>
 
-      <div className="relative flex items-center justify-between min-h-screen px-6 mx-auto max-w-7xl py-28">
+      {/* ========================= CONTAINER ========================= */}
 
-        {/* ================= LEFT CONTENT ================= */}
+      <div className="relative flex items-center justify-between min-h-screen gap-20 px-6 py-24 mx-auto max-w-7xl">
+
+        {/* ========================================================= */}
+
+        {/* LEFT CONTENT */}
+
+        {/* ========================================================= */}
 
         <div className="max-w-xl">
 
-          {/* Small Label */}
+          {/* Label */}
 
-          <div className="flex items-center gap-2 mb-6">
-            <div className="h-[2px] w-10 bg-cyan-400"></div>
+          <div className="flex items-center gap-3 mb-8">
 
-            <span className="text-[11px] font-semibold uppercase tracking-[4px] text-cyan-300">
-              Faces On Faces Academy
+            <div className="h-[2px] w-12 bg-cyan-400"></div>
+
+            <span className="text-[11px] font-semibold uppercase tracking-[5px] text-cyan-300">
+
+              LIQUID BBL TREATMENT
+
             </span>
+
           </div>
 
           {/* Heading */}
 
-          <h1 className="leading-none text-white">
-            <span className="block text-6xl font-black tracking-tight">
-              Liquid BBL
+          <h1 className="leading-[0.92]">
+
+            <span className="block text-[68px] font-black tracking-[-3px] text-white">
+
+              Achieve a Fuller,
+
             </span>
 
-            <span className="block mt-2 text-4xl font-bold text-white/95">
-              2 Days Course
+            <span className="block text-[68px] font-black tracking-[-3px] text-white">
+
+              More Contoured
+
             </span>
+
+            <span className="block text-[68px] font-black tracking-[-3px] text-white">
+
+              Shape —
+
+            </span>
+
+            <span className="block bg-gradient-to-r from-cyan-300 via-cyan-400 to-sky-300 bg-clip-text text-[68px] font-black tracking-[-3px] text-transparent">
+
+              Without Surgery
+
+            </span>
+
           </h1>
 
           {/* Description */}
 
-          <p className="mt-8 text-lg leading-8 text-white/70">
-            Master one of the fastest-growing non-surgical body contouring
-            treatments with expert-led practical training.
+          <p className="mt-8 max-w-lg text-[17px] leading-8 text-[#9FB3BD]">
+
+            Liquid BBL is a non-surgical body contouring treatment that enhances
+            the shape, volume, and contour of the buttocks using advanced dermal
+            filler techniques. It provides a more sculpted appearance with
+            minimal downtime and no general anaesthetic.
+
           </p>
 
-          <p className="mt-5 text-[15px] leading-7 text-white/55">
-            Learn advanced Liquid BBL techniques, patient safety, anatomy,
-            consultation, treatment planning and live model practice in an
-            intensive beginner-friendly course designed for aesthetic
-            professionals.
-          </p>
+          {/* Buttons */}
 
-          {/* Feature Pills */}
+          <div className="flex flex-wrap gap-4 mt-12">
 
-          <div className="flex flex-wrap gap-3 mt-10">
+            <button className="group flex items-center gap-3 rounded-xl bg-cyan-400 px-8 py-4 text-sm font-semibold text-[#041317] transition duration-300 hover:scale-105 hover:bg-cyan-300">
 
-            {features.map((item) => (
-              <div
-                key={item}
-                className="flex items-center gap-2 rounded-full border border-cyan-400/20 bg-[#0E1618] px-4 py-2 text-sm text-white/85 transition hover:border-cyan-300 hover:bg-[#111E22]"
-              >
-                <Check
-                  size={13}
-                  className="text-cyan-300"
-                  strokeWidth={3}
-                />
-
-                {item}
-              </div>
-            ))}
-
-          </div>
-
-          {/* CTA Buttons */}
-
-          <div className="flex flex-wrap gap-4 mt-10">
-
-            <button className="flex items-center gap-3 py-4 font-semibold text-black transition duration-300 group rounded-xl bg-cyan-400 px-7 hover:bg-cyan-300">
-
-              Enquire Now
+              Book Free Consultation
 
               <ArrowRight
                 size={18}
@@ -102,35 +122,197 @@ const Banner = () => {
 
             </button>
 
-           
+            <button className="rounded-xl border border-cyan-400/20 bg-[#0C1417] px-8 py-4 text-sm font-medium text-white transition duration-300 hover:border-cyan-300 hover:bg-[#111C20]">
+
+              Learn More
+
+            </button>
+
+          </div>
+
+          {/* Bottom Features */}
+
+          <div className="flex flex-wrap gap-8 mt-12">
+
+            <div className="flex items-center gap-2 text-sm text-[#A8BAC2]">
+
+              <Check size={15} className="text-cyan-300" />
+
+              No Surgery Needed
+
+            </div>
+
+            <div className="flex items-center gap-2 text-sm text-[#A8BAC2]">
+
+              <Check size={15} className="text-cyan-300" />
+
+              Qualified Practitioners
+
+            </div>
+
+            <div className="flex items-center gap-2 text-sm text-[#A8BAC2]">
+
+              <Check size={15} className="text-cyan-300" />
+
+              UK Based Clinic
+
+            </div>
 
           </div>
 
         </div>
 
-        {/* ================= RIGHT IMAGE ================= */}
+        {/* ========================= */}
+        {/* RIGHT SIDE COMES IN PART-2 */}
+        {/* ========================= */}
+                {/* ========================================================= */}
+        {/* RIGHT IMAGE */}
+        {/* ========================================================= */}
 
-        <div className="relative hidden lg:flex">
+        <div className="relative items-center justify-center hidden lg:flex">
 
-          {/* Glow */}
+          {/* Main Glow */}
 
-          <div className="absolute inset-0 scale-110 rounded-full bg-cyan-400/10 blur-[80px]" />
+          <div className="absolute h-[620px] w-[620px] rounded-full bg-cyan-400/10 blur-[120px]" />
 
-          {/* Oval Frame */}
+          {/* Outer Ring */}
 
-          <div className="relative h-[540px] w-[400px] overflow-hidden rounded-[50%] border border-cyan-400/30 bg-[#081114] shadow-[0_0_50px_rgba(34,211,238,.15)]">
+          <div className="absolute h-[520px] w-[520px] rounded-full border border-cyan-400/10" />
 
-            <img
-              src="/banner-image.jpg"
-              alt="Liquid BBL"
-              className="object-cover w-full h-full"
-            />
+          <div className="absolute h-[600px] w-[600px] rounded-full border border-cyan-400/5" />
+
+          {/* Glass Card */}
+
+          <div className="relative overflow-hidden rounded-[38px] border border-cyan-400/20 bg-[#081114]/80 p-5 backdrop-blur-xl shadow-[0_0_60px_rgba(34,211,238,.12)]">
+
+            {/* Image */}
+
+            <div className="relative overflow-hidden rounded-[28px]">
+
+              <img
+                src="https://i.ibb.co.com/xSxz3Wdy/banner.jpg"
+                alt="Liquid BBL"
+                className="h-[650px] w-[470px] object-fill transition duration-700 hover:scale-105"
+              />
+
+              {/* Image Overlay */}
+
+              <div className="absolute inset-0 bg-gradient-to-t from-[#05080A]/70 via-transparent to-transparent" />
+
+            </div>
+
+            {/* Bottom Gradient */}
+
+            <div className="absolute bottom-0 left-0 right-0 pointer-events-none h-36 bg-gradient-to-t from-cyan-400/10 to-transparent" />
+
+          </div>
+
+          {/* ================= Floating Card 1 ================= */}
+
+          <div className="absolute -left-16 top-24 rounded-2xl border border-cyan-400/20 bg-[#0A1418]/95 px-5 py-4 backdrop-blur-xl shadow-[0_15px_40px_rgba(0,0,0,.45)]">
+
+            <p className="text-[11px] uppercase tracking-[3px] text-cyan-300">
+
+              Treatment
+
+            </p>
+
+            <h4 className="mt-2 text-lg font-bold text-white">
+
+              Non Surgical
+
+            </h4>
+
+            <p className="mt-1 text-sm text-[#97ADB6]">
+
+              Safe & Effective
+
+            </p>
+
+          </div>
+
+          {/* ================= Floating Card 2 ================= */}
+
+          <div className="absolute -right-12 bottom-24 rounded-2xl border border-cyan-400/20 bg-[#0A1418]/95 px-5 py-4 backdrop-blur-xl shadow-[0_15px_40px_rgba(0,0,0,.45)]">
+
+            <p className="text-[11px] uppercase tracking-[3px] text-cyan-300">
+
+              Recovery
+
+            </p>
+
+            <h4 className="mt-2 text-lg font-bold text-white">
+
+              Minimal Downtime
+
+            </h4>
+
+            <p className="mt-1 text-sm text-[#97ADB6]">
+
+              Return Quickly
+
+            </p>
+
+          </div>
+
+          {/* ================= Floating Circle ================= */}
+
+          <div className="absolute -top-8 right-20 flex h-24 w-24 items-center justify-center rounded-full border border-cyan-400/20 bg-[#0B1518]/90 backdrop-blur-xl shadow-[0_0_35px_rgba(34,211,238,.18)]">
+
+            <div className="text-center">
+
+              <h3 className="text-2xl font-black text-cyan-300">
+
+                2D
+
+              </h3>
+
+              <p className="text-[11px] uppercase tracking-[2px] text-white/70">
+
+                Course
+
+              </p>
+
+            </div>
 
           </div>
 
         </div>
+                {/* ========================================================= */}
+        {/* DECORATIVE ELEMENTS */}
+        {/* ========================================================= */}
+
+        {/* Top Left Blur */}
+        <div className="absolute left-10 top-20 h-44 w-44 rounded-full bg-cyan-400/5 blur-[120px]" />
+
+        {/* Bottom Right Blur */}
+        <div className="absolute bottom-10 right-10 h-60 w-60 rounded-full bg-cyan-500/5 blur-[160px]" />
+
+        {/* Small Floating Glow */}
+        <div className="absolute left-[45%] top-40 h-5 w-5 rounded-full bg-cyan-300 shadow-[0_0_35px_rgba(34,211,238,.9)]" />
+
+
+        {/* ========================================================= */}
+        {/* CYAN LINE */}
+        {/* ========================================================= */}
+
+        <div className="absolute bottom-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent" />
 
       </div>
+            {/* ========================================================= */}
+      {/* MOBILE DECORATION */}
+      {/* ========================================================= */}
+
+      <div className="absolute flex gap-2 -translate-x-1/2 bottom-6 left-1/2 lg:hidden">
+
+        <div className="w-10 h-2 rounded-full bg-cyan-400"></div>
+
+        <div className="w-2 h-2 rounded-full bg-cyan-400/60"></div>
+
+        <div className="w-2 h-2 rounded-full bg-cyan-400/40"></div>
+
+      </div>
+
     </section>
   );
 };

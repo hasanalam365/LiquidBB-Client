@@ -1,143 +1,168 @@
 import React from "react";
-import {
-  Activity,
-  Clock3,
-  TrendingUp,
-  ShieldCheck,
-  Sparkles,
-} from "lucide-react";
 
 const Overview = () => {
-  const features = [
-    {
-      icon: <Activity size={18} />,
-      title: "Non-surgical approach",
-      desc: "A minimally invasive alternative to surgical procedures.",
-    },
-    {
-      icon: <Clock3 size={18} />,
-      title: "Minimal downtime",
-      desc: "Patients return quickly to their daily routine.",
-    },
-    {
-      icon: <TrendingUp size={18} />,
-      title: "High patient demand",
-      desc: "A fast-growing treatment market worldwide.",
-    },
-    {
-      icon: <ShieldCheck size={18} />,
-      title: "Safe professional techniques",
-      desc: "Delivered within a strict clinical framework.",
-    },
-    {
-      icon: <Sparkles size={18} />,
-      title: "Growing treatment market",
-      desc: "Position yourself in one of the fastest growing sectors.",
-    },
-  ];
-
   return (
-    <section className="relative overflow-hidden bg-[#050B0D] py-24">
+    <section className="relative overflow-hidden bg-[#05080A] py-28">
 
-      {/* Background Glow */}
+      {/* Background */}
 
       <div className="absolute inset-0">
 
-        <div className="absolute left-1/2 -translate-x-1/2 -top-40 h-[500px] w-[900px] rounded-full bg-cyan-500/10 blur-[180px]" />
+        <div className="absolute left-1/2 top-[-150px] h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-cyan-400/5 blur-[180px]" />
 
-        <div className="absolute left-0 bottom-0 h-[300px] w-[300px] rounded-full bg-cyan-400/5 blur-[120px]" />
+        <div className="absolute -left-32 top-20 h-[320px] w-[320px] rounded-full bg-cyan-400/5 blur-[140px]" />
 
-        <div className="absolute right-0 top-0 h-[300px] w-[300px] rounded-full bg-cyan-400/5 blur-[120px]" />
+        <div className="absolute -right-32 bottom-0 h-[350px] w-[350px] rounded-full bg-cyan-400/5 blur-[150px]" />
 
       </div>
 
-      <div className="relative flex flex-col items-center gap-16 px-6 mx-auto max-w-7xl lg:flex-row">
+      <div className="relative flex items-center justify-between gap-24 px-6 mx-auto max-w-7xl">
 
-        {/* LEFT IMAGE */}
+        {/* ================= LEFT ================= */}
 
-        <div className="w-full lg:w-1/2">
+        <div className="max-w-xl">
 
-          <div className="overflow-hidden rounded-2xl border border-cyan-400/20 shadow-[0_0_40px_rgba(34,211,238,.08)]">
+          <div className="flex items-center gap-3 mb-6">
 
-            <img
-              src="https://i.ibb.co.com/HLWnVKkK/overview.jpg"
-              alt="Clinic"
-              className="h-[420px] w-full object-cover transition duration-700 hover:scale-105"
-            />
+            <div className="h-[2px] w-10 bg-cyan-400"></div>
 
-          </div>
+            <span className="text-[11px] font-semibold uppercase tracking-[5px] text-cyan-300">
 
-        </div>
+              OVERVIEW
 
-        {/* RIGHT CONTENT */}
-
-        <div className="w-full lg:w-1/2">
-
-          {/* Label */}
-
-          <div className="flex items-center gap-2 mb-5">
-
-            <div className="h-[2px] w-8 bg-cyan-400" />
-
-            <span className="text-[11px] font-semibold uppercase tracking-[4px] text-cyan-300">
-              Course Overview
             </span>
 
           </div>
 
-          {/* Heading */}
+          <h2 className="text-[58px] font-black leading-[1.05] tracking-[-2px] text-white">
 
-          <h2 className="text-4xl font-bold text-white xl:text-5xl">
-            What is a Liquid BBL?
+            What is
+
+            <span className="text-cyan-300">
+
+              {" "}Liquid BBL?
+
+            </span>
+
           </h2>
 
-          {/* Description */}
+          <p className="mt-8 text-[17px] leading-8 text-[#9FB3BD]">
 
-          <p className="leading-8 mt-7 text-white/70">
-            A Liquid BBL (Brazilian Butt Lift) is a non-surgical,
-            minimally invasive alternative to traditional buttock
-            augmentation procedures using dermal fillers.
+            Liquid BBL (Brazilian Butt Lift) is a minimally invasive
+            body contouring treatment that enhances the shape,
+            projection and overall appearance of the buttocks
+            using premium dermal fillers.
+
           </p>
 
-          <p className="mt-5 leading-8 text-white/55">
-            The treatment carefully injects dermal fillers into the
-            buttocks and hips to improve contour, increase volume,
-            and create a fuller lifted appearance without surgery
-            or general anaesthesia.
+          <p className="mt-6 text-[17px] leading-8 text-[#9FB3BD]">
+
+            Unlike traditional surgery, Liquid BBL requires
+            no fat transfer, no general anaesthesia and
+            significantly less recovery time while delivering
+            natural-looking enhancement.
+
           </p>
 
-          {/* Feature Cards */}
+          <p className="mt-6 text-[17px] leading-8 text-[#9FB3BD]">
 
-          <div className="grid gap-4 mt-10 sm:grid-cols-2">
+            The treatment focuses on creating smooth,
+            balanced body proportions while prioritising
+            patient comfort and safety.
 
-            {features.map((item) => (
+          </p>
 
-              <div
-                key={item.title}
-                className="rounded-2xl border border-cyan-400/15 bg-white/[0.03] p-5 backdrop-blur-xl transition duration-300 hover:border-cyan-300 hover:bg-cyan-400/5"
-              >
+        </div>
 
-                <div className="flex items-center justify-center w-10 h-10 mb-4 border rounded-xl border-cyan-400/20 bg-cyan-400/5 text-cyan-300">
+        {/* RIGHT SIDE COMES IN PART-2 */}
+                {/* ================= RIGHT ================= */}
 
-                  {item.icon}
+        <div className="relative items-center justify-center hidden lg:flex">
 
-                </div>
+          {/* Main Glow */}
 
-                <h3 className="text-sm font-semibold text-white">
-                  {item.title}
-                </h3>
+          <div className="absolute h-[620px] w-[620px] rounded-full bg-cyan-400/10 blur-[120px]" />
 
-                <p className="mt-2 text-sm leading-6 text-white/55">
-                  {item.desc}
-                </p>
+          {/* Outer Decoration */}
 
-              </div>
+          <div className="absolute h-[500px] w-[500px] rounded-full border border-cyan-400/10" />
 
-            ))}
+          {/* Glass Card */}
+
+          <div className="relative overflow-hidden rounded-[26px] border border-cyan-400/20 bg-[#091114]/80 p-4 backdrop-blur-xl shadow-[0_0_60px_rgba(34,211,238,.12)]">
+
+            {/* Image */}
+
+            <div className="relative overflow-hidden rounded-[20px]">
+
+              <img
+                src="https://i.ibb.co.com/7dgcjY8Y/overview.jpg"
+                alt="Liquid BBL Overview"
+                className="h-[460px] w-[460px] object-cover transition duration-700 hover:scale-105"
+              />
+
+              {/* Overlay */}
+
+              <div className="absolute inset-0 bg-gradient-to-t from-[#05080A]/70 via-transparent to-transparent"></div>
+
+            </div>
+
+            {/* Bottom Glow */}
+
+            <div className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none bg-gradient-to-t from-cyan-400/10 to-transparent" />
 
           </div>
 
+          {/* Floating Badge */}
+
+          <div className="absolute -translate-x-1/2 -bottom-6 left-1/2">
+
+            <div className="rounded-full border border-cyan-400/20 bg-[#0B1518]/95 px-7 py-3 backdrop-blur-xl shadow-[0_12px_30px_rgba(0,0,0,.45)]">
+
+              <span className="text-[11px] uppercase tracking-[2px] text-cyan-300">
+
+                Premium Dermal Filler Technology
+
+              </span>
+
+            </div>
+
+          </div>
+
+          {/* Floating Accent */}
+
+          <div className="absolute w-24 h-24 border rounded-full -right-8 top-10 border-cyan-400/20 bg-cyan-400/5 blur-sm"></div>
+
+          <div className="absolute w-16 h-16 rounded-full -left-10 bottom-20 bg-cyan-300/10 blur-xl"></div>
+
         </div>
+                {/* ================= Decorative Glow ================= */}
+
+        <div className="pointer-events-none absolute -top-20 left-1/2 h-[300px] w-[300px] -translate-x-1/2 rounded-full bg-cyan-400/5 blur-[120px]" />
+
+        <div className="pointer-events-none absolute bottom-10 left-10 h-32 w-32 rounded-full bg-cyan-400/5 blur-[90px]" />
+
+        <div className="pointer-events-none absolute right-10 top-16 h-24 w-24 rounded-full bg-cyan-300/10 blur-[70px]" />
+
+      </div>
+
+      {/* Bottom Divider */}
+
+      <div className="relative px-6 mx-auto mt-24 max-w-7xl">
+
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent"></div>
+
+      </div>
+
+      {/* Mobile Decoration */}
+
+      <div className="absolute flex gap-2 -translate-x-1/2 bottom-8 left-1/2 lg:hidden">
+
+        <div className="w-10 h-2 rounded-full bg-cyan-400"></div>
+
+        <div className="w-2 h-2 rounded-full bg-cyan-400/70"></div>
+
+        <div className="w-2 h-2 rounded-full bg-cyan-400/40"></div>
 
       </div>
 
