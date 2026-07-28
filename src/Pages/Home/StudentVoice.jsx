@@ -3,25 +3,25 @@ import { Quote, Star } from "lucide-react";
 
 const StudentVoice = () => {
   const testimonials = [
-    {
-      name: "Dr. Amira Sinclair",
-      role: "Aesthetic Practitioner",
-      review:
-        "The most comprehensive training I have ever attended. The hands-on approach and live models gave me the confidence to start offering Liquid BBL immediately.",
-    },
-    {
-      name: "Nadia Hassan",
-      role: "Clinic Owner",
-      review:
-        "Faces On Faces sets the benchmark. Small classes, expert trainers and a genuinely professional environment. My whole team benefited enormously.",
-    },
-    {
-      name: "Priya Sharma",
-      role: "Beauty Professional",
-      review:
-        "As a beginner I was nervous, but the educators guided me through every step. I left feeling skilled, safe and certified. Truly world-class.",
-    },
-  ];
+  {
+    name: "Charlotte Evans",
+    role: "Verified Patient",
+    review:
+      "Choosing Liquid BBL was one of the best decisions I've made. The treatment was virtually painless, and the enhancement looks beautifully natural. Friends keep complimenting me without realizing I've had anything done.",
+  },
+  {
+    name: "Isabella Moore",
+    role: "Verified Patient",
+    review:
+      "From consultation to aftercare, the service was exceptional. The practitioners answered every question and made me feel completely confident. The results have exceeded everything I hoped for.",
+  },
+  {
+    name: "Grace Wilson",
+    role: "Verified Patient",
+    review:
+      "I was looking for subtle body enhancement without surgery, and this treatment delivered exactly that. Recovery was quick, the clinic was immaculate, and I finally feel more confident in my own body.",
+  },
+];
 
   return (
     <section className="relative overflow-hidden bg-[#050B0D] py-24">

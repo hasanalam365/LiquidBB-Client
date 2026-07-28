@@ -22,17 +22,17 @@ const Homes = () => {
       <Overview/>
       <WhyChooseIt/>
       <WhoIsThis/>
-      <HowItWorks/>
-      <ExpectedResult/>
+      {/* <HowItWorks/>
+      <ExpectedResult/> */}
       <Welbeing/>
       <FAQ/>
-      {/* <EnquiryNow/>
-      <WhatYouLearn/>
-      <CourseHighlights/>
-      <WhoChoose/>
-      <Benefits/>
+      {/* <EnquiryNow/> */}
+      {/* <WhatYouLearn/> */}
+      {/* <CourseHighlights/> */}
+      {/* <WhoChoose/> */}
+      {/* <Benefits/> */}
       <StudentVoice/>
-      <AdvisorForm/> */}
+      {/* <AdvisorForm/>  */}
 
     </div>
   )
