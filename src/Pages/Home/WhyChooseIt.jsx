@@ -53,7 +53,7 @@ const benefits = [
   },
 ];
 
-const WhoThis = () => {
+const WhyChooseIt = () => {
   return (
     <section className="relative overflow-hidden bg-[#05080A] py-28">
 
@@ -180,4 +180,4 @@ const WhoThis = () => {
   );
 };
 
-export default WhoThis;
+export default WhyChooseIt;
