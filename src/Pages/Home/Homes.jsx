@@ -11,6 +11,9 @@ import EnquiryNow from './EnquiryNow'
 import AdvisorForm from './AdvisorForm'
 import WhoIsThis from './WhoIsThis'
 import HowItWorks from './HowItWorks'
+import ExpectedResult from './ExpectedResult'
+import Welbeing from './Welbeing'
+import FAQ from './FAQ'
 
 const Homes = () => {
   return (
@@ -20,6 +23,9 @@ const Homes = () => {
       <WhyChooseIt/>
       <WhoIsThis/>
       <HowItWorks/>
+      <ExpectedResult/>
+      <Welbeing/>
+      <FAQ/>
       {/* <EnquiryNow/>
       <WhatYouLearn/>
       <CourseHighlights/>
