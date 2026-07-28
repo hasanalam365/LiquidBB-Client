@@ -214,12 +214,12 @@ const FAQ = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-[#050816] py-24"
+      className="relative overflow-hidden bg-[#05080A] py-24"
       style={{ overflowAnchor: "none" }}
     >
       {/* Background Glow */}
-      <div className="absolute top-0 left-0 w-96 h-96 rounded-full bg-cyan-500/10 blur-[120px]" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-cyan-400/10 blur-[120px]" />
+      <div className="absolute left-0 top-20 h-[320px] w-[320px] rounded-full bg-cyan-500/10 blur-[120px]" />
+<div className="absolute right-0 bottom-0 h-[260px] w-[260px] rounded-full bg-cyan-400/5 blur-[120px]" />
 
       <div className="relative z-10 max-w-5xl px-4 mx-auto">
         {/* Heading */}
@@ -230,21 +230,21 @@ const FAQ = () => {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <p className="mb-4 text-[11px] uppercase tracking-[5px] text-cyan-400">
+          <p className="mb-4 inline-block text-[11px] font-bold uppercase tracking-[3px] text-cyan-400">
             Frequently Asked Questions
           </p>
 
-          <h2 className="font-light leading-tight text-white">
-            <span className="block text-4xl md:text-6xl">
+          <h2 className="font-bold leading-tight text-white">
+            <span className="block text-4xl md:text-5xl">
               Everything You Need
             </span>
 
-            <span className="block text-4xl italic md:text-6xl text-cyan-400">
+           <span className="block text-4xl md:text-5xl text-cyan-400">
               To Know
             </span>
           </h2>
 
-          <p className="max-w-2xl mx-auto mt-6 leading-8 text-gray-400">
+          <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-8 text-[#9FB3BD]">
             Find answers to the most common questions about our CPD accredited
             Foundation Aesthetics Course.
           </p>
@@ -261,13 +261,13 @@ const FAQ = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
               style={{ overflowAnchor: "none", scrollMarginTop: STICKY_HEADER_OFFSET }}
-              className="overflow-hidden transition-all duration-300 border rounded-3xl border-cyan-600 bg-white/[0.03] backdrop-blur-xl hover:border-cyan-400/30 hover:shadow-[0_0_40px_rgba(34,211,238,0.08)]"
+              className="overflow-hidden rounded-2xl border border-cyan-400/15 bg-[#081116]/80 backdrop-blur-sm transition-all duration-300 hover:border-cyan-400/60 hover:shadow-[0_0_30px_rgba(34,211,238,.18)]"
             >
               <button
                 onClick={() => toggleCategory(index)}
-                className="flex items-center justify-between w-full px-8 py-6 text-left"
+                className="flex w-full items-center justify-between px-8 py-6 text-left transition-colors hover:bg-cyan-400/[0.03]"
               >
-                <span className="text-lg font-medium text-white md:text-xl">
+                <span className="text-xl font-semibold text-white">
                   {section.category}
                 </span>
 
@@ -279,20 +279,20 @@ const FAQ = () => {
               </button>
 
               {openCategory === index && (
-                <div className="border-t border-white/10">
+                <div className="border-t border-cyan-400/10">
                   {section.questions.map((item, i) => {
                     const key = `${index}-${i}`;
 
                     return (
                       <div
                         key={i}
-                        className="border-b border-white/5 last:border-b-0"
+                        className="border-b border-cyan-400/10 last:border-b-0"
                       >
                         <button
                           onClick={() => toggleQuestion(index, i)}
-                          className="flex items-center justify-between w-full px-8 py-6 text-left transition-colors hover:bg-white/[0.02]"
+                          className="flex items-center justify-between w-full px-8 py-6 text-left transition-colors hover:bg-cyan-400/[0.03]"
                         >
-                          <h3 className="pr-6 text-base font-medium text-white md:text-lg">
+                          <h3 className="pr-6 text-[18px] font-semibold text-white">
                             {i + 1}. {item.q}
                           </h3>
 
@@ -311,7 +311,7 @@ const FAQ = () => {
 
                         {openQuestion[key] && (
                           <div className="px-8 pb-6">
-                            <p className="leading-8 text-gray-400 whitespace-pre-line">
+                            <p className="whitespace-pre-line text-[15px] leading-8 text-[#9FB3BD]">
                               {item.a}
                             </p>
                           </div>
