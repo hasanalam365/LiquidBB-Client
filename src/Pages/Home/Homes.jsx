@@ -32,7 +32,7 @@ const Homes = () => {
       {/* <WhoChoose/> */}
       {/* <Benefits/> */}
       <StudentVoice/>
-      {/* <AdvisorForm/>  */}
+      <AdvisorForm/> 
 
     </div>
   )
