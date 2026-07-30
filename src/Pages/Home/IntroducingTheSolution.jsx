@@ -5,7 +5,7 @@ import {
 
 const IntroducingTheSolution = () => {
   return (
-    <section className="relative overflow-hidden bg-[#05080A] py-28">
+    <section id="about" className="relative overflow-hidden bg-[#05080A] py-28">
 
       {/* Background Glow */}
 

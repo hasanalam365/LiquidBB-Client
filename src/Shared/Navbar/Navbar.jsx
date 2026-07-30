@@ -6,10 +6,10 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
  const navLinks = [
-  { name: "Overview", id: "overview" },
-  { name: "Curriculum", id: "curriculum" },
-  { name: "Highlights", id: "highlights" },
-  { name: "Why Us", id: "why-us" },
+  { name: "About", id: "about" },
+  { name: "Benefits", id: "benefits" },
+  // { name: "Highlights", id: "highlights" },
+  // { name: "Why Us", id: "why-us" },
   { name: "FAQ", id: "faq" },
 ];
 

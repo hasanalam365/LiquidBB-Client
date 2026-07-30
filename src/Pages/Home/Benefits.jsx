@@ -70,7 +70,7 @@ const Benefits = () => {
   };
 
   return (
-    <section className="relative overflow-hidden bg-[#050B0D] py-24">
+    <section id="benefits" className="relative overflow-hidden bg-[#050B0D] py-24">
       {/* Background Glow */}
       <div className="absolute inset-0">
         <div className="absolute left-1/2 -translate-x-1/2 -top-44 h-[500px] w-[900px] rounded-full bg-cyan-500/10 blur-[180px]" />

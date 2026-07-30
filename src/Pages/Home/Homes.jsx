@@ -15,6 +15,7 @@ import Welbeing from './Welbeing'
 import FAQ from './FAQ'
 import UnderstandingYou from './UnderstandingYou'
 import IntroducingTheSolution from './IntroducingTheSolution'
+import Suitability from './Suitability'
 
 const Homes = () => {
   return (
@@ -23,14 +24,15 @@ const Homes = () => {
       <UnderstandingYou/>
       <IntroducingTheSolution/>
       <Benefits/>
-      {/* <Overview/>
-      <WhyChooseIt/>
-      <WhoIsThis/>
-       <HowItWorks/>
-       <ExpectedResult/> 
-      <Welbeing/>
+      <Suitability/>
+   {/* <Overview/> */}
+      {/* <WhyChooseIt/> */}
+      {/* <WhoIsThis/> */}
+       {/* <HowItWorks/> */}
+       {/* <ExpectedResult/>  */}
+      {/* <Welbeing/> */}
       <FAQ/>
-       <EnquiryNow/>  */}
+       {/* <EnquiryNow/>  */}
       
       {/* <CourseHighlights/> */}
       {/* <WhoChoose/> */}
