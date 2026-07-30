@@ -44,123 +44,65 @@ const Banner = () => {
 
       <div className="relative flex items-center justify-between min-h-screen gap-20 px-6 py-24 mx-auto max-w-7xl">
 
-        {/* ========================================================= */}
+       
+{/* LEFT CONTENT */}
+{/* ========================================================= */}
 
-        {/* LEFT CONTENT */}
+<div className="max-w-xl">
 
-        {/* ========================================================= */}
+  {/* Small Label */}
 
-        <div className="max-w-xl">
+  <div className="inline-flex items-center rounded-full border border-cyan-400/20 bg-[#0B1518] px-4 py-1.5 backdrop-blur-xl">
+    <span className="text-[11px] font-semibold uppercase tracking-[3px] text-cyan-300">
+      UK Aesthetic Clinic
+    </span>
+  </div>
 
-          {/* Label */}
+  {/* Heading */}
 
-          <div className="flex items-center gap-3 mb-8">
+  <h1 className="mt-8 font-['Playfair_Display'] text-[64px] font-semibold leading-[0.95] tracking-[-2px] text-white">
+    Feeling Less
+    <br />
+    Confident About
+    <br />
+    Your Body Shape?
+  </h1>
 
-            <div className="h-[2px] w-12 bg-cyan-400"></div>
+  {/* Description */}
 
-            <span className="text-[11px] font-semibold uppercase tracking-[5px] text-cyan-300">
+  <p className="mt-8 max-w-lg text-[17px] leading-8 text-[#9FB3BD]">
+    Many people feel self-conscious about the shape or volume of their
+    buttocks, making certain clothing choices or swimwear feel
+    uncomfortable. These feelings are far more common than many realise.
+    If you've been searching for a natural-looking, non-surgical way to
+    enhance your body contours, you're not alone—and you're in the right
+    place to learn more.
+  </p>
 
-              LIQUID BBL TREATMENT
+  {/* Buttons */}
 
-            </span>
+  <div className="flex flex-wrap gap-4 mt-12">
 
-          </div>
+    <button className="group flex items-center gap-3 rounded-xl bg-cyan-400 px-8 py-4 text-sm font-semibold text-[#041317] transition duration-300 hover:scale-105 hover:bg-cyan-300">
 
-          {/* Heading */}
+      Request a Consultation
 
-          <h1 className="leading-[0.92]">
+      <ArrowRight
+        size={18}
+        className="transition group-hover:translate-x-1"
+      />
 
-            <span className="block text-[68px] font-black tracking-[-3px] text-white">
+    </button>
 
-              Achieve a Fuller,
+    <button className="rounded-xl border border-cyan-400/20 bg-[#0C1417] px-8 py-4 text-sm font-medium text-white transition duration-300 hover:border-cyan-300 hover:bg-[#111C20]">
 
-            </span>
+      Learn More
 
-            <span className="block text-[68px] font-black tracking-[-3px] text-white">
+    </button>
 
-              More Contoured
+  </div>
 
-            </span>
-
-            <span className="block text-[68px] font-black tracking-[-3px] text-white">
-
-              Shape —
-
-            </span>
-
-            <span className="block bg-gradient-to-r from-cyan-300 via-cyan-400 to-sky-300 bg-clip-text text-[68px] font-black tracking-[-3px] text-transparent">
-
-              Without Surgery
-
-            </span>
-
-          </h1>
-
-          {/* Description */}
-
-          <p className="mt-8 max-w-lg text-[17px] leading-8 text-[#9FB3BD]">
-
-            Liquid BBL is a non-surgical body contouring treatment that enhances
-            the shape, volume, and contour of the buttocks using advanced dermal
-            filler techniques. It provides a more sculpted appearance with
-            minimal downtime and no general anaesthetic.
-
-          </p>
-
-          {/* Buttons */}
-
-          <div className="flex flex-wrap gap-4 mt-12">
-
-            <button className="group flex items-center gap-3 rounded-xl bg-cyan-400 px-8 py-4 text-sm font-semibold text-[#041317] transition duration-300 hover:scale-105 hover:bg-cyan-300">
-
-              Book Free Consultation
-
-              <ArrowRight
-                size={18}
-                className="transition group-hover:translate-x-1"
-              />
-
-            </button>
-
-            <button className="rounded-xl border border-cyan-400/20 bg-[#0C1417] px-8 py-4 text-sm font-medium text-white transition duration-300 hover:border-cyan-300 hover:bg-[#111C20]">
-
-              Learn More
-
-            </button>
-
-          </div>
-
-          {/* Bottom Features */}
-
-          <div className="flex flex-wrap gap-8 mt-12">
-
-            <div className="flex items-center gap-2 text-sm text-[#A8BAC2]">
-
-              <Check size={15} className="text-cyan-300" />
-
-              No Surgery Needed
-
-            </div>
-
-            <div className="flex items-center gap-2 text-sm text-[#A8BAC2]">
-
-              <Check size={15} className="text-cyan-300" />
-
-              Qualified Practitioners
-
-            </div>
-
-            <div className="flex items-center gap-2 text-sm text-[#A8BAC2]">
-
-              <Check size={15} className="text-cyan-300" />
-
-              UK Based Clinic
-
-            </div>
-
-          </div>
-
-        </div>
+</div>
 
         {/* ========================= */}
         {/* RIGHT SIDE COMES IN PART-2 */}

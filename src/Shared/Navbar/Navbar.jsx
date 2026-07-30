@@ -5,13 +5,13 @@ import { Menu, X } from "lucide-react";
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const navLinks = [
-    { name: "Overview", path: "#" },
-    { name: "Curriculum", path: "#" },
-    { name: "Highlights", path: "#" },
-    { name: "Why Us", path: "#" },
-    { name: "FAQ", path: "#" },
-  ];
+ const navLinks = [
+  { name: "Overview", id: "overview" },
+  { name: "Curriculum", id: "curriculum" },
+  { name: "Highlights", id: "highlights" },
+  { name: "Why Us", id: "why-us" },
+  { name: "FAQ", id: "faq" },
+];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 overflow-hidden">
@@ -56,25 +56,19 @@ export default function Navbar() {
           <div className="flex items-center gap-2 rounded-2xl border border-cyan-400/10 bg-white/[0.04] px-3 py-1 backdrop-blur-xl shadow-[0_0_35px_rgba(34,211,238,.08)]">
 
             {navLinks.map((link) => (
-              <NavLink
-                key={link.name}
-                to={link.path}
-                className={({ isActive }) =>
-  `whitespace-nowrap rounded-xl px-5 py-3 text-[13px] font-medium transition duration-300 ${
-    isActive
-      ? "bg-cyan-400/10 text-cyan-300"
-      : "text-white/70 hover:bg-white/5 hover:text-white"
-  }`
-}
-              >
-                {link.name}
-              </NavLink>
+             <a
+  key={link.name}
+  href={`#${link.id}`}
+  className="whitespace-nowrap rounded-xl px-5 py-3 text-[13px] font-medium text-white/70 transition duration-300 hover:bg-white/5 hover:text-white"
+>
+  {link.name}
+</a>
             ))}
 
             {/* CTA */}
 
-            <Link
-  to="#"
+            <a
+  href="#enquiry"
   className="
     whitespace-nowrap
     rounded-xl
@@ -94,7 +88,7 @@ export default function Navbar() {
   "
 >
   Enquire Now
-</Link>
+</a>
 
           </div>
 
@@ -119,28 +113,23 @@ export default function Navbar() {
           <div className="px-6 py-6 space-y-3">
 
             {navLinks.map((link) => (
-              <NavLink
-                key={link.name}
-                to={link.path}
-                onClick={() => setMobileMenuOpen(false)}
-                className={({ isActive }) =>
-                  `block rounded-lg px-4 py-3 transition ${
-                    isActive
-                      ? "bg-cyan-400/10 text-cyan-300"
-                      : "text-white/80 hover:bg-white/5 hover:text-white"
-                  }`
-                }
-              >
-                {link.name}
-              </NavLink>
+              <a
+  key={link.name}
+  href={`#${link.id}`}
+  onClick={() => setMobileMenuOpen(false)}
+  className="block px-4 py-3 transition rounded-lg text-white/80 hover:bg-white/5 hover:text-white"
+>
+  {link.name}
+</a>
             ))}
 
-            <Link
-              to="#"
-              className="mt-4 block rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-300 py-3 text-center font-semibold text-black shadow-[0_0_30px_rgba(34,211,238,.25)]"
-            >
-              Enquire Now
-            </Link>
+            <a
+  href="#enquiry"
+  onClick={() => setMobileMenuOpen(false)}
+  className="mt-4 block rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-300 py-3 text-center font-semibold text-black shadow-[0_0_30px_rgba(34,211,238,.25)]"
+>
+  Enquire Now
+</a>
 
           </div>
 

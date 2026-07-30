@@ -1,10 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap');
 
-body {
-  background: #0f0f1a;
-  font-family: 'Inter', sans-serif;
+
+
+html {
+  scroll-behavior: smooth;
+}
+@import "tailwindcss";
+
+html {
+  font-family: "Playfair Display", serif;
 }
 
+body {
+  font-family: "Playfair Display", serif;
+}

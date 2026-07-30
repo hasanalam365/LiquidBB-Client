@@ -2,7 +2,6 @@ import React from 'react'
 import Banner from './Banner'
 import Overview from './Overview'
 import WhyChooseIt from './WhyChooseIt'
-import WhatYouLearn from './WhatYouLearn'
 import CourseHighlights from './CourseHighlights'
 import WhoChoose from './WhoChoose'
 import Benefits from './Benefits'
@@ -14,24 +13,29 @@ import HowItWorks from './HowItWorks'
 import ExpectedResult from './ExpectedResult'
 import Welbeing from './Welbeing'
 import FAQ from './FAQ'
+import UnderstandingYou from './UnderstandingYou'
+import IntroducingTheSolution from './IntroducingTheSolution'
 
 const Homes = () => {
   return (
     <div>
       <Banner/>
-      <Overview/>
+      <UnderstandingYou/>
+      <IntroducingTheSolution/>
+      <Benefits/>
+      {/* <Overview/>
       <WhyChooseIt/>
       <WhoIsThis/>
-      {/* <HowItWorks/>
-      <ExpectedResult/> */}
+       <HowItWorks/>
+       <ExpectedResult/> 
       <Welbeing/>
       <FAQ/>
-      {/* <EnquiryNow/> */}
-      {/* <WhatYouLearn/> */}
+       <EnquiryNow/>  */}
+      
       {/* <CourseHighlights/> */}
       {/* <WhoChoose/> */}
-      {/* <Benefits/> */}
-      <StudentVoice/>
+      {/* <Benefits/>
+      <StudentVoice/> */}
       <AdvisorForm/> 
 
     </div>

@@ -214,6 +214,7 @@ const FAQ = () => {
   return (
     <section
       ref={sectionRef}
+      id="faq"
       className="relative overflow-hidden bg-[#05080A] py-24"
       style={{ overflowAnchor: "none" }}
     >

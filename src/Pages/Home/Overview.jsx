@@ -2,7 +2,7 @@ import React from "react";
 
 const Overview = () => {
   return (
-    <section className="relative overflow-hidden bg-[#05080A] py-28">
+    <section id="overview" className="relative overflow-hidden bg-[#05080A] py-28">
 
       {/* Background */}
 
