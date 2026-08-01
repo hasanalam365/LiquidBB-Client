@@ -28,8 +28,8 @@ const Homes = () => {
    {/* <Overview/> */}
       {/* <WhyChooseIt/> */}
       {/* <WhoIsThis/> */}
-       {/* <HowItWorks/> */}
-       {/* <ExpectedResult/>  */}
+       <HowItWorks/>
+       <ExpectedResult/> 
       {/* <Welbeing/> */}
       <FAQ/>
        {/* <EnquiryNow/>  */}
