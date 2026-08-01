@@ -10,12 +10,10 @@ import {
 
 export default function Footer() {
   const quickLinks = [
-    { name: "Course Overview", path: "#" },
-    { name: "Curriculum", path: "#" },
-    { name: "Highlights", path: "#" },
-    { name: "Why Us", path: "#" },
-    { name: "FAQ", path: "#" },
-    { name: "Enquire", path: "#" },
+    { name: "About", id: "about" },
+    { name: "Benefits", id: "benefits" },
+    { name: "How it Works", id: "how-it-works" },
+    { name: "FAQ", id: "faq" },
   ];
 
   return (
@@ -89,12 +87,12 @@ export default function Footer() {
 
                 <li key={item.name}>
 
-                  <Link
-                    to={item.path}
+                  <a
+                    href={`#${item.id}`}
                     className="text-sm transition text-white/60 hover:text-cyan-300"
                   >
                     {item.name}
-                  </Link>
+                  </a>
 
                 </li>
 
@@ -139,21 +137,6 @@ export default function Footer() {
                 </span>
 
               </div>
-
-              {/* <div className="flex items-start gap-3">
-
-                <MapPin
-                  size={17}
-                  className="mt-1 text-cyan-300"
-                />
-
-                <span className="text-sm leading-6 text-white/60">
-                  Premium Training Institute
-                  <br />
-                  United Kingdom
-                </span>
-
-              </div> */}
 
             </div>
 

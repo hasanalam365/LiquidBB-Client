@@ -10,6 +10,8 @@ export default function Navbar() {
   { name: "Benefits", id: "benefits" },
   // { name: "Highlights", id: "highlights" },
   // { name: "Why Us", id: "why-us" },
+
+  { name: "How it Works", id: "how-it-works" },
   { name: "FAQ", id: "faq" },
 ];
 

@@ -126,7 +126,7 @@ const HowItWorks = () => {
   const fillPct = steps.length > 1 ? (activeCount / steps.length) * 100 : 0;
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#05080A] px-4 py-24 sm:px-8">
+    <section id="how-it-works" className="relative w-full overflow-hidden bg-[#05080A] px-4 py-24 sm:px-8">
       {/* ambient glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute left-0 top-20 h-[320px] w-[320px] rounded-full bg-cyan-500/10 blur-[120px] animate-[pulse_8s_ease-in-out_infinite]" />
