@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 const EnquiryNow = () => {
   return (
-    <section className="relative overflow-hidden bg-[#050B0D] py-28">
+    <section className="relative overflow-hidden bg-white py-28">
 
       {/* ================= Background Glow ================= */}
 
@@ -11,9 +11,9 @@ const EnquiryNow = () => {
 
         <div className="absolute left-1/2 top-0 h-[550px] w-[900px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[200px]" />
 
-        <div className="absolute bottom-0 left-0 h-[320px] w-[320px] rounded-full bg-cyan-400/5 blur-[140px]" />
+        <div className="absolute bottom-0 left-0 h-[320px] w-[320px] rounded-full bg-cyan-400/10 blur-[140px]" />
 
-        <div className="absolute top-0 right-0 h-[320px] w-[320px] rounded-full bg-cyan-400/5 blur-[140px]" />
+        <div className="absolute top-0 right-0 h-[320px] w-[320px] rounded-full bg-cyan-400/10 blur-[140px]" />
 
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(34,211,238,.08),transparent_65%)]" />
 
@@ -29,7 +29,7 @@ const EnquiryNow = () => {
 
           <div className="h-[2px] w-8 bg-cyan-400"></div>
 
-          <span className="text-[11px] font-semibold uppercase tracking-[4px] text-cyan-300">
+          <span className="text-[11px] font-semibold uppercase tracking-[4px] text-cyan-600">
             Begin Your Journey
           </span>
 
@@ -37,7 +37,7 @@ const EnquiryNow = () => {
 
         {/* Heading */}
 
-        <h2 className="max-w-4xl text-5xl font-extrabold leading-tight text-white lg:text-6xl">
+        <h2 className="max-w-4xl text-5xl font-extrabold leading-tight text-[#0B1518] lg:text-6xl">
 
           Ready To Start Your
           <br />
@@ -47,7 +47,7 @@ const EnquiryNow = () => {
 
         {/* Description */}
 
-        <p className="mt-8 max-w-2xl text-[16px] leading-8 text-white/60">
+        <p className="mt-8 max-w-2xl text-[16px] leading-8 text-[#4A5C63]">
 
           Leave your details and one of our advisors will contact you to
           discuss the course, available locations and upcoming training

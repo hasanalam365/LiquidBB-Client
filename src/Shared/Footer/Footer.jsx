@@ -17,7 +17,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative overflow-hidden bg-[#050B0D] text-white">
+    <footer className="relative overflow-hidden bg-white text-[#0B1518]">
 
       {/* Background Glow */}
 
@@ -25,9 +25,9 @@ export default function Footer() {
 
         <div className="absolute left-1/2 -top-44 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[180px]" />
 
-        <div className="absolute bottom-0 left-0 h-[300px] w-[300px] rounded-full bg-cyan-400/5 blur-[120px]" />
+        <div className="absolute bottom-0 left-0 h-[300px] w-[300px] rounded-full bg-cyan-400/10 blur-[120px]" />
 
-        <div className="absolute bottom-0 right-0 h-[300px] w-[300px] rounded-full bg-cyan-400/5 blur-[120px]" />
+        <div className="absolute bottom-0 right-0 h-[300px] w-[300px] rounded-full bg-cyan-400/10 blur-[120px]" />
 
       </div>
 
@@ -41,11 +41,11 @@ export default function Footer() {
 
           <div>
 
-            <h3 className="text-xl font-bold text-white">
+            <h3 className="text-xl font-bold text-[#0B1518]">
               Faces On Faces Academy
             </h3>
 
-            <p className="max-w-sm mt-5 text-sm leading-7 text-white/60">
+            <p className="max-w-sm mt-5 text-sm leading-7 text-[#4A5C63]">
               A premier aesthetics training academy dedicated to
               advancing professional mastery in non-surgical beauty,
               contouring and advanced injectable techniques.
@@ -57,14 +57,14 @@ export default function Footer() {
 
               <a
                 href="#"
-                className="flex items-center justify-center w-10 h-10 transition border rounded-full border-cyan-400/20 text-white/70 hover:border-cyan-300 hover:bg-cyan-400/10 hover:text-cyan-300"
+                className="flex items-center justify-center w-10 h-10 transition border rounded-full border-cyan-400/30 text-[#4A5C63] hover:border-cyan-500 hover:bg-cyan-50 hover:text-cyan-600"
               >
                 <Instagram size={18} />
               </a>
 
               <a
                 href="#"
-                className="flex items-center justify-center w-10 h-10 transition border rounded-full border-cyan-400/20 text-white/70 hover:border-cyan-300 hover:bg-cyan-400/10 hover:text-cyan-300"
+                className="flex items-center justify-center w-10 h-10 transition border rounded-full border-cyan-400/30 text-[#4A5C63] hover:border-cyan-500 hover:bg-cyan-50 hover:text-cyan-600"
               >
                 <Facebook size={18} />
               </a>
@@ -77,7 +77,7 @@ export default function Footer() {
 
           <div>
 
-            <h4 className="mb-6 text-sm font-semibold uppercase tracking-[3px] text-white">
+            <h4 className="mb-6 text-sm font-semibold uppercase tracking-[3px] text-[#0B1518]">
               Quick Links
             </h4>
 
@@ -89,7 +89,7 @@ export default function Footer() {
 
                   <a
                     href={`#${item.id}`}
-                    className="text-sm transition text-white/60 hover:text-cyan-300"
+                    className="text-sm transition text-[#4A5C63] hover:text-cyan-600"
                   >
                     {item.name}
                   </a>
@@ -106,7 +106,7 @@ export default function Footer() {
 
           <div>
 
-            <h4 className="mb-6 text-sm font-semibold uppercase tracking-[3px] text-white">
+            <h4 className="mb-6 text-sm font-semibold uppercase tracking-[3px] text-[#0B1518]">
               Contact
             </h4>
 
@@ -116,10 +116,10 @@ export default function Footer() {
 
                 <Mail
                   size={17}
-                  className="mt-1 text-cyan-300"
+                  className="mt-1 text-cyan-600"
                 />
 
-                <span className="text-sm text-white/60">
+                <span className="text-sm text-[#4A5C63]">
                   support@facesonfaces.com
                 </span>
 
@@ -129,10 +129,10 @@ export default function Footer() {
 
                 <Phone
                   size={17}
-                  className="mt-1 text-cyan-300"
+                  className="mt-1 text-cyan-600"
                 />
 
-                <span className="text-sm text-white/60">
+                <span className="text-sm text-[#4A5C63]">
                   +44 08009991751
                 </span>
 
@@ -146,24 +146,24 @@ export default function Footer() {
 
         {/* Divider */}
 
-        <div className="my-10 border-t border-white/10"></div>
+        <div className="my-10 border-t border-[#0B1518]/10"></div>
 
         {/* Bottom */}
 
-        <div className="flex flex-col items-center justify-between gap-5 text-sm text-white/40 md:flex-row">
+        <div className="flex flex-col items-center justify-between gap-5 text-sm text-[#5C7079] md:flex-row">
 
           <div className="flex gap-6">
 
             <Link
               to="/privacy-policy"
-              className="hover:text-cyan-300"
+              className="hover:text-cyan-600"
             >
               Privacy Policy
             </Link>
 
             <Link
               to="/terms-and-conditions"
-              className="hover:text-cyan-300"
+              className="hover:text-cyan-600"
             >
               Terms & Conditions
             </Link>
@@ -178,9 +178,9 @@ export default function Footer() {
 
         {/* Bottom Text */}
 
-        <div className="pt-6 mt-8 text-center border-t border-white/5">
+        <div className="pt-6 mt-8 text-center border-t border-[#0B1518]/5">
 
-          <p className="text-[10px] uppercase tracking-[6px] text-white/20">
+          <p className="text-[10px] uppercase tracking-[6px] text-[#0B1518]/25">
             Faces On Faces Academy
           </p>
 

@@ -22,12 +22,12 @@ const notSuitableRight = [
 
 const Suitability = () => {
   return (
-    <section className="relative overflow-hidden bg-[#050B0D] py-24">
+    <section className="relative py-24 overflow-hidden bg-white">
       {/* Background Glow */}
       <div className="absolute inset-0">
         <div className="absolute left-1/2 -translate-x-1/2 -top-44 h-[500px] w-[900px] rounded-full bg-cyan-500/10 blur-[180px]" />
-        <div className="absolute left-0 bottom-0 h-[300px] w-[300px] rounded-full bg-cyan-400/5 blur-[130px]" />
-        <div className="absolute right-0 top-0 h-[300px] w-[300px] rounded-full bg-cyan-400/5 blur-[130px]" />
+        <div className="absolute left-0 bottom-0 h-[300px] w-[300px] rounded-full bg-cyan-400/10 blur-[130px]" />
+        <div className="absolute right-0 top-0 h-[300px] w-[300px] rounded-full bg-cyan-400/10 blur-[130px]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,211,238,.08),transparent_65%)]" />
       </div>
 
@@ -36,17 +36,17 @@ const Suitability = () => {
         <div className="mb-16 text-center">
           <div className="flex items-center justify-center gap-2 mb-5">
             <div className="h-[2px] w-8 bg-cyan-400" />
-            <span className="text-[11px] font-semibold uppercase tracking-[4px] text-cyan-300">
+            <span className="text-[11px] font-semibold uppercase tracking-[4px] text-cyan-600">
               Suitability
             </span>
             <div className="h-[2px] w-8 bg-cyan-400" />
           </div>
 
-          <h2 className="text-4xl font-bold leading-tight text-white lg:text-5xl">
+          <h2 className="text-4xl font-bold leading-tight text-[#0B1518] lg:text-5xl">
             Who May Benefit
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-8 text-white/60">
+          <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-8 text-[#4A5C63]">
             The treatment may be worth considering if any of the following
             resonate with you. Equally, it's important to know that it isn't
             right for everyone — a consultation is the only way to confirm
@@ -59,12 +59,12 @@ const Suitability = () => {
           {suitablePoints.map((point, index) => (
             <div
               key={point}
-              className="group flex items-start gap-4 rounded-2xl border border-cyan-400/15 bg-white/[0.03] p-6 backdrop-blur-xl transition-all duration-300 hover:border-cyan-400/30 hover:bg-white/[0.05]"
+              className="group flex items-start gap-4 rounded-2xl border border-cyan-400/20 bg-white p-6 shadow-[0_2px_20px_rgba(8,20,24,.06)] backdrop-blur-xl transition-all duration-300 hover:border-cyan-400/50 hover:shadow-[0_0_35px_rgba(34,211,238,.15)]"
             >
-              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-cyan-400/30 bg-cyan-400/5 text-[13px] font-semibold text-cyan-300 transition-all duration-300 group-hover:scale-110 group-hover:bg-cyan-400/10">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-cyan-400/30 bg-cyan-50 text-[13px] font-semibold text-cyan-600 transition-all duration-300 group-hover:scale-110 group-hover:bg-cyan-100">
                 {index + 1}
               </div>
-              <p className="pt-1 text-[15px] leading-6 text-white/85">
+              <p className="pt-1 text-[15px] leading-6 text-[#33454C]">
                 {point}
               </p>
             </div>
@@ -72,11 +72,11 @@ const Suitability = () => {
         </div>
 
         {/* Not Suitable Box */}
-        <div className="rounded-3xl border border-amber-400/20 bg-amber-400/[0.03] p-8 backdrop-blur-xl shadow-[0_0_40px_rgba(251,191,36,.06)]">
-          <h3 className="mb-3 text-xl font-bold text-white">
+        <div className="rounded-3xl border border-amber-400/30 bg-amber-50/60 p-8 backdrop-blur-xl shadow-[0_0_40px_rgba(251,191,36,.08)]">
+          <h3 className="mb-3 text-xl font-bold text-[#0B1518]">
             When It May Not Be Suitable
           </h3>
-          <p className="mb-8 max-w-3xl text-[14px] leading-7 text-white/60">
+          <p className="mb-8 max-w-3xl text-[14px] leading-7 text-[#4A5C63]">
             Honesty matters. This treatment isn't appropriate for everyone,
             and we will always let you know if it isn't the right fit for
             you. The following are common reasons a treatment may be delayed
@@ -86,10 +86,10 @@ const Suitability = () => {
           <div className="grid gap-x-10 gap-y-4 sm:grid-cols-2">
             {[...notSuitableLeft, ...notSuitableRight].map((item) => (
               <div key={item} className="flex items-start gap-3">
-                <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-amber-400/40 bg-amber-400/10 text-amber-300">
+                <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-amber-400/50 bg-amber-100 text-amber-600">
                   <X size={12} />
                 </div>
-                <p className="text-[14px] leading-6 text-white/70">{item}</p>
+                <p className="text-[14px] leading-6 text-[#4A5C63]">{item}</p>
               </div>
             ))}
           </div>

@@ -83,7 +83,7 @@ const Card = ({ step, align, isVisible, delay }) => {
   return (
     <div
       style={{ transitionDelay: isVisible ? `${delay}ms` : '0ms' }}
-      className={`group relative rounded-2xl border border-cyan-400/15 bg-[#081116]/80 backdrop-blur-sm px-6 py-6 transition-all duration-700 ease-out hover:-translate-y-1 hover:border-cyan-400/60 hover:shadow-[0_0_30px_rgba(34,211,238,.18)] motion-reduce:transition-none motion-reduce:transform-none ${
+      className={`group relative rounded-2xl border border-cyan-400/20 bg-white shadow-[0_2px_20px_rgba(8,20,24,.06)] backdrop-blur-sm px-6 py-6 transition-all duration-700 ease-out hover:-translate-y-1 hover:border-cyan-400/60 hover:shadow-[0_0_30px_rgba(34,211,238,.18)] motion-reduce:transition-none motion-reduce:transform-none ${
         align === 'right' ? 'md:text-right' : 'md:text-left'
       } text-left ${
         isVisible
@@ -97,7 +97,7 @@ const Card = ({ step, align, isVisible, delay }) => {
         }`}
       >
         <span
-          className={`flex items-center justify-center w-10 h-10 transition-all duration-500 border shrink-0 rounded-xl border-cyan-400/25 bg-cyan-400/10 text-cyan-400 group-hover:border-cyan-400/60 group-hover:bg-cyan-400/15 group-hover:rotate-6 md:hidden ${
+          className={`flex items-center justify-center w-10 h-10 transition-all duration-500 border shrink-0 rounded-xl border-cyan-400/30 bg-cyan-50 text-cyan-600 group-hover:border-cyan-400/60 group-hover:bg-cyan-100 group-hover:rotate-6 md:hidden ${
             isVisible ? 'scale-100' : 'scale-75'
           }`}
         >
@@ -105,7 +105,7 @@ const Card = ({ step, align, isVisible, delay }) => {
         </span>
 
         <span
-          className={`hidden md:block text-[11px] font-mono tracking-[2px] text-cyan-400/50 transition-opacity duration-500 ${
+          className={`hidden md:block text-[11px] font-mono tracking-[2px] text-cyan-600/60 transition-opacity duration-500 ${
             isVisible ? 'opacity-100' : 'opacity-0'
           }`}
         >
@@ -113,9 +113,9 @@ const Card = ({ step, align, isVisible, delay }) => {
         </span>
       </div>
 
-      <h3 className="mb-2 text-xl font-semibold text-white">{step.title}</h3>
+      <h3 className="mb-2 text-xl font-semibold text-[#0B1518]">{step.title}</h3>
 
-      <p className="text-[15px] leading-7 text-[#9FB3BD]">{step.text}</p>
+      <p className="text-[15px] leading-7 text-[#4A5C63]">{step.text}</p>
     </div>
   );
 };
@@ -126,27 +126,27 @@ const HowItWorks = () => {
   const fillPct = steps.length > 1 ? (activeCount / steps.length) * 100 : 0;
 
   return (
-    <section id="how-it-works" className="relative w-full overflow-hidden bg-[#05080A] px-4 py-24 sm:px-8">
+    <section id="how-it-works" className="relative w-full px-4 py-24 overflow-hidden bg-white sm:px-8">
       {/* ambient glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute left-0 top-20 h-[320px] w-[320px] rounded-full bg-cyan-500/10 blur-[120px] animate-[pulse_8s_ease-in-out_infinite]" />
-        <div className="absolute right-0 bottom-0 h-[260px] w-[260px] rounded-full bg-cyan-400/5 blur-[120px] animate-[pulse_10s_ease-in-out_infinite]" />
+        <div className="absolute right-0 bottom-0 h-[260px] w-[260px] rounded-full bg-cyan-400/10 blur-[120px] animate-[pulse_10s_ease-in-out_infinite]" />
       </div>
 
       <div className="relative max-w-4xl mx-auto">
         {/* Header */}
         <div className="mb-16 text-center">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <span className="w-8 h-px bg-cyan-400/50" />
-            <span className="text-[11px] font-bold uppercase tracking-[3px] text-cyan-400">
+            <span className="w-8 h-px bg-cyan-400/60" />
+            <span className="text-[11px] font-bold uppercase tracking-[3px] text-cyan-600">
               The Process
             </span>
-            <span className="w-8 h-px bg-cyan-400/50" />
+            <span className="w-8 h-px bg-cyan-400/60" />
           </div>
-          <h2 className="text-4xl font-bold text-white md:text-5xl">
+          <h2 className="text-4xl font-bold text-[#0B1518] md:text-5xl">
             How the Process Works
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-8 text-[#9FB3BD]">
+          <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-8 text-[#4A5C63]">
             Every stage is designed around your comfort, understanding and
             safety — from first conversation to final follow-up. Here's
             exactly what to expect, so nothing feels unknown.
@@ -156,16 +156,16 @@ const HowItWorks = () => {
         {/* Timeline */}
         <div className="relative">
           {/* center line - desktop, base + progressive fill */}
-          <div className="absolute top-0 hidden w-px h-full -translate-x-1/2 left-1/2 bg-gradient-to-b from-transparent via-cyan-400/15 to-transparent md:block" />
+          <div className="absolute top-0 hidden w-px h-full -translate-x-1/2 left-1/2 bg-gradient-to-b from-transparent via-cyan-400/20 to-transparent md:block" />
           <div
-            className="absolute top-0 hidden w-px -translate-x-1/2 left-1/2 bg-cyan-400/70 shadow-[0_0_8px_rgba(34,211,238,0.6)] transition-[height] duration-700 ease-out md:block"
+            className="absolute top-0 hidden w-px -translate-x-1/2 left-1/2 bg-cyan-500 shadow-[0_0_8px_rgba(34,211,238,0.6)] transition-[height] duration-700 ease-out md:block"
             style={{ height: `${fillPct}%` }}
           />
 
           {/* left line - mobile, base + progressive fill */}
-          <div className="absolute left-[19px] top-0 h-full w-px bg-gradient-to-b from-transparent via-cyan-400/15 to-transparent md:hidden" />
+          <div className="absolute left-[19px] top-0 h-full w-px bg-gradient-to-b from-transparent via-cyan-400/20 to-transparent md:hidden" />
           <div
-            className="absolute left-[19px] top-0 w-px bg-cyan-400/70 shadow-[0_0_8px_rgba(34,211,238,0.6)] transition-[height] duration-700 ease-out md:hidden"
+            className="absolute left-[19px] top-0 w-px bg-cyan-500 shadow-[0_0_8px_rgba(34,211,238,0.6)] transition-[height] duration-700 ease-out md:hidden"
             style={{ height: `${fillPct}%` }}
           />
 
@@ -183,16 +183,16 @@ const HowItWorks = () => {
                 >
                   {/* mobile dot */}
                   <span
-                    className={`absolute left-0 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-[#05080A] ring-1 transition-all duration-500 md:hidden ${
+                    className={`absolute left-0 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white ring-1 transition-all duration-500 md:hidden ${
                       isVisible
-                        ? 'ring-cyan-400/60'
+                        ? 'ring-cyan-400/70'
                         : 'ring-cyan-400/25'
                     }`}
                   >
                     <span
                       className={`h-2.5 w-2.5 rounded-full transition-all duration-500 ${
                         isVisible
-                          ? 'bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.8)] scale-100'
+                          ? 'bg-cyan-500 shadow-[0_0_12px_rgba(34,211,238,0.8)] scale-100'
                           : 'bg-cyan-400/40 scale-75'
                       }`}
                     />
@@ -212,8 +212,8 @@ const HowItWorks = () => {
 
                   {/* center dot - desktop */}
                   <span
-                    className={`relative z-10 hidden h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#05080A] ring-1 transition-all duration-500 md:flex ${
-                      isVisible ? 'ring-cyan-400/60' : 'ring-cyan-400/25'
+                    className={`relative z-10 hidden h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white ring-1 transition-all duration-500 md:flex ${
+                      isVisible ? 'ring-cyan-400/70' : 'ring-cyan-400/25'
                     }`}
                   >
                     {isVisible && (
@@ -222,8 +222,8 @@ const HowItWorks = () => {
                     <span
                       className={`relative flex items-center justify-center rounded-full h-7 w-7 transition-colors duration-500 ${
                         isVisible
-                          ? 'bg-cyan-400/15 text-cyan-400'
-                          : 'bg-cyan-400/5 text-cyan-400/40'
+                          ? 'bg-cyan-100 text-cyan-600'
+                          : 'bg-cyan-50 text-cyan-400/60'
                       }`}
                     >
                       <Icon size={15} strokeWidth={1.75} />

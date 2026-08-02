@@ -146,12 +146,12 @@ const FAQ = () => {
   return (
     <section
       id="faq"
-      className="relative overflow-hidden bg-[#05080A] py-24"
+      className="relative py-24 overflow-hidden bg-white"
       style={{ overflowAnchor: "none" }}
     >
       {/* Background Glow */}
       <div className="absolute left-0 top-20 h-[320px] w-[320px] rounded-full bg-cyan-500/10 blur-[120px]" />
-      <div className="absolute right-0 bottom-0 h-[260px] w-[260px] rounded-full bg-cyan-400/5 blur-[120px]" />
+      <div className="absolute right-0 bottom-0 h-[260px] w-[260px] rounded-full bg-cyan-400/10 blur-[120px]" />
 
       <div className="relative z-10 max-w-5xl px-4 mx-auto">
         {/* Heading */}
@@ -162,20 +162,20 @@ const FAQ = () => {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <p className="mb-4 inline-block text-[11px] font-bold uppercase tracking-[3px] text-cyan-400">
+          <p className="mb-4 inline-block text-[11px] font-bold uppercase tracking-[3px] text-cyan-600">
             Frequently Asked Questions
           </p>
 
-          <h2 className="font-bold leading-tight text-white">
+          <h2 className="font-bold leading-tight text-[#0B1518]">
             <span className="block text-4xl md:text-5xl">
               Everything You Need
             </span>
-            <span className="block text-4xl md:text-5xl text-cyan-400">
+            <span className="block text-4xl md:text-5xl text-cyan-600">
               To Know
             </span>
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-8 text-[#9FB3BD]">
+          <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-8 text-[#4A5C63]">
             It's natural to have questions — the more you ask, the more
             confident your decision will be. Here are some of the most common
             questions we hear, answered honestly and in plain language.
@@ -196,25 +196,25 @@ const FAQ = () => {
                 overflowAnchor: "none",
                 scrollMarginTop: STICKY_HEADER_OFFSET,
               }}
-              className="overflow-hidden rounded-2xl border border-cyan-400/15 bg-[#081116]/80 backdrop-blur-sm transition-all duration-300 hover:border-cyan-400/60 hover:shadow-[0_0_30px_rgba(34,211,238,.18)]"
+              className="overflow-hidden rounded-2xl border border-cyan-400/20 bg-white shadow-[0_2px_20px_rgba(8,20,24,.06)] backdrop-blur-sm transition-all duration-300 hover:border-cyan-400/60 hover:shadow-[0_0_30px_rgba(34,211,238,.18)]"
             >
               <button
                 onClick={() => toggleCategory(index)}
-                className="flex w-full items-center justify-between px-6 py-6 text-left transition-colors hover:bg-cyan-400/[0.03] sm:px-8"
+                className="flex items-center justify-between w-full px-6 py-6 text-left transition-colors hover:bg-cyan-50/60 sm:px-8"
               >
-                <span className="text-lg font-semibold text-white sm:text-xl">
+                <span className="text-lg font-semibold text-[#0B1518] sm:text-xl">
                   {section.category}
                 </span>
 
                 {openCategory === index ? (
-                  <ChevronUp size={22} className="flex-shrink-0 text-cyan-400" />
+                  <ChevronUp size={22} className="flex-shrink-0 text-cyan-600" />
                 ) : (
-                  <ChevronDown size={22} className="flex-shrink-0 text-cyan-400" />
+                  <ChevronDown size={22} className="flex-shrink-0 text-cyan-600" />
                 )}
               </button>
 
               {openCategory === index && (
-                <div className="border-t border-cyan-400/10">
+                <div className="border-t border-cyan-400/15">
                   {section.questions.map((item, i) => {
                     const key = `${index}-${i}`;
                     const isOpen = openQuestion[key];
@@ -222,32 +222,32 @@ const FAQ = () => {
                     return (
                       <div
                         key={i}
-                        className="border-b border-cyan-400/10 last:border-b-0"
+                        className="border-b border-cyan-400/15 last:border-b-0"
                       >
                         <button
                           onClick={() => toggleQuestion(index, i)}
-                          className="flex items-center justify-between w-full gap-4 px-6 py-5 text-left transition-colors hover:bg-cyan-400/[0.03] sm:px-8"
+                          className="flex items-center justify-between w-full gap-4 px-6 py-5 text-left transition-colors hover:bg-cyan-50/60 sm:px-8"
                         >
-                          <h3 className="pr-4 text-[15px] font-semibold text-white sm:text-[16px]">
+                          <h3 className="pr-4 text-[15px] font-semibold text-[#0B1518] sm:text-[16px]">
                             {item.q}
                           </h3>
 
                           {isOpen ? (
                             <Minus
                               size={18}
-                              className="flex-shrink-0 text-cyan-400"
+                              className="flex-shrink-0 text-cyan-600"
                             />
                           ) : (
                             <Plus
                               size={18}
-                              className="flex-shrink-0 text-cyan-400"
+                              className="flex-shrink-0 text-cyan-600"
                             />
                           )}
                         </button>
 
                         {isOpen && (
                           <div className="px-6 pb-6 sm:px-8">
-                            <p className="whitespace-pre-line text-[14px] leading-7 text-[#9FB3BD]">
+                            <p className="whitespace-pre-line text-[14px] leading-7 text-[#4A5C63]">
                               {item.a}
                             </p>
                           </div>

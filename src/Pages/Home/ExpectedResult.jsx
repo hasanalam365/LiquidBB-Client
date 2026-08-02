@@ -73,7 +73,7 @@ const useReveal = (count) => {
 const Marker = ({ active }) => (
   <span
     className={`mr-3 inline-block h-px shrink-0 self-center transition-all duration-500 ${
-      active ? 'w-5 bg-cyan-400' : 'w-2.5 bg-cyan-400/40'
+      active ? 'w-5 bg-cyan-500' : 'w-2.5 bg-cyan-400/40'
     }`}
   />
 );
@@ -83,16 +83,16 @@ const ResultCard = ({ item, isVisible, delay, setNode, index }) => (
     ref={(el) => setNode(el, index)}
     data-index={index}
     style={{ transitionDelay: isVisible ? `${delay}ms` : '0ms' }}
-    className={`group rounded-2xl border border-cyan-400/15 bg-[#081116]/80 p-7 backdrop-blur-sm transition-all duration-700 ease-out hover:-translate-y-1 hover:border-cyan-400/60 hover:shadow-[0_0_30px_rgba(34,211,238,.18)] motion-reduce:transition-none motion-reduce:transform-none ${
+    className={`group rounded-2xl border border-cyan-400/20 bg-white p-7 shadow-[0_2px_20px_rgba(8,20,24,.06)] backdrop-blur-sm transition-all duration-700 ease-out hover:-translate-y-1 hover:border-cyan-400/60 hover:shadow-[0_0_30px_rgba(34,211,238,.18)] motion-reduce:transition-none motion-reduce:transform-none ${
       isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
     }`}
   >
-    <h3 className="flex items-baseline text-xl font-semibold text-white">
+    <h3 className="flex items-baseline text-xl font-semibold text-[#0B1518]">
       <Marker active={isVisible} />
       {item.title}
     </h3>
 
-    <p className="mt-3 text-[15px] leading-7 text-[#9FB3BD]">
+    <p className="mt-3 text-[15px] leading-7 text-[#4A5C63]">
       {item.description}
     </p>
   </div>
@@ -117,27 +117,27 @@ const ExpectedResult = () => {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-[#05080A] py-24">
+    <section className="relative py-24 overflow-hidden bg-white">
       {/* Background Glow */}
       <div className="absolute top-20 left-0 h-[300px] w-[300px] rounded-full bg-cyan-500/10 blur-[120px] animate-[pulse_8s_ease-in-out_infinite]" />
-      <div className="absolute bottom-0 right-0 h-[250px] w-[250px] rounded-full bg-cyan-400/5 blur-[120px] animate-[pulse_10s_ease-in-out_infinite]" />
+      <div className="absolute bottom-0 right-0 h-[250px] w-[250px] rounded-full bg-cyan-400/10 blur-[120px] animate-[pulse_10s_ease-in-out_infinite]" />
 
       <div className="relative max-w-5xl px-6 mx-auto lg:px-10">
         {/* Heading */}
         <div className="mb-16 text-center">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <span className="w-8 h-px bg-cyan-400/50" />
-            <span className="text-[11px] font-bold uppercase tracking-[3px] text-cyan-400">
+            <span className="w-8 h-px bg-cyan-400/60" />
+            <span className="text-[11px] font-bold uppercase tracking-[3px] text-cyan-600">
               Realistic Expectations
             </span>
-            <span className="w-8 h-px bg-cyan-400/50" />
+            <span className="w-8 h-px bg-cyan-400/60" />
           </div>
 
-          <h2 className="text-4xl font-bold text-white md:text-5xl">
+          <h2 className="text-4xl font-bold text-[#0B1518] md:text-5xl">
             Expected Results
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-8 text-[#9FB3BD]">
+          <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-8 text-[#4A5C63]">
             Results are intended to be subtle and natural-looking. The aim is
             enhancement that complements you — never a dramatic, obvious
             change. Here's what the treatment is designed to achieve, and an
@@ -162,18 +162,18 @@ const ExpectedResult = () => {
         {/* Longevity & Maintenance — full width */}
         <div
           ref={footerRef}
-          className={`mt-6 rounded-2xl border border-cyan-400/15 bg-[#081116]/80 p-7 backdrop-blur-sm transition-all duration-700 ease-out motion-reduce:transition-none motion-reduce:transform-none ${
+          className={`mt-6 rounded-2xl border border-cyan-400/20 bg-white p-7 shadow-[0_2px_20px_rgba(8,20,24,.06)] backdrop-blur-sm transition-all duration-700 ease-out motion-reduce:transition-none motion-reduce:transform-none ${
             footerVisible
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-6'
           }`}
         >
-          <h3 className="flex items-baseline text-xl font-semibold text-white">
+          <h3 className="flex items-baseline text-xl font-semibold text-[#0B1518]">
             <Marker active={footerVisible} />
             Longevity &amp; Maintenance
           </h3>
 
-          <p className="mt-3 text-[15px] leading-7 text-[#9FB3BD]">
+          <p className="mt-3 text-[15px] leading-7 text-[#4A5C63]">
             Results are not permanent. Dermal filler is gradually broken down
             naturally by the body, so the volume you gain will soften over
             time. Exactly how long results last varies from person to person
