@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   ShieldCheck,
   Database,
@@ -7,8 +7,16 @@ import {
   Lock,
   UserCheck,
 } from "lucide-react";
+import PageNavButtons from "../../Shared/PageNavButtons/PageNavButtons";
 
 const PrivacyPolicy = () => {
+  // Fix: React Router keeps the previous scroll position when navigating
+  // here from another page (e.g. clicking the footer link mid-scroll on
+  // Home). This resets the scroll to the top whenever this page mounts.
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const sections = [
     {
       icon: <Database size={22} />,
@@ -189,6 +197,8 @@ const PrivacyPolicy = () => {
           </div>
         </div>
       </section>
+
+      <PageNavButtons />
     </div>
   );
 };

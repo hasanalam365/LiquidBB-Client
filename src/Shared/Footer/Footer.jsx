@@ -17,7 +17,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative overflow-hidden bg-white text-[#0B1518]">
+    <footer id="footer" className="relative overflow-hidden bg-white text-[#0B1518]">
 
       {/* Background Glow */}
 

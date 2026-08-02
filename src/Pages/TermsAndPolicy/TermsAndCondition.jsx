@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { FileText, ShieldCheck, CreditCard, AlertCircle } from "lucide-react";
+import PageNavButtons from "../../Shared/PageNavButtons/PageNavButtons";
 
 const sections = [
   { id: "about", title: "1. About These Terms" },
@@ -81,7 +82,12 @@ const ClauseList = ({ items }) => (
 const TermsAndCondition = () => {
 const trackedSections = useRef(new Set());
 
-
+  // Fix: React Router keeps the previous scroll position when navigating
+  // here from another page (e.g. clicking the footer link mid-scroll on
+  // Home). This resets the scroll to the top whenever this page mounts.
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
 useEffect(() => {
   const milestones = [25, 50, 75, 100];
@@ -373,6 +379,8 @@ useEffect(() => {
           div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
         }
       `}</style>
+
+      <PageNavButtons />
     </div>
   );
 };

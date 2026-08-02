@@ -16,7 +16,14 @@ export const router = createBrowserRouter([
                 path: '/',
                 element:<Homes/>
             },
-            {
+            
+          
+           
+        ],
+        
+    },
+  
+    {
                 path: '/privacy-policy',
                 element: <PrivacyPolicy/>
             },
@@ -24,10 +31,4 @@ export const router = createBrowserRouter([
                 path: '/terms-and-conditions',
                 element: <TermsAndCondition/>
             }
-          
-           
-        ]
-    },
-  
-    
 ]);
