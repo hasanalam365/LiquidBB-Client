@@ -47,7 +47,7 @@ const EnquiryNow = () => {
 
         {/* Description */}
 
-        <p className="mt-8 max-w-2xl text-[16px] leading-8 text-[#4A5C63]">
+        <p className="mt-8 max-w-2xl text-[16px] leading-8 text-black/80">
 
           Leave your details and one of our advisors will contact you to
           discuss the course, available locations and upcoming training

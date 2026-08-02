@@ -70,7 +70,7 @@ const Banner = () => {
 
   {/* Description */}
 
-  <p className="mt-8 max-w-lg text-[17px] leading-8 text-[#4A5C63]">
+  <p className="mt-8 max-w-lg text-[17px] leading-8 text-black/80">
     Many people feel self-conscious about the shape or volume of their
     buttocks, making certain clothing choices or swimwear feel
     uncomfortable. These feelings are far more common than many realise.

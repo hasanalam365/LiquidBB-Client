@@ -115,7 +115,7 @@ const Card = ({ step, align, isVisible, delay }) => {
 
       <h3 className="mb-2 text-xl font-semibold text-[#0B1518]">{step.title}</h3>
 
-      <p className="text-[15px] leading-7 text-[#4A5C63]">{step.text}</p>
+      <p className="text-[15px] leading-7 text-black/80">{step.text}</p>
     </div>
   );
 };
@@ -146,7 +146,7 @@ const HowItWorks = () => {
           <h2 className="text-4xl font-bold text-[#0B1518] md:text-5xl">
             How the Process Works
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-8 text-[#4A5C63]">
+          <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-8 text-black/80">
             Every stage is designed around your comfort, understanding and
             safety — from first conversation to final follow-up. Here's
             exactly what to expect, so nothing feels unknown.

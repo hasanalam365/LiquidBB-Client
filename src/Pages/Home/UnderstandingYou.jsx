@@ -83,7 +83,7 @@ const UnderstandingYou = () => {
 
         {/* Description */}
 
-        <p className="mx-auto mt-6 max-w-3xl text-center text-lg leading-8 text-[#4A5C63]">
+        <p className="mx-auto mt-6 max-w-3xl text-center text-lg leading-8 text-black/80">
           Many people share similar concerns about body shape, balance and
           confidence. Whether you've noticed changes over time, have naturally
           flatter contours, or simply wish to feel more comfortable in your own
@@ -123,7 +123,7 @@ const UnderstandingYou = () => {
 
               {/* Description */}
 
-              <p className="mt-5 text-[15px] leading-8 text-[#4A5C63]">
+              <p className="mt-5 text-[15px] leading-8 text-black/80">
                 {item.description}
               </p>
             </div>

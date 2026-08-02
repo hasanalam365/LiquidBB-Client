@@ -41,11 +41,12 @@ export default function Footer() {
 
           <div>
 
-            <h3 className="text-xl font-bold text-[#0B1518]">
+<img src="https://www.facesonfaces.com/wp-content/uploads/2025/03/pdf-logo.png" alt="" />
+            {/* <h3 className="text-xl font-bold text-[#0B1518]">
               Faces On Faces Academy
-            </h3>
+            </h3> */}
 
-            <p className="max-w-sm mt-5 text-sm leading-7 text-[#4A5C63]">
+            <p className="max-w-sm mt-5 text-sm leading-7 text-black">
               A premier aesthetics training academy dedicated to
               advancing professional mastery in non-surgical beauty,
               contouring and advanced injectable techniques.
@@ -57,14 +58,14 @@ export default function Footer() {
 
               <a
                 href="#"
-                className="flex items-center justify-center w-10 h-10 transition border rounded-full border-cyan-400/30 text-[#4A5C63] hover:border-cyan-500 hover:bg-cyan-50 hover:text-cyan-600"
+                className="flex items-center justify-center w-10 h-10 text-black transition border rounded-full border-cyan-400/30 hover:border-cyan-500 hover:bg-cyan-50 hover:text-cyan-600"
               >
                 <Instagram size={18} />
               </a>
 
               <a
                 href="#"
-                className="flex items-center justify-center w-10 h-10 transition border rounded-full border-cyan-400/30 text-[#4A5C63] hover:border-cyan-500 hover:bg-cyan-50 hover:text-cyan-600"
+                className="flex items-center justify-center w-10 h-10 text-black transition border rounded-full border-cyan-400/30 hover:border-cyan-500 hover:bg-cyan-50 hover:text-cyan-600"
               >
                 <Facebook size={18} />
               </a>
@@ -77,7 +78,7 @@ export default function Footer() {
 
           <div>
 
-            <h4 className="mb-6 text-sm font-semibold uppercase tracking-[3px] text-[#0B1518]">
+            <h4 className="mb-6 text-sm font-semibold uppercase tracking-[3px] text-black">
               Quick Links
             </h4>
 
@@ -89,7 +90,7 @@ export default function Footer() {
 
                   <a
                     href={`#${item.id}`}
-                    className="text-sm transition text-[#4A5C63] hover:text-cyan-600"
+                    className="text-sm text-black transition hover:text-cyan-600"
                   >
                     {item.name}
                   </a>
@@ -106,7 +107,7 @@ export default function Footer() {
 
           <div>
 
-            <h4 className="mb-6 text-sm font-semibold uppercase tracking-[3px] text-[#0B1518]">
+            <h4 className="mb-6 text-sm font-semibold uppercase tracking-[3px] text-black">
               Contact
             </h4>
 
@@ -119,7 +120,7 @@ export default function Footer() {
                   className="mt-1 text-cyan-600"
                 />
 
-                <span className="text-sm text-[#4A5C63]">
+                <span className="text-sm text-black">
                   support@facesonfaces.com
                 </span>
 
@@ -132,7 +133,7 @@ export default function Footer() {
                   className="mt-1 text-cyan-600"
                 />
 
-                <span className="text-sm text-[#4A5C63]">
+                <span className="text-sm text-black">
                   +44 08009991751
                 </span>
 

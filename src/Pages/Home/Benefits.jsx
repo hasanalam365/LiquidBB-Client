@@ -94,7 +94,7 @@ const Benefits = () => {
             What This Approach Offers
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-8 text-[#4A5C63]">
+          <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-8 text-black/80">
             A thoughtful, measured option for those seeking enhancement
             without the commitment of surgery. Here's why each of these
             matters — not just as a feature, but as something that can
@@ -138,7 +138,7 @@ const Benefits = () => {
                     isOpen ? "mt-3 max-h-96 opacity-100" : "mt-0 max-h-0 opacity-0"
                   }`}
                 >
-                  <p className="text-[13px] leading-6 text-[#4A5C63]">
+                  <p className="text-[13px] leading-6 text-black/80">
                     {item.description}
                   </p>
                 </div>

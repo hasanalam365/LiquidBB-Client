@@ -92,7 +92,7 @@ const ResultCard = ({ item, isVisible, delay, setNode, index }) => (
       {item.title}
     </h3>
 
-    <p className="mt-3 text-[15px] leading-7 text-[#4A5C63]">
+    <p className="mt-3 text-[15px] leading-7 text-black/80">
       {item.description}
     </p>
   </div>
@@ -137,7 +137,7 @@ const ExpectedResult = () => {
             Expected Results
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-8 text-[#4A5C63]">
+          <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-8 text-black/80">
             Results are intended to be subtle and natural-looking. The aim is
             enhancement that complements you — never a dramatic, obvious
             change. Here's what the treatment is designed to achieve, and an
@@ -173,7 +173,7 @@ const ExpectedResult = () => {
             Longevity &amp; Maintenance
           </h3>
 
-          <p className="mt-3 text-[15px] leading-7 text-[#4A5C63]">
+          <p className="mt-3 text-[15px] leading-7 text-black/80">
             Results are not permanent. Dermal filler is gradually broken down
             naturally by the body, so the volume you gain will soften over
             time. Exactly how long results last varies from person to person

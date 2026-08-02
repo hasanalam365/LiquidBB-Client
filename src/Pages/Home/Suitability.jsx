@@ -46,7 +46,7 @@ const Suitability = () => {
             Who May Benefit
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-8 text-[#4A5C63]">
+          <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-8 text-black/80">
             The treatment may be worth considering if any of the following
             resonate with you. Equally, it's important to know that it isn't
             right for everyone — a consultation is the only way to confirm
@@ -76,7 +76,7 @@ const Suitability = () => {
           <h3 className="mb-3 text-xl font-bold text-[#0B1518]">
             When It May Not Be Suitable
           </h3>
-          <p className="mb-8 max-w-3xl text-[14px] leading-7 text-[#4A5C63]">
+          <p className="mb-8 max-w-3xl text-[14px] leading-7 text-black/80">
             Honesty matters. This treatment isn't appropriate for everyone,
             and we will always let you know if it isn't the right fit for
             you. The following are common reasons a treatment may be delayed
@@ -89,7 +89,7 @@ const Suitability = () => {
                 <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-amber-400/50 bg-amber-100 text-amber-600">
                   <X size={12} />
                 </div>
-                <p className="text-[14px] leading-6 text-[#4A5C63]">{item}</p>
+                <p className="text-[14px] leading-6 text-black/80">{item}</p>
               </div>
             ))}
           </div>

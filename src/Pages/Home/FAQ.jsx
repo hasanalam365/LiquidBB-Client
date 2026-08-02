@@ -175,7 +175,7 @@ const FAQ = () => {
             </span>
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-8 text-[#4A5C63]">
+          <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-8 text-black/80">
             It's natural to have questions — the more you ask, the more
             confident your decision will be. Here are some of the most common
             questions we hear, answered honestly and in plain language.
@@ -247,7 +247,7 @@ const FAQ = () => {
 
                         {isOpen && (
                           <div className="px-6 pb-6 sm:px-8">
-                            <p className="whitespace-pre-line text-[14px] leading-7 text-[#4A5C63]">
+                            <p className="whitespace-pre-line text-[14px] leading-7 text-black/80">
                               {item.a}
                             </p>
                           </div>
