@@ -71,22 +71,22 @@ const PrivacyPolicy = () => {
   ];
 
   return (
-    <div className="relative overflow-hidden bg-[#050B0D] text-white">
+    <div className="relative overflow-hidden bg-white text-[#0B1518]">
       {/* Background Glow */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute left-1/2 -translate-x-1/2 -top-44 h-[700px] w-[1100px] rounded-full bg-cyan-500/10 blur-[220px]" />
-        <div className="absolute left-0 top-0 h-[350px] w-[350px] rounded-full bg-cyan-400/5 blur-[160px]" />
-        <div className="absolute right-0 bottom-0 h-[350px] w-[350px] rounded-full bg-cyan-400/5 blur-[160px]" />
+        <div className="absolute left-0 top-0 h-[350px] w-[350px] rounded-full bg-cyan-400/10 blur-[160px]" />
+        <div className="absolute right-0 bottom-0 h-[350px] w-[350px] rounded-full bg-cyan-400/10 blur-[160px]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,211,238,.08),transparent_65%)]" />
       </div>
 
       {/* HERO */}
-      <section className="relative overflow-hidden text-white bg-transparent">
+      <section className="relative overflow-hidden text-[#0B1518] bg-transparent">
         <div className="px-6 mx-auto max-w-7xl py-28">
           <div className="max-w-4xl">
             <div className="flex items-center gap-2 mb-5">
               <div className="h-[2px] w-8 bg-cyan-400" />
-              <span className="text-[11px] font-semibold uppercase tracking-[4px] text-cyan-300">
+              <span className="text-[11px] font-semibold uppercase tracking-[4px] text-cyan-600">
                 Privacy Policy
               </span>
             </div>
@@ -95,13 +95,13 @@ const PrivacyPolicy = () => {
               Your Privacy Matters
             </h1>
 
-            <p className="max-w-2xl mt-6 text-lg text-white/55">
+            <p className="max-w-2xl mt-6 text-lg text-[#4A5C63]">
               At Faces On Faces Academy, we are committed to protecting
               your personal information and ensuring transparency in
               how your data is collected, used, and stored.
             </p>
 
-            <div className="inline-flex px-4 py-2 mt-8 text-sm border rounded-full border-cyan-400/20 bg-cyan-400/10 text-cyan-300 backdrop-blur-xl">
+            <div className="inline-flex px-4 py-2 mt-8 text-sm border rounded-full border-cyan-400/30 bg-cyan-50 text-cyan-600 backdrop-blur-xl">
               Last Updated: June 2026
             </div>
           </div>
@@ -112,12 +112,12 @@ const PrivacyPolicy = () => {
       <section className="relative px-6 py-20 mx-auto max-w-7xl">
         <div className="max-w-5xl mx-auto">
           {/* INTRO */}
-          <div className="p-8 mb-12 border rounded-3xl border-cyan-400/15 bg-white/[0.03] backdrop-blur-xl">
-            <h2 className="mb-4 text-2xl font-bold text-white">
+          <div className="p-8 mb-12 border rounded-3xl border-cyan-400/20 bg-white shadow-[0_2px_20px_rgba(8,20,24,.06)] backdrop-blur-xl">
+            <h2 className="mb-4 text-2xl font-bold text-[#0B1518]">
               Introduction
             </h2>
 
-            <p className="leading-relaxed text-white/55">
+            <p className="leading-relaxed text-[#4A5C63]">
               This Privacy Policy explains how Faces On Faces Academy
               collects, uses, stores, and protects personal information
               when you visit our website, book a training course, or
@@ -130,22 +130,22 @@ const PrivacyPolicy = () => {
             {sections.map((section, index) => (
               <div
                 key={index}
-                className="group p-8 transition-all duration-300 border rounded-3xl border-cyan-400/15 bg-white/[0.03] backdrop-blur-xl hover:-translate-y-2 hover:border-cyan-300 hover:bg-cyan-400/5 hover:shadow-[0_0_30px_rgba(34,211,238,.12)]"
+                className="group p-8 transition-all duration-300 border rounded-3xl border-cyan-400/20 bg-white shadow-[0_2px_20px_rgba(8,20,24,.06)] backdrop-blur-xl hover:-translate-y-2 hover:border-cyan-400/60 hover:bg-cyan-50/40 hover:shadow-[0_0_30px_rgba(34,211,238,.15)]"
               >
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="flex items-center justify-center transition duration-300 border h-11 w-11 rounded-xl border-cyan-400/20 bg-cyan-400/5 text-cyan-300 group-hover:scale-110 group-hover:bg-cyan-400/10">
+                  <div className="flex items-center justify-center transition duration-300 border h-11 w-11 rounded-xl border-cyan-400/30 bg-cyan-50 text-cyan-600 group-hover:scale-110 group-hover:bg-cyan-100">
                     {section.icon}
                   </div>
 
-                  <h2 className="text-2xl font-bold text-white">
+                  <h2 className="text-2xl font-bold text-[#0B1518]">
                     {section.title}
                   </h2>
                 </div>
 
                 <ul className="space-y-3">
                   {section.content.map((item, i) => (
-                    <li key={i} className="flex gap-3 text-white/55">
-                      <span className="w-2 h-2 mt-2 rounded-full bg-cyan-300"></span>
+                    <li key={i} className="flex gap-3 text-[#4A5C63]">
+                      <span className="w-2 h-2 mt-2 rounded-full bg-cyan-500"></span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -155,12 +155,12 @@ const PrivacyPolicy = () => {
           </div>
 
           {/* THIRD PARTY */}
-          <div className="p-8 mt-8 border rounded-3xl border-cyan-400/15 bg-white/[0.03] backdrop-blur-xl">
-            <h2 className="mb-4 text-2xl font-bold text-white">
+          <div className="p-8 mt-8 border rounded-3xl border-cyan-400/20 bg-white shadow-[0_2px_20px_rgba(8,20,24,.06)] backdrop-blur-xl">
+            <h2 className="mb-4 text-2xl font-bold text-[#0B1518]">
               Third-Party Services
             </h2>
 
-            <p className="leading-relaxed text-white/55">
+            <p className="leading-relaxed text-[#4A5C63]">
               Our website may use trusted third-party services such as
               Stripe for payment processing and social media platforms
               for communication. These providers have their own privacy
@@ -169,19 +169,19 @@ const PrivacyPolicy = () => {
           </div>
 
           {/* CONTACT */}
-          <div className="relative p-10 mt-8 overflow-hidden text-white border rounded-3xl border-cyan-400/20 bg-cyan-400/10 backdrop-blur-xl">
-            <div className="absolute right-0 top-0 h-[200px] w-[200px] rounded-full bg-cyan-400/10 blur-[100px]" />
+          <div className="relative p-10 mt-8 overflow-hidden text-[#0B1518] border rounded-3xl border-cyan-400/25 bg-cyan-50/60 backdrop-blur-xl">
+            <div className="absolute right-0 top-0 h-[200px] w-[200px] rounded-full bg-cyan-400/15 blur-[100px]" />
 
             <h2 className="relative mb-4 text-3xl font-bold">
               Contact Us
             </h2>
 
-            <p className="relative mb-6 text-white/60">
+            <p className="relative mb-6 text-[#4A5C63]">
               If you have any questions regarding this Privacy Policy,
               please contact us.
             </p>
 
-            <div className="relative space-y-2 text-cyan-100">
+            <div className="relative space-y-2 text-cyan-700">
               <p>Email: support@facesonfaces.com</p>
               <p>Instagram: @facesonfaces_</p>
               <p>Phone: 08009991751</p>

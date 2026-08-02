@@ -24,11 +24,12 @@ const scrollToSection = (id) => {
 const SectionCard = ({ id, icon, iconColor, title, children, muted }) => (
   <section
     style={{
-      border: "0.5px solid rgba(34,211,238,0.15)",
+      border: "0.5px solid rgba(6,182,212,0.20)",
       borderRadius: "16px",
       padding: "28px 32px",
       marginBottom: "20px",
-      background: muted ? "rgba(255,255,255,0.05)" : "rgba(255,255,255,0.03)",
+      background: muted ? "rgba(6,182,212,0.04)" : "#ffffff",
+      boxShadow: "0 2px 20px rgba(8,20,24,0.06)",
       backdropFilter: "blur(20px)",
     }}
   >
@@ -37,10 +38,10 @@ const SectionCard = ({ id, icon, iconColor, title, children, muted }) => (
       style={{
         fontSize: "18px",
         fontWeight: 600,
-        color: "#fff",
+        color: "#0B1518",
         marginBottom: "18px",
         paddingBottom: "14px",
-        borderBottom: "0.5px solid rgba(34,211,238,0.15)",
+        borderBottom: "0.5px solid rgba(6,182,212,0.20)",
         display: "flex",
         alignItems: "center",
         gap: "10px",
@@ -59,14 +60,14 @@ const SectionCard = ({ id, icon, iconColor, title, children, muted }) => (
 const ClauseList = ({ items }) => (
   <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "14px" }}>
     {items.map((item, i) => (
-      <li key={i} style={{ fontSize: "14.5px", lineHeight: "1.8", color: "rgba(255,255,255,0.65)" }}>
-        <span style={{ fontWeight: 600, color: "#fff", marginRight: "6px" }}>{item.clause}</span>
+      <li key={i} style={{ fontSize: "14.5px", lineHeight: "1.8", color: "#4A5C63" }}>
+        <span style={{ fontWeight: 600, color: "#0B1518", marginRight: "6px" }}>{item.clause}</span>
         {item.text}
         {item.sub && (
-          <ul style={{ listStyle: "none", padding: "10px 0 0 20px", margin: 0, display: "flex", flexDirection: "column", gap: "10px", borderLeft: "2px solid rgba(34,211,238,0.15)", marginTop: "10px" }}>
+          <ul style={{ listStyle: "none", padding: "10px 0 0 20px", margin: 0, display: "flex", flexDirection: "column", gap: "10px", borderLeft: "2px solid rgba(6,182,212,0.20)", marginTop: "10px" }}>
             {item.sub.map((s, j) => (
-              <li key={j} style={{ fontSize: "14px", lineHeight: "1.8", color: "rgba(255,255,255,0.55)" }}>
-                <span style={{ fontWeight: 600, color: "rgba(255,255,255,0.8)", marginRight: "6px" }}>{s.clause}</span>
+              <li key={j} style={{ fontSize: "14px", lineHeight: "1.8", color: "#5C7079" }}>
+                <span style={{ fontWeight: 600, color: "#33454C", marginRight: "6px" }}>{s.clause}</span>
                 {s.text}
               </li>
             ))}
@@ -138,30 +139,30 @@ useEffect(() => {
 }, []);
 
   return (
-    <div style={{ position: "relative", overflow: "hidden", background: "#050B0D", fontFamily: "Inter, system-ui, sans-serif", color: "#fff" }}>
+    <div style={{ position: "relative", overflow: "hidden", background: "#ffffff", fontFamily: "Inter, system-ui, sans-serif", color: "#0B1518" }}>
 
       {/* Background Glow */}
       <div style={{ position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none" }}>
         <div style={{ position: "absolute", left: "50%", transform: "translateX(-50%)", top: "-180px", height: "700px", width: "1100px", borderRadius: "9999px", background: "rgba(6,182,212,0.10)", filter: "blur(220px)" }} />
-        <div style={{ position: "absolute", left: 0, top: 0, height: "350px", width: "350px", borderRadius: "9999px", background: "rgba(34,211,238,0.05)", filter: "blur(160px)" }} />
-        <div style={{ position: "absolute", right: 0, bottom: 0, height: "350px", width: "350px", borderRadius: "9999px", background: "rgba(34,211,238,0.05)", filter: "blur(160px)" }} />
+        <div style={{ position: "absolute", left: 0, top: 0, height: "350px", width: "350px", borderRadius: "9999px", background: "rgba(34,211,238,0.10)", filter: "blur(160px)" }} />
+        <div style={{ position: "absolute", right: 0, bottom: 0, height: "350px", width: "350px", borderRadius: "9999px", background: "rgba(34,211,238,0.10)", filter: "blur(160px)" }} />
       </div>
 
       {/* HERO */}
-      <section style={{ position: "relative", zIndex: 1, background: "transparent", color: "#fff", padding: "64px 32px" }}>
+      <section style={{ position: "relative", zIndex: 1, background: "transparent", color: "#0B1518", padding: "64px 32px" }}>
         <div style={{ maxWidth: "860px", margin: "0 auto" }}>
-          <div style={{ display: "inline-flex", alignItems: "center", gap: "6px", padding: "5px 14px", fontSize: "13px", border: "0.5px solid rgba(34,211,238,0.2)", background: "rgba(34,211,238,0.1)", color: "#67e8f9", borderRadius: "999px", marginBottom: "20px" }}>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: "6px", padding: "5px 14px", fontSize: "13px", border: "0.5px solid rgba(6,182,212,0.25)", background: "rgba(6,182,212,0.08)", color: "#0891b2", borderRadius: "999px", marginBottom: "20px" }}>
             <FileText size={14} />
             Terms &amp; Conditions
           </div>
           <h1 style={{ fontSize: "clamp(28px, 5vw, 48px)", fontWeight: 700, lineHeight: 1.2, marginBottom: "14px" }}>
             Faces On Faces Academy
-            <span style={{ display: "block", color: "rgba(255,255,255,0.45)", fontWeight: 400 }}>Terms &amp; Conditions</span>
+            <span style={{ display: "block", color: "#5C7079", fontWeight: 400 }}>Terms &amp; Conditions</span>
           </h1>
-          <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.6)", maxWidth: "520px", lineHeight: "1.7" }}>
+          <p style={{ fontSize: "15px", color: "#4A5C63", maxWidth: "520px", lineHeight: "1.7" }}>
             Please read these terms carefully before booking any training course with Faces On Faces Academy.
           </p>
-          <div style={{ display: "inline-block", marginTop: "20px", fontSize: "12px", border: "0.5px solid rgba(34,211,238,0.2)", background: "rgba(34,211,238,0.1)", color: "#67e8f9", padding: "4px 14px", borderRadius: "999px" }}>
+          <div style={{ display: "inline-block", marginTop: "20px", fontSize: "12px", border: "0.5px solid rgba(6,182,212,0.25)", background: "rgba(6,182,212,0.08)", color: "#0891b2", padding: "4px 14px", borderRadius: "999px" }}>
             Last Updated: June 2026
           </div>
         </div>
@@ -172,8 +173,8 @@ useEffect(() => {
 
         {/* SIDEBAR */}
         <aside style={{ position: "sticky", top: "80px", height: "fit-content" }}>
-          <div style={{ background: "rgba(255,255,255,0.03)", border: "0.5px solid rgba(34,211,238,0.15)", borderRadius: "14px", padding: "20px", backdropFilter: "blur(20px)" }}>
-            <p style={{ fontSize: "11px", fontWeight: 600, color: "#67e8f9", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "12px" }}>Quick Navigation</p>
+          <div style={{ background: "#ffffff", border: "0.5px solid rgba(6,182,212,0.20)", borderRadius: "14px", padding: "20px", boxShadow: "0 2px 20px rgba(8,20,24,0.06)", backdropFilter: "blur(20px)" }}>
+            <p style={{ fontSize: "11px", fontWeight: 600, color: "#0891b2", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "12px" }}>Quick Navigation</p>
             {sections.map((s) => (
               <button
                 key={s.id}
@@ -182,9 +183,9 @@ useEffect(() => {
 
   scrollToSection(s.id);
 }}
-                style={{ display: "block", width: "100%", textAlign: "left", background: "none", border: "none", cursor: "pointer", fontSize: "13px", color: "rgba(255,255,255,0.6)", padding: "6px 10px", borderRadius: "8px", lineHeight: "1.4", marginBottom: "2px" }}
-                onMouseEnter={e => { e.target.style.background = "rgba(34,211,238,0.08)"; e.target.style.color = "#fff"; }}
-                onMouseLeave={e => { e.target.style.background = "none"; e.target.style.color = "rgba(255,255,255,0.6)"; }}
+                style={{ display: "block", width: "100%", textAlign: "left", background: "none", border: "none", cursor: "pointer", fontSize: "13px", color: "#4A5C63", padding: "6px 10px", borderRadius: "8px", lineHeight: "1.4", marginBottom: "2px" }}
+                onMouseEnter={e => { e.target.style.background = "rgba(6,182,212,0.08)"; e.target.style.color = "#0B1518"; }}
+                onMouseLeave={e => { e.target.style.background = "none"; e.target.style.color = "#4A5C63"; }}
               >
                 {s.title}
               </button>
@@ -196,9 +197,9 @@ useEffect(() => {
         <main>
 
           {/* 1. ABOUT */}
-          <SectionCard id="about" icon={<ShieldCheck size={18} />} iconColor="#4ade80" title="1. About These Terms" muted>
-            <p style={{ fontSize: "14.5px", lineHeight: "1.8", color: "rgba(255,255,255,0.65)" }}>
-              <span style={{ fontWeight: 600, color: "#fff", marginRight: "6px" }}>1.1</span>
+          <SectionCard id="about" icon={<ShieldCheck size={18} />} iconColor="#16a34a" title="1. About These Terms" muted>
+            <p style={{ fontSize: "14.5px", lineHeight: "1.8", color: "#4A5C63" }}>
+              <span style={{ fontWeight: 600, color: "#0B1518", marginRight: "6px" }}>1.1</span>
               In these terms and conditions "we", "our", and "us" refer to Faces on Faces Academy, and "you" and "your" refers to the delegate purchasing a Faces on Faces Academy training course.
             </p>
           </SectionCard>
@@ -219,7 +220,7 @@ useEffect(() => {
           </SectionCard>
 
           {/* 3. PAYMENT */}
-          <SectionCard id="payment" icon={<CreditCard size={18} />} iconColor="#60a5fa" title="3. Paying For Your Training Course">
+          <SectionCard id="payment" icon={<CreditCard size={18} />} iconColor="#2563eb" title="3. Paying For Your Training Course">
             <ClauseList items={[
               { clause: "3.1", text: "You may pay for your training course via Faces payment link." },
               {
@@ -235,8 +236,8 @@ useEffect(() => {
           </SectionCard>
 
           {/* 4. CANCELLATION */}
-          <SectionCard id="cancellation" icon={<AlertCircle size={18} />} iconColor="#f87171" title="4. Cancelling Your Training Course Booking">
-            <p style={{ fontSize: "14.5px", lineHeight: "1.8", color: "rgba(255,255,255,0.55)", marginBottom: "16px" }}>
+          <SectionCard id="cancellation" icon={<AlertCircle size={18} />} iconColor="#dc2626" title="4. Cancelling Your Training Course Booking">
+            <p style={{ fontSize: "14.5px", lineHeight: "1.8", color: "#4A5C63", marginBottom: "16px" }}>
               We understand that sometimes plans change and you may need to change your arrangements. Should you wish to cancel your booking, the following terms and conditions apply.
             </p>
             <ClauseList items={[
@@ -278,7 +279,7 @@ useEffect(() => {
     style={{
       fontSize: "14.5px",
       lineHeight: "1.8",
-      color: "rgba(255,255,255,0.55)",
+      color: "#4A5C63",
       marginBottom: "18px",
     }}
   >
@@ -294,13 +295,13 @@ useEffect(() => {
   >
     {/* Email */}
     <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-      <span style={{ fontWeight: 600, minWidth: "70px", color: "#fff" }}>Email</span>
+      <span style={{ fontWeight: 600, minWidth: "70px", color: "#0B1518" }}>Email</span>
 
       <a
         href="mailto:support@facesonfaces.com"
        
         style={{
-          color: "#67e8f9",
+          color: "#0891b2",
           textDecoration: "none",
         }}
       >
@@ -310,7 +311,7 @@ useEffect(() => {
 
     {/* Facebook */}
     <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-      <span style={{ fontWeight: 600, minWidth: "70px", color: "#fff" }}>Facebook</span>
+      <span style={{ fontWeight: 600, minWidth: "70px", color: "#0B1518" }}>Facebook</span>
 
       <a
         href="https://www.facebook.com/facesonfaces"
@@ -318,7 +319,7 @@ useEffect(() => {
         rel="noopener noreferrer"
        
         style={{
-          color: "#67e8f9",
+          color: "#0891b2",
           textDecoration: "none",
         }}
       >
@@ -328,13 +329,13 @@ useEffect(() => {
 
     {/* Phone */}
     <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-      <span style={{ fontWeight: 600, minWidth: "70px", color: "#fff" }}>Phone</span>
+      <span style={{ fontWeight: 600, minWidth: "70px", color: "#0B1518" }}>Phone</span>
 
       <a
         href="tel:+447308888874"
         
         style={{
-          color: "#67e8f9",
+          color: "#0891b2",
           textDecoration: "none",
         }}
       >
