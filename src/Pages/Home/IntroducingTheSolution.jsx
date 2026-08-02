@@ -73,7 +73,7 @@ const IntroducingTheSolution = () => {
 
         {/* Intro */}
 
-        <p className="mx-auto mt-8 max-w-4xl text-center text-lg leading-8 text-black/80">
+        <p className="max-w-4xl mx-auto mt-8 text-lg leading-8 text-center text-black/80">
 
           Once you've identified the concerns that matter most to you,
           the next step is understanding the options available.
@@ -284,7 +284,7 @@ const IntroducingTheSolution = () => {
                 Curious Whether Liquid BBL Could Be Right For You?
               </h3>
 
-              <p className="mt-6 text-lg leading-8 text-black/80">
+              <p className="mt-6 mb-10 text-lg leading-8 text-black/80">
                 The best place to start is with a professional
                 consultation. We'll take the time to understand your
                 goals, answer your questions and explain your available
@@ -292,9 +292,9 @@ const IntroducingTheSolution = () => {
                 confidence.
               </p>
 
-              <button className="mt-10 rounded-xl bg-cyan-400 px-8 py-4 font-semibold text-[#041317] transition duration-300 hover:scale-105 hover:bg-cyan-300">
+              <a href="#enquiry" className="mt-10  rounded-xl bg-cyan-400 px-8 py-4 font-semibold text-[#041317] transition duration-300 hover:scale-105 hover:bg-cyan-300">
                 Request a Consultation
-              </button>
+              </a>
 
             </div>
 

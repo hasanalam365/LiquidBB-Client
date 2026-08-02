@@ -59,7 +59,7 @@ const EnquiryNow = () => {
 
         <div className="mt-12">
 
-          <button className="group flex items-center gap-3 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-300 px-8 py-4 font-semibold text-black shadow-[0_0_40px_rgba(34,211,238,.25)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_60px_rgba(34,211,238,.45)]">
+          <a href="#enquiry" className="group flex items-center gap-3 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-300 px-8 py-4 font-semibold text-black shadow-[0_0_40px_rgba(34,211,238,.25)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_60px_rgba(34,211,238,.45)]">
 
             Enquire Now
 
@@ -68,7 +68,7 @@ const EnquiryNow = () => {
               className="transition duration-300 group-hover:translate-x-1"
             />
 
-          </button>
+          </a>
 
         </div>
 

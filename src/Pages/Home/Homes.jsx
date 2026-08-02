@@ -23,17 +23,17 @@ const Homes = () => {
       <UnderstandingYou/>
       <IntroducingTheSolution/>
       <Benefits/>
-       <EnquiryNow/> 
       <Suitability/>
+       <EnquiryNow/> 
   
       {/* <WhyChooseIt/> */}
       {/* <WhoIsThis/> */}
        <HowItWorks/>
        <ExpectedResult/> 
        <RecoveryLooks/>
+       <EnquiryNow/> 
       <YourSafety/>
       <FAQ/>
-       <EnquiryNow/> 
       
       
       {/* <WhoChoose/> */}

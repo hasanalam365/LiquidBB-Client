@@ -83,7 +83,7 @@ const Banner = () => {
 
   <div className="flex flex-wrap gap-4 mt-12">
 
-    <button className="group flex items-center gap-3 rounded-xl bg-cyan-400 px-8 py-4 text-sm font-semibold text-[#041317] transition duration-300 hover:scale-105 hover:bg-cyan-300">
+    <a href="#enquiry" className="group flex items-center gap-3 rounded-xl bg-cyan-400 px-8 py-4 text-sm font-semibold text-[#041317] transition duration-300 hover:scale-105 hover:bg-cyan-300">
 
       Request a Consultation
 
@@ -92,13 +92,13 @@ const Banner = () => {
         className="transition group-hover:translate-x-1"
       />
 
-    </button>
+    </a>
 
-    <button className="rounded-xl border border-cyan-400/30 bg-white px-8 py-4 text-sm font-medium text-[#0B1518] transition duration-300 hover:border-cyan-400 hover:bg-cyan-50">
+    {/* <button className="rounded-xl border border-cyan-400/30 bg-white px-8 py-4 text-sm font-medium text-[#0B1518] transition duration-300 hover:border-cyan-400 hover:bg-cyan-50">
 
       Learn More
 
-    </button>
+    </button> */}
 
   </div>
 
