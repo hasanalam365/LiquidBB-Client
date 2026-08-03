@@ -83,7 +83,7 @@ const UnderstandingYou = () => {
 
         {/* Description */}
 
-        <p className="mx-auto mt-6 max-w-3xl text-center text-lg leading-8 text-black/80">
+        <p className="max-w-3xl mx-auto mt-6 text-lg leading-8 text-center text-black/80">
           Many people share similar concerns about body shape, balance and
           confidence. Whether you've noticed changes over time, have naturally
           flatter contours, or simply wish to feel more comfortable in your own
@@ -143,7 +143,7 @@ const UnderstandingYou = () => {
           <div className="relative overflow-hidden rounded-[32px] border border-cyan-400/20 bg-white p-4 shadow-[0_0_50px_rgba(34,211,238,.08)] backdrop-blur-xl">
 
             <img
-              src="https://i.ibb.co.com/xSxz3Wdy/banner.jpg"
+              src="https://i.ibb.co.com/mVgHVy3B/liquidbbl.jpg"
               alt="Liquid BBL"
               className="h-[500px] w-full rounded-[24px] object-cover transition duration-700 hover:scale-105"
             />
