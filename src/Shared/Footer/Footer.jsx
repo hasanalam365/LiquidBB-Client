@@ -17,7 +17,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer id="footer" className="relative overflow-hidden bg-white text-[#0B1518]">
+    <footer id="footer" className="relative overflow-hidden bg-[#05080A] text-white">
 
       {/* Background Glow */}
 
@@ -41,12 +41,12 @@ export default function Footer() {
 
           <div>
 
-<img src="https://www.facesonfaces.com/wp-content/uploads/2025/03/pdf-logo.png" alt="" />
-            {/* <h3 className="text-xl font-bold text-[#0B1518]">
+<img src="https://i.ibb.co.com/TM5zgDgD/logo-png.webp" alt="" className="brightness-0 invert" />
+            {/* <h3 className="text-xl font-bold text-white">
               Faces On Faces Academy
             </h3> */}
 
-            <p className="max-w-sm mt-5 text-sm leading-7 text-black">
+            <p className="max-w-sm mt-5 text-sm leading-7 text-white/60">
               A premier aesthetics training academy dedicated to
               advancing professional mastery in non-surgical beauty,
               contouring and advanced injectable techniques.
@@ -58,14 +58,14 @@ export default function Footer() {
 
               <a
                 href="#"
-                className="flex items-center justify-center w-10 h-10 text-black transition border rounded-full border-cyan-400/30 hover:border-cyan-500 hover:bg-cyan-50 hover:text-cyan-600"
+                className="flex items-center justify-center w-10 h-10 transition border rounded-full text-white/70 border-cyan-400/20 hover:border-cyan-400/60 hover:bg-cyan-400/10 hover:text-cyan-300"
               >
                 <Instagram size={18} />
               </a>
 
               <a
                 href="#"
-                className="flex items-center justify-center w-10 h-10 text-black transition border rounded-full border-cyan-400/30 hover:border-cyan-500 hover:bg-cyan-50 hover:text-cyan-600"
+                className="flex items-center justify-center w-10 h-10 transition border rounded-full text-white/70 border-cyan-400/20 hover:border-cyan-400/60 hover:bg-cyan-400/10 hover:text-cyan-300"
               >
                 <Facebook size={18} />
               </a>
@@ -78,7 +78,7 @@ export default function Footer() {
 
           <div>
 
-            <h4 className="mb-6 text-sm font-semibold uppercase tracking-[3px] text-black">
+            <h4 className="mb-6 text-sm font-semibold uppercase tracking-[3px] text-white">
               Quick Links
             </h4>
 
@@ -90,7 +90,7 @@ export default function Footer() {
 
                   <a
                     href={`#${item.id}`}
-                    className="text-sm text-black transition hover:text-cyan-600"
+                    className="text-sm transition text-white/60 hover:text-cyan-300"
                   >
                     {item.name}
                   </a>
@@ -107,7 +107,7 @@ export default function Footer() {
 
           <div>
 
-            <h4 className="mb-6 text-sm font-semibold uppercase tracking-[3px] text-black">
+            <h4 className="mb-6 text-sm font-semibold uppercase tracking-[3px] text-white">
               Contact
             </h4>
 
@@ -117,10 +117,10 @@ export default function Footer() {
 
                 <Mail
                   size={17}
-                  className="mt-1 text-cyan-600"
+                  className="mt-1 text-cyan-300"
                 />
 
-                <span className="text-sm text-black">
+                <span className="text-sm text-white/60">
                   support@facesonfaces.com
                 </span>
 
@@ -130,10 +130,10 @@ export default function Footer() {
 
                 <Phone
                   size={17}
-                  className="mt-1 text-cyan-600"
+                  className="mt-1 text-cyan-300"
                 />
 
-                <span className="text-sm text-black">
+                <span className="text-sm text-white/60">
                   +44 08009991751
                 </span>
 
@@ -147,24 +147,24 @@ export default function Footer() {
 
         {/* Divider */}
 
-        <div className="my-10 border-t border-[#0B1518]/10"></div>
+        <div className="my-10 border-t border-white/10"></div>
 
         {/* Bottom */}
 
-        <div className="flex flex-col items-center justify-between gap-5 text-sm text-[#5C7079] md:flex-row">
+        <div className="flex flex-col items-center justify-between gap-5 text-sm text-white/40 md:flex-row">
 
           <div className="flex gap-6">
 
             <Link
               to="/privacy-policy"
-              className="hover:text-cyan-600"
+              className="hover:text-cyan-300"
             >
               Privacy Policy
             </Link>
 
             <Link
               to="/terms-and-conditions"
-              className="hover:text-cyan-600"
+              className="hover:text-cyan-300"
             >
               Terms & Conditions
             </Link>
@@ -179,9 +179,9 @@ export default function Footer() {
 
         {/* Bottom Text */}
 
-        <div className="pt-6 mt-8 text-center border-t border-[#0B1518]/5">
+        <div className="pt-6 mt-8 text-center border-t border-white/5">
 
-          <p className="text-[10px] uppercase tracking-[6px] text-[#0B1518]/25">
+          <p className="text-[10px] uppercase tracking-[6px] text-white/20">
             Faces On Faces Academy
           </p>
 

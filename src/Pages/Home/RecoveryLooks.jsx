@@ -63,19 +63,19 @@ const recoveryPoints = [
 
 const RecoveryLooks = () => {
   return (
-    <section className="relative py-24 overflow-hidden bg-white">
+    <section className="relative py-24 overflow-hidden bg-[#05080C]">
 
       {/* Background Glow */}
 
       <div className="absolute inset-0">
 
-        <div className="absolute left-1/2 -translate-x-1/2 -top-44 h-[500px] w-[900px] rounded-full bg-cyan-500/10 blur-[180px]" />
+        <div className="absolute left-1/2 -translate-x-1/2 -top-44 h-[500px] w-[900px] rounded-full bg-cyan-500/15 blur-[180px]" />
 
-        <div className="absolute left-0 bottom-0 h-[300px] w-[300px] rounded-full bg-cyan-400/10 blur-[130px]" />
+        <div className="absolute left-0 bottom-0 h-[300px] w-[300px] rounded-full bg-cyan-400/15 blur-[130px]" />
 
-        <div className="absolute right-0 top-0 h-[300px] w-[300px] rounded-full bg-cyan-400/10 blur-[130px]" />
+        <div className="absolute right-0 top-0 h-[300px] w-[300px] rounded-full bg-cyan-400/15 blur-[130px]" />
 
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,211,238,.08),transparent_65%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,211,238,.1),transparent_65%)]" />
 
       </div>
 
@@ -87,17 +87,17 @@ const RecoveryLooks = () => {
 
           <div className="flex items-center justify-center gap-2 mb-5">
             <div className="h-[2px] w-8 bg-cyan-400" />
-            <span className="text-[11px] font-semibold uppercase tracking-[4px] text-cyan-600">
+            <span className="text-[11px] font-semibold uppercase tracking-[4px] text-cyan-400">
               Recovery & Aftercare
             </span>
             <div className="h-[2px] w-8 bg-cyan-400" />
           </div>
 
-          <h2 className="text-4xl font-bold leading-tight text-[#0B1518] lg:text-5xl">
+          <h2 className="text-4xl font-bold leading-tight text-white lg:text-5xl">
             What Recovery Looks Like
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-8 text-[#4A5C63]">
+          <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-8 text-slate-300/85">
             Knowing what to expect afterwards is just as important as
             understanding the treatment itself. Recovery from a Liquid BBL is
             gentle and straightforward, and a little guidance goes a long
@@ -116,17 +116,17 @@ const RecoveryLooks = () => {
             return (
               <div
                 key={item.title}
-                className="group rounded-2xl border border-cyan-400/20 bg-white p-6 shadow-[0_2px_20px_rgba(8,20,24,.06)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/50 hover:shadow-[0_0_35px_rgba(34,211,238,.15)]"
+                className="group rounded-2xl border border-cyan-400/15 bg-white/[0.03] p-6 shadow-[0_2px_20px_rgba(0,0,0,.35)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/50 hover:bg-white/[0.05] hover:shadow-[0_0_35px_rgba(34,211,238,.15)]"
               >
-                <div className="flex items-center justify-center w-10 h-10 transition-all duration-300 border rounded-xl border-cyan-400/30 bg-cyan-50 text-cyan-600 group-hover:scale-110 group-hover:bg-cyan-100">
+                <div className="flex items-center justify-center w-10 h-10 transition-all duration-300 border rounded-xl border-cyan-400/25 bg-cyan-400/10 text-cyan-300 group-hover:scale-110 group-hover:bg-cyan-400/15">
                   <Icon size={18} />
                 </div>
 
-                <h3 className="mt-5 text-[15px] font-semibold text-[#0B1518]">
+                <h3 className="mt-5 text-[15px] font-semibold text-white">
                   {item.title}
                 </h3>
 
-                <p className="mt-3 text-[13px] leading-6 text-[#4A5C63]">
+                <p className="mt-3 text-[13px] leading-6 text-slate-300/80">
                   {item.description}
                 </p>
               </div>

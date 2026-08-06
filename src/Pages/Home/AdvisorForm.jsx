@@ -39,13 +39,13 @@ const AdvisorForm = () => {
     setErrorMsg("");
 
     try {
-  const res = await fetch(`${import.meta.env.VITE_API_URL}/advisor-form`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formData),
-  });
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/advisor-form`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
       const data = await res.json();
 
@@ -62,7 +62,7 @@ const AdvisorForm = () => {
   };
 
   return (
-    <section id="enquiry" className="relative py-24 overflow-hidden bg-white">
+    <section id="enquiry" className="relative py-24 overflow-hidden bg-[#0a0e14]">
       {/* ================= Background Glow ================= */}
       <div className="absolute inset-0">
         <div className="absolute left-1/2 -translate-x-1/2 -top-40 h-[520px] w-[900px] rounded-full bg-cyan-500/10 blur-[180px]" />
@@ -77,11 +77,11 @@ const AdvisorForm = () => {
         <div className="text-center mb-14">
           <div className="flex items-center justify-center gap-2 mb-5">
             <div className="h-[2px] w-8 bg-cyan-400"></div>
-            <span className="text-[11px] font-semibold uppercase tracking-[4px] text-cyan-600">
+            <span className="text-[11px] font-semibold uppercase tracking-[4px] text-cyan-400">
               Request Information
             </span>
           </div>
-          <h2 className="text-4xl font-bold text-[#0B1518] lg:text-5xl">
+          <h2 className="text-4xl font-bold text-white lg:text-5xl">
             Speak with an advisor
           </h2>
         </div>
@@ -89,7 +89,7 @@ const AdvisorForm = () => {
         {/* ================= Form Card ================= */}
         <form
           onSubmit={handleSubmit}
-          className="mx-auto max-w-2xl rounded-3xl border border-cyan-400/20 bg-white p-8 shadow-[0_0_45px_rgba(34,211,238,.10)] backdrop-blur-xl"
+          className="mx-auto max-w-2xl rounded-3xl border border-cyan-400/20 bg-white/[0.03] p-8 shadow-[0_0_45px_rgba(34,211,238,.10)] backdrop-blur-xl"
         >
           {/* Full Name */}
           <input
@@ -98,7 +98,7 @@ const AdvisorForm = () => {
             value={formData.name}
             onChange={handleChange}
             placeholder="Full Name"
-            className="mb-5 h-14 w-full rounded-xl border border-[#0B1518]/10 bg-[#F5F9FA] px-5 text-[#0B1518] placeholder:text-[#5C7079] outline-none transition duration-300 focus:border-cyan-400 focus:bg-white"
+            className="mb-5 h-14 w-full rounded-xl border border-white/10 bg-white/5 px-5 text-white placeholder:text-slate-400 outline-none transition duration-300 focus:border-cyan-400 focus:bg-white/[0.07]"
           />
 
           {/* Email + Phone */}
@@ -109,7 +109,7 @@ const AdvisorForm = () => {
               value={formData.email}
               onChange={handleChange}
               placeholder="Email Address"
-              className="h-14 rounded-xl border border-[#0B1518]/10 bg-[#F5F9FA] px-5 text-[#0B1518] placeholder:text-[#5C7079] outline-none transition duration-300 focus:border-cyan-400 focus:bg-white"
+              className="h-14 rounded-xl border border-white/10 bg-white/5 px-5 text-white placeholder:text-slate-400 outline-none transition duration-300 focus:border-cyan-400 focus:bg-white/[0.07]"
             />
 
             <input
@@ -118,13 +118,13 @@ const AdvisorForm = () => {
               value={formData.phone}
               onChange={handleChange}
               placeholder="Phone Number"
-              className="h-14 rounded-xl border border-[#0B1518]/10 bg-[#F5F9FA] px-5 text-[#0B1518] placeholder:text-[#5C7079] outline-none transition duration-300 focus:border-cyan-400 focus:bg-white"
+              className="h-14 rounded-xl border border-white/10 bg-white/5 px-5 text-white placeholder:text-slate-400 outline-none transition duration-300 focus:border-cyan-400 focus:bg-white/[0.07]"
             />
           </div>
 
           {/* Best Time */}
           <div className="mb-5">
-            <label className="block mb-3 text-xs font-medium tracking-wider uppercase text-[#5C7079]">
+            <label className="block mb-3 text-xs font-medium tracking-wider uppercase text-slate-400">
               Preferred Time To Call
             </label>
 
@@ -132,14 +132,14 @@ const AdvisorForm = () => {
               name="time"
               value={formData.time}
               onChange={handleChange}
-              className="h-14 w-full rounded-xl border border-[#0B1518]/10 bg-[#F5F9FA] px-5 text-[#0B1518] outline-none transition-all duration-300 hover:border-cyan-400/50 focus:border-cyan-400 focus:bg-white"
+              className="h-14 w-full rounded-xl border border-white/10 bg-white/5 px-5 text-white outline-none transition-all duration-300 hover:border-cyan-400/50 focus:border-cyan-400 focus:bg-white/[0.07]"
             >
-              <option value="" className="bg-white text-[#5C7079]">
+              <option value="" className="bg-[#0a0e14] text-slate-400">
                 Select a Time Slot
               </option>
 
               {timeSlots.map((time) => (
-                <option key={time} value={time} className="bg-white text-[#0B1518]">
+                <option key={time} value={time} className="bg-[#0a0e14] text-white">
                   {time}
                 </option>
               ))}
@@ -153,17 +153,17 @@ const AdvisorForm = () => {
             value={formData.message}
             onChange={handleChange}
             placeholder="Message"
-            className="w-full rounded-xl border border-[#0B1518]/10 bg-[#F5F9FA] p-5 text-[#0B1518] placeholder:text-[#5C7079] outline-none transition duration-300 focus:border-cyan-400 focus:bg-white"
+            className="w-full rounded-xl border border-white/10 bg-white/5 p-5 text-white placeholder:text-slate-400 outline-none transition duration-300 focus:border-cyan-400 focus:bg-white/[0.07]"
           ></textarea>
 
           {/* Status message */}
           {status === "success" && (
-            <p className="mt-4 text-sm text-emerald-600">
+            <p className="mt-4 text-sm text-emerald-400">
               Thanks! Your message has been sent — we'll be in touch soon.
             </p>
           )}
           {status === "error" && (
-            <p className="mt-4 text-sm text-red-600">{errorMsg}</p>
+            <p className="mt-4 text-sm text-red-400">{errorMsg}</p>
           )}
 
           {/* Submit Button */}

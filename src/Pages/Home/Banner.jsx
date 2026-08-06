@@ -3,7 +3,7 @@ import { ArrowRight, Check } from "lucide-react";
 
 const Banner = () => {
   return (
-    <section className="relative overflow-hidden bg-white">
+    <section className="relative overflow-hidden bg-[#05080A]">
 
       {/* ========================= BACKGROUND ========================= */}
 
@@ -28,11 +28,11 @@ const Banner = () => {
         {/* Grid */}
 
         <div
-          className="absolute inset-0 opacity-[0.04]"
+          className="absolute inset-0 opacity-[0.05]"
           style={{
             backgroundImage: `
-              linear-gradient(rgba(8,20,24,.08) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(8,20,24,.08) 1px, transparent 1px)
+              linear-gradient(rgba(34,211,238,.15) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(34,211,238,.15) 1px, transparent 1px)
             `,
             backgroundSize: "70px 70px",
           }}
@@ -52,15 +52,15 @@ const Banner = () => {
 
   {/* Small Label */}
 
-  <div className="inline-flex items-center rounded-full border border-cyan-400/30 bg-cyan-50 px-4 py-1.5 backdrop-blur-xl">
-    <span className="text-[11px] font-semibold uppercase tracking-[3px] text-cyan-600">
+  <div className="inline-flex items-center rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-1.5 backdrop-blur-xl">
+    <span className="text-[11px] font-semibold uppercase tracking-[3px] text-cyan-300">
       UK Aesthetic Clinic
     </span>
   </div>
 
   {/* Heading */}
 
-  <h1 className="mt-8 font-['Playfair_Display'] text-[64px] font-semibold leading-[0.95] tracking-[-2px] text-[#0B1518]">
+  <h1 className="mt-8 font-['Playfair_Display'] text-[64px] font-semibold leading-[0.95] tracking-[-2px] text-white">
     Feeling Less
     <br />
     Confident About
@@ -70,7 +70,7 @@ const Banner = () => {
 
   {/* Description */}
 
-  <p className="mt-8 max-w-lg text-[17px] leading-8 text-black/80">
+  <p className="mt-8 max-w-lg text-[17px] leading-8 text-white/60">
     Many people feel self-conscious about the shape or volume of their
     buttocks, making certain clothing choices or swimwear feel
     uncomfortable. These feelings are far more common than many realise.
@@ -125,7 +125,7 @@ const Banner = () => {
 
           {/* Glass Card */}
 
-          <div className="relative overflow-hidden rounded-[38px] border border-cyan-400/20 bg-white/80 p-5 backdrop-blur-xl shadow-[0_0_60px_rgba(34,211,238,.12)]">
+          <div className="relative overflow-hidden rounded-[38px] border border-cyan-400/20 bg-white/[0.04] p-5 backdrop-blur-xl shadow-[0_0_60px_rgba(34,211,238,.12)]">
 
             {/* Image */}
 
@@ -139,7 +139,7 @@ const Banner = () => {
 
               {/* Image Overlay */}
 
-              <div className="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#05080A]/50 via-transparent to-transparent" />
 
             </div>
 
@@ -151,21 +151,21 @@ const Banner = () => {
 
           {/* ================= Floating Card 1 ================= */}
 
-          <div className="absolute -left-16 top-24 rounded-2xl border border-cyan-400/20 bg-white/95 px-5 py-4 backdrop-blur-xl shadow-[0_15px_40px_rgba(8,20,24,.12)]">
+          <div className="absolute -left-16 top-24 rounded-2xl border border-cyan-400/20 bg-[#081116]/95 px-5 py-4 backdrop-blur-xl shadow-[0_15px_40px_rgba(0,0,0,.35)]">
 
-            <p className="text-[11px] uppercase tracking-[3px] text-cyan-600">
+            <p className="text-[11px] uppercase tracking-[3px] text-cyan-300">
 
               Treatment
 
             </p>
 
-            <h4 className="mt-2 text-lg font-bold text-[#0B1518]">
+            <h4 className="mt-2 text-lg font-bold text-white">
 
               Non Surgical
 
             </h4>
 
-            <p className="mt-1 text-sm text-[#5C7079]">
+            <p className="mt-1 text-sm text-white/50">
 
               Safe & Effective
 
@@ -175,21 +175,21 @@ const Banner = () => {
 
           {/* ================= Floating Card 2 ================= */}
 
-          <div className="absolute -right-12 bottom-24 rounded-2xl border border-cyan-400/20 bg-white/95 px-5 py-4 backdrop-blur-xl shadow-[0_15px_40px_rgba(8,20,24,.12)]">
+          <div className="absolute -right-12 bottom-24 rounded-2xl border border-cyan-400/20 bg-[#081116]/95 px-5 py-4 backdrop-blur-xl shadow-[0_15px_40px_rgba(0,0,0,.35)]">
 
-            <p className="text-[11px] uppercase tracking-[3px] text-cyan-600">
+            <p className="text-[11px] uppercase tracking-[3px] text-cyan-300">
 
               Recovery
 
             </p>
 
-            <h4 className="mt-2 text-lg font-bold text-[#0B1518]">
+            <h4 className="mt-2 text-lg font-bold text-white">
 
               Minimal Downtime
 
             </h4>
 
-            <p className="mt-1 text-sm text-[#5C7079]">
+            <p className="mt-1 text-sm text-white/50">
 
               Return Quickly
 
@@ -199,17 +199,17 @@ const Banner = () => {
 
           {/* ================= Floating Circle ================= */}
 
-          <div className="absolute -top-8 right-20 flex h-24 w-24 items-center justify-center rounded-full border border-cyan-400/20 bg-white/90 backdrop-blur-xl shadow-[0_0_35px_rgba(34,211,238,.18)]">
+          <div className="absolute -top-8 right-20 flex h-24 w-24 items-center justify-center rounded-full border border-cyan-400/20 bg-[#081116]/90 backdrop-blur-xl shadow-[0_0_35px_rgba(34,211,238,.18)]">
 
             <div className="text-center">
 
-              <h3 className="text-2xl font-black text-cyan-600">
+              <h3 className="text-2xl font-black text-cyan-300">
 
                 2D
 
               </h3>
 
-              <p className="text-[11px] uppercase tracking-[2px] text-[#0B1518]/70">
+              <p className="text-[11px] uppercase tracking-[2px] text-white/70">
 
                 Course
 

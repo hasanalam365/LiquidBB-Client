@@ -5,7 +5,7 @@ import {
 
 const IntroducingTheSolution = () => {
   return (
-    <section id="about" className="relative overflow-hidden bg-white py-28">
+    <section id="about" className="relative overflow-hidden bg-[#0A0F12] py-28">
 
       {/* Background Glow */}
 
@@ -49,7 +49,7 @@ const IntroducingTheSolution = () => {
 
             <div className="h-[2px] w-10 bg-cyan-400" />
 
-            <span className="text-[11px] uppercase tracking-[4px] font-semibold text-cyan-600">
+            <span className="text-[11px] uppercase tracking-[4px] font-semibold text-cyan-400">
 
               Introducing The Solution
 
@@ -63,7 +63,7 @@ const IntroducingTheSolution = () => {
 
         {/* Heading */}
 
-        <h2 className="mt-6 text-5xl font-bold text-center text-[#0B1518] md:text-6xl">
+        <h2 className="mt-6 text-5xl font-bold text-center text-white md:text-6xl">
 
           A Non-Surgical Option
           <br />
@@ -73,7 +73,7 @@ const IntroducingTheSolution = () => {
 
         {/* Intro */}
 
-        <p className="max-w-4xl mx-auto mt-8 text-lg leading-8 text-center text-black/80">
+        <p className="max-w-4xl mx-auto mt-8 text-lg leading-8 text-center text-white/70">
 
           Once you've identified the concerns that matter most to you,
           the next step is understanding the options available.
@@ -88,13 +88,13 @@ const IntroducingTheSolution = () => {
 
         <div className="mt-16">
 
-          <h3 className="text-3xl font-bold text-[#0B1518]">
+          <h3 className="text-3xl font-bold text-white">
 
             What is Liquid BBL?
 
           </h3>
 
-          <p className="mt-6 text-[17px] leading-9 text-black/80">
+          <p className="mt-6 text-[17px] leading-9 text-white/70">
 
             Liquid BBL is a non-surgical body contouring treatment that
             uses carefully selected dermal fillers to enhance the shape,
@@ -108,7 +108,7 @@ const IntroducingTheSolution = () => {
 
           </p>
 
-          <p className="mt-6 text-[17px] leading-9 text-black/80">
+          <p className="mt-6 text-[17px] leading-9 text-white/70">
 
             Every treatment plan is personalised according to the
             individual's anatomy, body shape and desired outcome.
@@ -124,13 +124,13 @@ const IntroducingTheSolution = () => {
 
         <div className="mt-16">
 
-          <h3 className="text-3xl font-bold text-[#0B1518]">
+          <h3 className="text-3xl font-bold text-white">
 
             Why Is It Called "Liquid"?
 
           </h3>
 
-          <p className="mt-6 text-[17px] leading-9 text-black/80">
+          <p className="mt-6 text-[17px] leading-9 text-white/70">
 
             The treatment is commonly referred to as "Liquid BBL"
             because volume is created using injectable dermal fillers
@@ -147,13 +147,13 @@ const IntroducingTheSolution = () => {
 
         <div className="mt-16">
 
-          <h3 className="text-3xl font-bold text-[#0B1518]">
+          <h3 className="text-3xl font-bold text-white">
 
             How Does It Work?
 
           </h3>
 
-          <p className="mt-6 text-[17px] leading-9 text-black/80">
+          <p className="mt-6 text-[17px] leading-9 text-white/70">
 
             During your consultation, your practitioner will assess your
             natural body proportions, discuss your goals and develop a
@@ -166,13 +166,13 @@ const IntroducingTheSolution = () => {
           </p>
                     {/* ================= BENEFITS ================= */}
 
-          <div className="mt-16 rounded-[28px] border border-cyan-400/20 bg-cyan-50/40 p-8 backdrop-blur-xl">
+          <div className="mt-16 rounded-[28px] border border-cyan-400/20 bg-cyan-400/[0.06] p-8 backdrop-blur-xl">
 
-            <h3 className="text-3xl font-bold text-[#0B1518]">
+            <h3 className="text-3xl font-bold text-white">
               Key Benefits of Liquid BBL
             </h3>
 
-            <p className="mt-5 text-[17px] leading-9 text-black/80">
+            <p className="mt-5 text-[17px] leading-9 text-white/70">
               While every treatment is tailored to the individual, many
               patients choose Liquid BBL because it offers a balance
               between subtle enhancement, convenience and minimal
@@ -196,14 +196,14 @@ const IntroducingTheSolution = () => {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-start gap-4 p-4 transition duration-300 bg-white border rounded-xl border-cyan-400/20 hover:border-cyan-400/50"
+                  className="flex items-start gap-4 p-4 transition duration-300 bg-white/[0.03] border rounded-xl border-cyan-400/20 hover:border-cyan-400/50"
                 >
                   <CheckCircle2
-                    className="mt-1 text-cyan-600"
+                    className="mt-1 text-cyan-400"
                     size={20}
                   />
 
-                  <span className="leading-7 text-[#33454C]">
+                  <span className="leading-7 text-white/80">
                     {item}
                   </span>
                 </div>
@@ -217,11 +217,11 @@ const IntroducingTheSolution = () => {
 
           <div className="mt-20">
 
-            <h3 className="text-3xl font-bold text-[#0B1518]">
+            <h3 className="text-3xl font-bold text-white">
               Who May Benefit From This Treatment?
             </h3>
 
-            <p className="mt-6 text-[17px] leading-9 text-black/80">
+            <p className="mt-6 text-[17px] leading-9 text-white/70">
               Liquid BBL may be considered by individuals who are looking
               for a subtle enhancement rather than dramatic surgical
               change. It is often explored by people who feel their body
@@ -230,7 +230,7 @@ const IntroducingTheSolution = () => {
               over time.
             </p>
 
-            <p className="mt-6 text-[17px] leading-9 text-black/80">
+            <p className="mt-6 text-[17px] leading-9 text-white/70">
               The treatment is not suitable for everyone, which is why a
               professional consultation is an essential part of the
               process. During this appointment, your practitioner will
@@ -243,13 +243,13 @@ const IntroducingTheSolution = () => {
 
           {/* ================= IMPORTANT ================= */}
 
-          <div className="mt-20 rounded-[28px] border border-cyan-400/20 bg-gradient-to-br from-cyan-50/60 to-white p-8">
+          <div className="mt-20 rounded-[28px] border border-cyan-400/20 bg-gradient-to-br from-cyan-400/[0.08] to-white/[0.02] p-8">
 
-            <h3 className="text-3xl font-bold text-[#0B1518]">
+            <h3 className="text-3xl font-bold text-white">
               Important Things to Know
             </h3>
 
-            <div className="mt-8 space-y-6 text-black/80">
+            <div className="mt-8 space-y-6 text-white/70">
 
               <p className="leading-8">
                 Every person's anatomy is unique, meaning results will
@@ -276,15 +276,15 @@ const IntroducingTheSolution = () => {
 
           {/* ================= CTA ================= */}
 
-          <div className="mt-24 overflow-hidden rounded-[32px] border border-cyan-400/20 bg-white p-10 text-center shadow-[0_0_50px_rgba(34,211,238,.08)]">
+          <div className="mt-24 overflow-hidden rounded-[32px] border border-cyan-400/20 bg-white/[0.03] p-10 text-center shadow-[0_0_50px_rgba(34,211,238,.08)]">
 
             <div className="max-w-3xl mx-auto">
 
-              <h3 className="text-4xl font-bold text-[#0B1518]">
+              <h3 className="text-4xl font-bold text-white">
                 Curious Whether Liquid BBL Could Be Right For You?
               </h3>
 
-              <p className="mt-6 mb-10 text-lg leading-8 text-black/80">
+              <p className="mt-6 mb-10 text-lg leading-8 text-white/70">
                 The best place to start is with a professional
                 consultation. We'll take the time to understand your
                 goals, answer your questions and explain your available

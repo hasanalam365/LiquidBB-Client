@@ -70,7 +70,7 @@ const Benefits = () => {
   };
 
   return (
-    <section id="benefits" className="relative py-24 overflow-hidden bg-white">
+    <section id="benefits" className="relative py-24 overflow-hidden bg-[#0A0F12]">
       {/* Background Glow */}
       <div className="absolute inset-0">
         <div className="absolute left-1/2 -translate-x-1/2 -top-44 h-[500px] w-[900px] rounded-full bg-cyan-500/10 blur-[180px]" />
@@ -84,17 +84,17 @@ const Benefits = () => {
         <div className="mb-16 text-center">
           <div className="flex items-center justify-center gap-2 mb-5">
             <div className="h-[2px] w-8 bg-cyan-400" />
-            <span className="text-[11px] font-semibold uppercase tracking-[4px] text-cyan-600">
+            <span className="text-[11px] font-semibold uppercase tracking-[4px] text-cyan-400">
               The Benefits
             </span>
             <div className="h-[2px] w-8 bg-cyan-400" />
           </div>
 
-          <h2 className="text-4xl font-bold leading-tight text-[#0B1518] lg:text-5xl">
+          <h2 className="text-4xl font-bold leading-tight text-white lg:text-5xl">
             What This Approach Offers
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-8 text-black/80">
+          <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-8 text-white/70">
             A thoughtful, measured option for those seeking enhancement
             without the commitment of surgery. Here's why each of these
             matters — not just as a feature, but as something that can
@@ -112,23 +112,23 @@ const Benefits = () => {
               <div
                 key={item.title}
                 onClick={() => toggleCard(index)}
-                className="group cursor-pointer rounded-2xl border border-cyan-400/20 bg-white p-6 shadow-[0_2px_20px_rgba(8,20,24,.06)] backdrop-blur-xl transition-all duration-300 hover:border-cyan-400/50 hover:shadow-[0_0_35px_rgba(34,211,238,.15)] sm:cursor-default"
+                className="group cursor-pointer rounded-2xl border border-cyan-400/20 bg-white/[0.03] p-6 shadow-[0_2px_20px_rgba(0,0,0,.4)] backdrop-blur-xl transition-all duration-300 hover:border-cyan-400/50 hover:shadow-[0_0_35px_rgba(34,211,238,.15)] sm:cursor-default"
               >
                 {/* Card Header */}
                 <div className="flex items-center justify-between sm:block">
-                  <div className="flex items-center justify-center w-10 h-10 transition-all duration-300 border rounded-xl border-cyan-400/30 bg-cyan-50 text-cyan-600 group-hover:scale-110 group-hover:bg-cyan-100">
+                  <div className="flex items-center justify-center w-10 h-10 transition-all duration-300 border rounded-xl border-cyan-400/30 bg-cyan-400/10 text-cyan-400 group-hover:scale-110 group-hover:bg-cyan-400/20">
                     <Icon size={18} />
                   </div>
 
                   <ChevronDown
                     size={18}
-                    className={`text-cyan-600/70 transition-transform duration-300 sm:hidden ${
+                    className={`text-cyan-400/70 transition-transform duration-300 sm:hidden ${
                       isOpen ? "rotate-180" : ""
                     }`}
                   />
                 </div>
 
-                <h3 className="mt-4 text-[15px] font-semibold text-[#0B1518]">
+                <h3 className="mt-4 text-[15px] font-semibold text-white">
                   {item.title}
                 </h3>
 
@@ -138,7 +138,7 @@ const Benefits = () => {
                     isOpen ? "mt-3 max-h-96 opacity-100" : "mt-0 max-h-0 opacity-0"
                   }`}
                 >
-                  <p className="text-[13px] leading-6 text-black/80">
+                  <p className="text-[13px] leading-6 text-white/70">
                     {item.description}
                   </p>
                 </div>

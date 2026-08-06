@@ -41,7 +41,7 @@ const concerns = [
 
 const UnderstandingYou = () => {
   return (
-    <section className="relative overflow-hidden bg-white py-28">
+    <section className="relative overflow-hidden bg-[#0A0F12] py-28">
 
       {/* Background Glow */}
 
@@ -65,7 +65,7 @@ const UnderstandingYou = () => {
 
             <div className="h-[2px] w-10 bg-cyan-400" />
 
-            <span className="text-[11px] font-semibold uppercase tracking-[4px] text-cyan-600">
+            <span className="text-[11px] font-semibold uppercase tracking-[4px] text-cyan-400">
               Understanding Your Concerns
             </span>
 
@@ -77,13 +77,13 @@ const UnderstandingYou = () => {
 
         {/* Heading */}
 
-        <h2 className="max-w-3xl mx-auto mt-6 text-5xl font-bold text-center text-[#0B1518] md:text-6xl">
+        <h2 className="max-w-3xl mx-auto mt-6 text-5xl font-bold text-center text-white md:text-6xl">
           You're Not Alone
         </h2>
 
         {/* Description */}
 
-        <p className="max-w-3xl mx-auto mt-6 text-lg leading-8 text-center text-black/80">
+        <p className="max-w-3xl mx-auto mt-6 text-lg leading-8 text-center text-white/70">
           Many people share similar concerns about body shape, balance and
           confidence. Whether you've noticed changes over time, have naturally
           flatter contours, or simply wish to feel more comfortable in your own
@@ -97,13 +97,13 @@ const UnderstandingYou = () => {
                       {concerns.map((item) => (
             <div
               key={item.number}
-              className="group rounded-2xl border border-cyan-400/20 bg-white p-7 shadow-[0_2px_20px_rgba(8,20,24,.06)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/50 hover:shadow-[0_0_35px_rgba(34,211,238,.15)]"
+              className="group rounded-2xl border border-cyan-400/20 bg-white/[0.03] p-7 shadow-[0_2px_20px_rgba(0,0,0,.4)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/50 hover:shadow-[0_0_35px_rgba(34,211,238,.15)]"
             >
               {/* Number */}
 
               <div className="flex items-center justify-between">
 
-                <span className="text-3xl font-black text-cyan-600">
+                <span className="text-3xl font-black text-cyan-400">
                   {item.number}
                 </span>
 
@@ -113,7 +113,7 @@ const UnderstandingYou = () => {
 
               {/* Title */}
 
-              <h3 className="mt-6 text-2xl font-bold text-[#0B1518]">
+              <h3 className="mt-6 text-2xl font-bold text-white">
                 {item.title}
               </h3>
 
@@ -123,7 +123,7 @@ const UnderstandingYou = () => {
 
               {/* Description */}
 
-              <p className="mt-5 text-[15px] leading-8 text-black/80">
+              <p className="mt-5 text-[15px] leading-8 text-white/70">
                 {item.description}
               </p>
             </div>
@@ -140,7 +140,7 @@ const UnderstandingYou = () => {
 
           {/* Image Card */}
 
-          <div className="relative overflow-hidden rounded-[32px] border border-cyan-400/20 bg-white p-4 shadow-[0_0_50px_rgba(34,211,238,.08)] backdrop-blur-xl">
+          <div className="relative overflow-hidden rounded-[32px] border border-cyan-400/20 bg-white/[0.03] p-4 shadow-[0_0_50px_rgba(34,211,238,.08)] backdrop-blur-xl">
 
             <img
               src="https://i.ibb.co.com/mVgHVy3B/liquidbbl.jpg"
@@ -150,7 +150,7 @@ const UnderstandingYou = () => {
 
             {/* Overlay */}
 
-            <div className="absolute inset-0 rounded-[32px] bg-gradient-to-t from-white/30 via-transparent to-transparent" />
+            <div className="absolute inset-0 rounded-[32px] bg-gradient-to-t from-black/40 via-transparent to-transparent" />
 
           </div>
 

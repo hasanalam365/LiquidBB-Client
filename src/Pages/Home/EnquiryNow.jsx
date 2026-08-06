@@ -3,19 +3,19 @@ import { ArrowRight } from "lucide-react";
 
 const EnquiryNow = () => {
   return (
-    <section className="relative overflow-hidden bg-white py-28">
+    <section className="relative overflow-hidden bg-[#05080C] py-28">
 
       {/* ================= Background Glow ================= */}
 
       <div className="absolute inset-0">
 
-        <div className="absolute left-1/2 top-0 h-[550px] w-[900px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[200px]" />
+        <div className="absolute left-1/2 top-0 h-[550px] w-[900px] -translate-x-1/2 rounded-full bg-cyan-500/15 blur-[200px]" />
 
-        <div className="absolute bottom-0 left-0 h-[320px] w-[320px] rounded-full bg-cyan-400/10 blur-[140px]" />
+        <div className="absolute bottom-0 left-0 h-[320px] w-[320px] rounded-full bg-cyan-400/15 blur-[140px]" />
 
-        <div className="absolute top-0 right-0 h-[320px] w-[320px] rounded-full bg-cyan-400/10 blur-[140px]" />
+        <div className="absolute top-0 right-0 h-[320px] w-[320px] rounded-full bg-cyan-400/15 blur-[140px]" />
 
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(34,211,238,.08),transparent_65%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(34,211,238,.12),transparent_65%)]" />
 
       </div>
 
@@ -29,7 +29,7 @@ const EnquiryNow = () => {
 
           <div className="h-[2px] w-8 bg-cyan-400"></div>
 
-          <span className="text-[11px] font-semibold uppercase tracking-[4px] text-cyan-600">
+          <span className="text-[11px] font-semibold uppercase tracking-[4px] text-cyan-400">
             Begin Your Journey
           </span>
 
@@ -37,7 +37,7 @@ const EnquiryNow = () => {
 
         {/* Heading */}
 
-        <h2 className="max-w-4xl text-5xl font-extrabold leading-tight text-[#0B1518] lg:text-6xl">
+        <h2 className="max-w-4xl text-5xl font-extrabold leading-tight text-white lg:text-6xl">
 
           Ready To Start Your
           <br />
@@ -47,7 +47,7 @@ const EnquiryNow = () => {
 
         {/* Description */}
 
-        <p className="mt-8 max-w-2xl text-[16px] leading-8 text-black/80">
+        <p className="mt-8 max-w-2xl text-[16px] leading-8 text-slate-300/85">
 
           Leave your details and one of our advisors will contact you to
           discuss the course, available locations and upcoming training
@@ -59,7 +59,7 @@ const EnquiryNow = () => {
 
         <div className="mt-12">
 
-          <a href="#enquiry" className="group flex items-center gap-3 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-300 px-8 py-4 font-semibold text-black shadow-[0_0_40px_rgba(34,211,238,.25)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_60px_rgba(34,211,238,.45)]">
+          <a href="#enquiry" className="group flex items-center gap-3 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-300 px-8 py-4 font-semibold text-black shadow-[0_0_40px_rgba(34,211,238,.3)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_60px_rgba(34,211,238,.5)]">
 
             Enquire Now
 
