@@ -272,7 +272,7 @@ const Banner = () => {
           {/* ================= Floating Card 1 ================= */}
 
           <div
-            className="absolute -left-10 md:-left-16 lg:-left-16 -top-10 md:top-24 lg:top-24 flex items-start gap-3 rounded-2xl border border-cyan-400/30 bg-[#081116]/95 px-5 py-4 backdrop-blur-xl shadow-[0_0_35px_rgba(34,211,238,0.2),0_15px_40px_rgba(0,0,0,.4)]"
+            className="absolute -left-16 top-24 flex items-start gap-3 rounded-2xl border border-cyan-400/30 bg-[#081116]/95 px-5 py-4 backdrop-blur-xl shadow-[0_0_35px_rgba(34,211,238,0.2),0_15px_40px_rgba(0,0,0,.4)]"
             style={{ animation: "lbbl-float 7s ease-in-out infinite" }}
           >
             <div className="flex items-center justify-center w-8 h-8 mt-1 border rounded-full shrink-0 border-cyan-400/40 bg-cyan-400/10">
@@ -288,7 +288,7 @@ const Banner = () => {
           {/* ================= Floating Card 2 ================= */}
 
           <div
-            className="absolute -right-8 lg:-right-16 -bottom-16 flex items-start gap-3 rounded-2xl border border-cyan-400/30 bg-[#081116]/95 px-5 py-4 backdrop-blur-xl shadow-[0_0_35px_rgba(34,211,238,0.2),0_15px_40px_rgba(0,0,0,.4)]"
+            className="absolute -right-12 bottom-24 flex items-start gap-3 rounded-2xl border border-cyan-400/30 bg-[#081116]/95 px-5 py-4 backdrop-blur-xl shadow-[0_0_35px_rgba(34,211,238,0.2),0_15px_40px_rgba(0,0,0,.4)]"
             style={{ animation: "lbbl-float 7.5s ease-in-out infinite", animationDelay: "0.5s" }}
           >
             <div className="flex items-center justify-center w-8 h-8 mt-1 border rounded-full shrink-0 border-cyan-400/40 bg-cyan-400/10">
