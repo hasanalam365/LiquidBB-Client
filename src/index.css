@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,7 +9,6 @@
 html {
   scroll-behavior: smooth;
 }
-@import "tailwindcss";
 
 html {
   font-family: "Playfair Display", serif;
