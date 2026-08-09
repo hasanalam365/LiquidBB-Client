@@ -83,7 +83,7 @@ const Card = ({ step, align, isVisible, delay }) => {
   return (
     <div
       style={{ transitionDelay: isVisible ? `${delay}ms` : '0ms' }}
-      className={`group relative rounded-2xl border border-cyan-400/15 bg-white/[0.03] shadow-[0_2px_20px_rgba(0,0,0,.35)] backdrop-blur-sm px-6 py-6 transition-all duration-700 ease-out hover:-translate-y-1 hover:border-cyan-400/50 hover:bg-white/[0.05] hover:shadow-[0_0_30px_rgba(34,211,238,.15)] motion-reduce:transition-none motion-reduce:transform-none ${
+      className={`group relative overflow-hidden rounded-2xl border border-cyan-400/20 bg-white/[0.03] shadow-[0_2px_20px_rgba(0,0,0,.4)] backdrop-blur-xl px-6 py-6 transition-all duration-700 ease-out hover:-translate-y-1.5 hover:border-cyan-400/60 hover:bg-white/[0.05] hover:shadow-[0_0_40px_rgba(34,211,238,.22)] motion-reduce:transition-none motion-reduce:transform-none ${
         align === 'right' ? 'md:text-right' : 'md:text-left'
       } text-left ${
         isVisible
@@ -91,13 +91,20 @@ const Card = ({ step, align, isVisible, delay }) => {
           : 'opacity-0 translate-y-6 md:translate-y-8'
       }`}
     >
+      {/* Corner glow that appears on hover — matches the rest of the page's cards */}
       <div
-        className={`mb-4 flex items-center gap-3 ${
+        className={`pointer-events-none absolute -top-10 h-32 w-32 rounded-full bg-cyan-400/0 blur-[60px] transition-all duration-300 group-hover:bg-cyan-400/20 ${
+          align === 'right' ? 'md:-left-10 -right-10' : '-right-10 md:-right-10'
+        }`}
+      />
+
+      <div
+        className={`relative mb-4 flex items-center gap-3 ${
           align === 'right' ? 'md:flex-row-reverse' : ''
         }`}
       >
         <span
-          className={`flex items-center justify-center w-10 h-10 transition-all duration-500 border shrink-0 rounded-xl border-cyan-400/25 bg-cyan-400/10 text-cyan-300 group-hover:border-cyan-400/50 group-hover:bg-cyan-400/15 group-hover:rotate-6 md:hidden ${
+          className={`flex items-center justify-center w-10 h-10 transition-all duration-500 border shrink-0 rounded-xl border-cyan-400/25 bg-cyan-400/10 text-cyan-300 shadow-[0_0_15px_rgba(34,211,238,0.15)] group-hover:border-cyan-400/50 group-hover:bg-cyan-400/15 group-hover:shadow-[0_0_25px_rgba(34,211,238,0.3)] group-hover:rotate-6 md:hidden ${
             isVisible ? 'scale-100' : 'scale-75'
           }`}
         >
@@ -113,9 +120,9 @@ const Card = ({ step, align, isVisible, delay }) => {
         </span>
       </div>
 
-      <h3 className="mb-2 text-xl font-semibold text-white">{step.title}</h3>
+      <h3 className="relative mb-2 text-xl font-semibold text-white">{step.title}</h3>
 
-      <p className="text-[15px] leading-7 text-slate-300/85">{step.text}</p>
+      <p className="relative text-[15px] leading-7 text-slate-300/85">{step.text}</p>
     </div>
   );
 };
@@ -127,24 +134,72 @@ const HowItWorks = () => {
 
   return (
     <section id="how-it-works" className="relative w-full px-4 py-24 overflow-hidden bg-[#05080C] sm:px-8">
-      {/* ambient glow */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute left-0 top-20 h-[320px] w-[320px] rounded-full bg-cyan-500/15 blur-[120px] animate-[pulse_8s_ease-in-out_infinite]" />
-        <div className="absolute right-0 bottom-0 h-[260px] w-[260px] rounded-full bg-cyan-400/15 blur-[120px] animate-[pulse_10s_ease-in-out_infinite]" />
+      {/* ========================= LOCAL ANIMATION KEYFRAMES ========================= */}
+      <style>{`
+        @keyframes hiw-breathe {
+          0%, 100% { opacity: 0.5; }
+          50% { opacity: 1; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .hiw-anim, .hiw-anim * { animation: none !important; }
+        }
+      `}</style>
+
+      {/* ambient glow — richer, matching the rest of the page */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none hiw-anim">
+        <div
+          className="absolute left-1/2 top-0 h-[500px] w-[850px] -translate-x-1/2 rounded-full bg-cyan-400/15 blur-[190px]"
+          style={{ animation: 'hiw-breathe 8s ease-in-out infinite' }}
+        />
+        <div className="absolute left-0 top-20 h-[340px] w-[340px] rounded-full bg-cyan-500/20 blur-[130px]" />
+        <div className="absolute right-0 bottom-0 h-[280px] w-[280px] rounded-full bg-cyan-300/20 blur-[130px]" />
+        <div className="absolute left-1/3 bottom-1/4 h-[220px] w-[220px] rounded-full bg-blue-500/15 blur-[120px]" />
+
+        {/* Faint glowing grid, consistent with the rest of the page */}
+        <div
+          className="absolute inset-0 opacity-[0.05]"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(34,211,238,.25) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(34,211,238,.25) 1px, transparent 1px)
+            `,
+            backgroundSize: '70px 70px',
+          }}
+        />
+
+        {/* Fine film-grain texture for a premium, non-flat finish */}
+        <svg className="absolute inset-0 h-full w-full opacity-[0.03] mix-blend-overlay">
+          <filter id="hiw-noise">
+            <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" />
+          </filter>
+          <rect width="100%" height="100%" filter="url(#hiw-noise)" />
+        </svg>
       </div>
 
       <div className="relative max-w-4xl mx-auto">
         {/* Header */}
         <div className="mb-16 text-center">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <span className="w-8 h-px bg-cyan-400/60" />
-            <span className="text-[11px] font-bold uppercase tracking-[3px] text-cyan-400">
-              The Process
-            </span>
-            <span className="w-8 h-px bg-cyan-400/60" />
+          <div className="flex items-center justify-center gap-2 mb-5">
+            <div className="inline-flex items-center gap-3 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-5 py-2 backdrop-blur-xl shadow-[0_0_20px_rgba(34,211,238,0.15)]">
+              <span className="w-8 h-px bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)]" />
+              <span className="text-[11px] font-bold uppercase tracking-[3px] text-cyan-300">
+                The Process
+              </span>
+              <span className="w-8 h-px bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)]" />
+            </div>
           </div>
-          <h2 className="text-4xl font-bold text-white md:text-5xl">
-            How the Process Works
+          <h2
+            className="text-4xl font-bold text-white md:text-5xl"
+            style={{ textShadow: '0 0 40px rgba(34,211,238,0.2)' }}
+          >
+            How the{' '}
+            <span
+              className="text-cyan-300"
+              style={{ textShadow: '0 0 30px rgba(34,211,238,0.55), 0 0 70px rgba(34,211,238,0.25)' }}
+            >
+              Process
+            </span>{' '}
+            Works
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-[16px] leading-8 text-slate-300/85">
             Every stage is designed around your comfort, understanding and
@@ -158,14 +213,14 @@ const HowItWorks = () => {
           {/* center line - desktop, base + progressive fill */}
           <div className="absolute top-0 hidden w-px h-full -translate-x-1/2 left-1/2 bg-gradient-to-b from-transparent via-cyan-400/25 to-transparent md:block" />
           <div
-            className="absolute top-0 hidden w-px -translate-x-1/2 left-1/2 bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.6)] transition-[height] duration-700 ease-out md:block"
+            className="absolute top-0 hidden w-px -translate-x-1/2 left-1/2 bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.7)] transition-[height] duration-700 ease-out md:block"
             style={{ height: `${fillPct}%` }}
           />
 
           {/* left line - mobile, base + progressive fill */}
           <div className="absolute left-[19px] top-0 h-full w-px bg-gradient-to-b from-transparent via-cyan-400/25 to-transparent md:hidden" />
           <div
-            className="absolute left-[19px] top-0 w-px bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.6)] transition-[height] duration-700 ease-out md:hidden"
+            className="absolute left-[19px] top-0 w-px bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.7)] transition-[height] duration-700 ease-out md:hidden"
             style={{ height: `${fillPct}%` }}
           />
 
@@ -257,6 +312,9 @@ const HowItWorks = () => {
           </ol>
         </div>
       </div>
+
+      {/* Bottom Glow Line — consistent with the rest of the page */}
+      <div className="absolute bottom-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent" />
     </section>
   );
 };
