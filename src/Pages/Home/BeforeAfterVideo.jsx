@@ -153,7 +153,7 @@ const BeforeAfterVideo = () => {
         {/* Video Frame */}
 
         <motion.div
-          className="relative max-w-3xl mx-auto bav-anim"
+          className="relative mx-auto bav-anim w-full max-w-[380px]"
           initial={{ opacity: 0, y: 30, scale: 0.98 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
@@ -167,8 +167,18 @@ const BeforeAfterVideo = () => {
             {/* Top inner highlight — glass edge realism */}
             <div className="absolute z-10 h-px pointer-events-none inset-x-5 top-3 bg-gradient-to-r from-transparent via-white/40 to-transparent" />
 
+            {/*
+              REELS-STYLE FIX:
+              - Container is now a fixed vertical 9:16 (`aspect-[9/16]`) frame, like
+                Instagram/TikTok reels, instead of the old wide 16:9 box.
+              - `object-cover` is fine again here because the frame's own ratio matches
+                a portrait video — nothing gets cropped off the top/bottom, it fills
+                the frame edge-to-edge just like a reel.
+              - If your source video is landscape, swap `object-cover` for
+                `object-contain` so it letterboxes instead of cropping.
+            */}
             <div
-              className="relative aspect-video cursor-pointer overflow-hidden rounded-[24px] bg-black"
+              className="relative aspect-[9/16] cursor-pointer overflow-hidden rounded-[24px] bg-black"
               onClick={togglePlay}
             >
               <video
@@ -209,14 +219,14 @@ const BeforeAfterVideo = () => {
               {/* Mute toggle */}
               <button
                 onClick={toggleMute}
-                className="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full border border-cyan-400/30 bg-[#081116]/90 text-cyan-300 backdrop-blur-xl transition-all duration-300 hover:border-cyan-400/60 hover:bg-[#081116]"
+                className="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full border border-cyan-400/30 bg-[#081116]/90 text-cyan-300 backdrop-blur-xl transition-all duration-300 hover:border-cyan-400/60 hover:bg-[#081116] z-20"
                 aria-label={isMuted ? "Unmute video" : "Mute video"}
               >
                 {isMuted ? <VolumeX size={16} /> : <Volume2 size={16} />}
               </button>
 
               {/* Neon edge glow along bottom */}
-              <div className="absolute inset-x-0 bottom-0 h-1 bg-cyan-400/70 blur-[2px]" />
+              <div className="absolute inset-x-0 bottom-0 h-1 bg-cyan-400/70 blur-[2px] z-10" />
             </div>
           </div>
         </motion.div>
