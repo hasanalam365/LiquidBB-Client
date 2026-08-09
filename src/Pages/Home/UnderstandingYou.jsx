@@ -188,7 +188,7 @@ const UnderstandingYou = () => {
             style={{ animation: "uy-float-slow 9s ease-in-out infinite" }}
           >
             <img
-              src="https://i.ibb.co.com/mVgHVy3B/liquidbbl.jpg"
+              src="https://i.ibb.co.com/HLzNsHhk/Liquid-BBL-Treatment-jpg.jpg"
               alt="Liquid BBL"
               className="h-[500px] w-full rounded-[24px] object-cover transition duration-700 hover:scale-105"
             />

@@ -246,7 +246,7 @@ const Banner = () => {
 
             <div className="relative overflow-hidden rounded-[28px]">
               <img
-                src="https://i.ibb.co.com/mVgHVy3B/liquidbbl.jpg"
+                src="https://i.ibb.co.com/HLzNsHhk/Liquid-BBL-Treatment-jpg.jpg"
                 alt="Liquid BBL"
                 className="h-[650px] w-[470px] object-fill transition duration-700 hover:scale-105"
               />

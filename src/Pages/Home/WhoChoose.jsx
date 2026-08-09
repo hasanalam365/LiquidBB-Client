@@ -78,7 +78,7 @@ const WhoChoose = () => {
           <div className="overflow-hidden rounded-2xl border border-cyan-400/20 shadow-[0_0_40px_rgba(34,211,238,.08)]">
 
             <img
-              src="https://i.ibb.co.com/C3Y7L15y/Banner-Img.jpg"
+              src="https://i.ibb.co.com/HLzNsHhk/Liquid-BBL-Treatment-jpg.jpg"
               alt="Training"
               className="h-[520px] w-full object-cover transition duration-700 hover:scale-105"
             />

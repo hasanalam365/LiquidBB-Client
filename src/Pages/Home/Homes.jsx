@@ -15,6 +15,7 @@ import IntroducingTheSolution from './IntroducingTheSolution'
 import Suitability from './Suitability'
 import RecoveryLooks from './RecoveryLooks'
 import YourSafety from './YourSafety'
+import BeforeAfterVideo from './BeforeAfterVideo'
 
 const Homes = () => {
   return (
@@ -23,6 +24,7 @@ const Homes = () => {
       <UnderstandingYou/>
       <IntroducingTheSolution/>
       <Benefits/>
+      <BeforeAfterVideo/>
       <Suitability/>
        <EnquiryNow/> 
   
