@@ -16,8 +16,12 @@ import Suitability from './Suitability'
 import RecoveryLooks from './RecoveryLooks'
 import YourSafety from './YourSafety'
 import BeforeAfterVideo from './BeforeAfterVideo'
+import PageNavButtons from '../../Shared/PageNavButtons/PageNavButtons'
 
 const Homes = () => {
+
+  const isHomePage=true
+
   return (
     <div>
       <Banner/>
@@ -42,7 +46,7 @@ const Homes = () => {
       {/* <Benefits/>
       <StudentVoice/> */}
       <AdvisorForm/> 
-
+<PageNavButtons isHomePage={isHomePage}/>
     </div>
   )
 }

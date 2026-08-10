@@ -153,7 +153,7 @@ export default function Footer() {
 
         <div className="flex flex-col items-center justify-between gap-5 text-sm text-white/40 md:flex-row">
 
-          <div className="flex gap-6">
+          {/* <div className="flex gap-6">
 
             <Link
               to="/privacy-policy"
@@ -169,7 +169,7 @@ export default function Footer() {
               Terms & Conditions
             </Link>
 
-          </div>
+          </div> */}
 
           <p>
             © 2026 Faces On Faces Academy. All rights reserved.
@@ -181,9 +181,9 @@ export default function Footer() {
 
         <div className="pt-6 mt-8 text-center border-t border-white/5">
 
-          <p className="text-[10px] uppercase tracking-[6px] text-white/20">
-            Faces On Faces Academy
-          </p>
+          <a href="https://www.facessolutions.tech" className="text-[10px] uppercase tracking-[6px] text-white/20" target="_blank" rel="noopener noreferrer">
+            Faces Solution
+          </a>
 
         </div>
 

@@ -23,12 +23,12 @@ export const router = createBrowserRouter([
         
     },
   
-    {
-                path: '/privacy-policy',
-                element: <PrivacyPolicy/>
-            },
-            {
-                path: '/terms-and-conditions',
-                element: <TermsAndCondition/>
-            }
+    // {
+    //             path: '/privacy-policy',
+    //             element: <PrivacyPolicy/>
+    //         },
+    //         {
+    //             path: '/terms-and-conditions',
+    //             element: <TermsAndCondition/>
+    //         }
 ]);
