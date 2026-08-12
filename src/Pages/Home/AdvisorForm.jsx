@@ -1,5 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
+// Adjust these relative paths to match this file's actual location in your src/ tree.
+import useSectionTracking from "../../hooks/useSectionTracking";
+import useFormTracking from "../../hooks/useFormTracking";
+
+// Send GA4 events without sending any personal field values.
+const trackGA4Event = (eventName, params = {}) => {
+  if (typeof window === "undefined") return;
+  if (typeof window.gtag === "function") {
+    window.gtag("event", eventName, params);
+  }
+};
 
 /* ================= Motion presets ================= */
 
@@ -26,6 +38,66 @@ const AdvisorForm = () => {
   const [status, setStatus] = useState("idle"); // idle | sending | success | error
   const [errorMsg, setErrorMsg] = useState("");
 
+  // "advisor-form" matches the section-naming convention used across the
+  // site. section_index 13 assumes this is the last Home-page section per
+  // Homes.jsx — adjust once every section on the page has tracking added.
+  const sectionRef = useSectionTracking({ sectionName: "advisor-form", sectionIndex: 13 });
+
+  const { formRef, trackFieldFocus, trackSubmit, trackSubmitSuccess, trackSubmitError } =
+    useFormTracking({ formName: "advisor_form", sectionName: "advisor-form" });
+
+  const startedFieldsRef = useRef(new Set());
+  const completedFieldsRef = useRef(new Set());
+  const formStartedRef = useRef(false);
+
+  useEffect(() => {
+    trackGA4Event("advisor_form_view", {
+      form_name: "advisor_form",
+      section_name: "advisor-form",
+      page_path: window.location.pathname,
+    });
+  }, []);
+
+  const handleFieldFocus = (fieldName) => {
+    trackFieldFocus(fieldName);
+
+    if (!formStartedRef.current) {
+      formStartedRef.current = true;
+      trackGA4Event("advisor_form_start", {
+        form_name: "advisor_form",
+        field_name: fieldName,
+        section_name: "advisor-form",
+      });
+    }
+  };
+
+  const handleFieldChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+
+    if (String(value).trim() && !startedFieldsRef.current.has(name)) {
+      startedFieldsRef.current.add(name);
+      trackGA4Event("form_field_start", {
+        form_name: "advisor_form",
+        field_name: name,
+        section_name: "advisor-form",
+      });
+    }
+  };
+
+  const handleFieldBlur = (e) => {
+    const { name, value } = e.target;
+
+    if (String(value).trim() && !completedFieldsRef.current.has(name)) {
+      completedFieldsRef.current.add(name);
+      trackGA4Event("form_field_complete", {
+        form_name: "advisor_form",
+        field_name: name,
+        section_name: "advisor-form",
+      });
+    }
+  };
+
   const timeSlots = [
     "09:00 - 11:00",
     "11:00 - 13:00",
@@ -42,10 +114,31 @@ const AdvisorForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // basic validation
-    if (!formData.name || !formData.email || !formData.phone) {
+    // Track every submit attempt, including validation failures.
+    trackSubmit();
+    trackGA4Event("advisor_form_submit", {
+      form_name: "advisor_form",
+      section_name: "advisor-form",
+      page_path: window.location.pathname,
+    });
+
+    // Never send field values to GA4. Only send the safe field name/category.
+    const missingField = !formData.name
+      ? "name"
+      : !formData.email
+        ? "email"
+        : !formData.phone
+          ? "phone"
+          : null;
+
+    // Basic validation
+    if (missingField) {
       setStatus("error");
       setErrorMsg("Please fill in Name, Email and Phone.");
+      trackSubmitError(
+        "validation_missing_required_fields",
+        missingField
+      );
       return;
     }
 
@@ -69,14 +162,30 @@ const AdvisorForm = () => {
 
       setStatus("success");
       setFormData({ name: "", email: "", phone: "", time: "", message: "" });
+      trackSubmitSuccess();
+      trackGA4Event("advisor_form_submit_success", {
+        form_name: "advisor_form",
+        section_name: "advisor-form",
+        page_path: window.location.pathname,
+      });
     } catch (err) {
       setStatus("error");
       setErrorMsg(err.message || "Failed to send message.");
+      trackSubmitError("submit_request_failed");
+      trackGA4Event("advisor_form_submit_error", {
+        form_name: "advisor_form",
+        section_name: "advisor-form",
+        error_type: "submit_request_failed",
+      });
     }
   };
 
   return (
-    <section id="enquiry" className="relative py-24 overflow-hidden bg-[#0a0e14]">
+    <section
+      id="enquiry"
+      ref={sectionRef}
+      className="relative py-24 overflow-hidden bg-[#0a0e14]"
+    >
       {/* ========================= LOCAL ANIMATION KEYFRAMES ========================= */}
       <style>{`
         @keyframes adv-breathe {
@@ -165,6 +274,7 @@ const AdvisorForm = () => {
 
         {/* ================= Form Card ================= */}
         <motion.form
+          ref={formRef}
           onSubmit={handleSubmit}
           initial={{ opacity: 0, y: 40, scale: 0.98 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -186,7 +296,9 @@ const AdvisorForm = () => {
             type="text"
             name="name"
             value={formData.name}
-            onChange={handleChange}
+            onChange={handleFieldChange}
+            onFocus={() => handleFieldFocus("name")}
+            onBlur={handleFieldBlur}
             placeholder="Full Name"
             variants={fadeUp}
             custom={0.05}
@@ -203,7 +315,9 @@ const AdvisorForm = () => {
               type="email"
               name="email"
               value={formData.email}
-              onChange={handleChange}
+              onChange={handleFieldChange}
+              onFocus={() => handleFieldFocus("email")}
+              onBlur={handleFieldBlur}
               placeholder="Email Address"
               variants={fadeUp}
               custom={0.1}
@@ -218,7 +332,9 @@ const AdvisorForm = () => {
               type="tel"
               name="phone"
               value={formData.phone}
-              onChange={handleChange}
+              onChange={handleFieldChange}
+              onFocus={() => handleFieldFocus("phone")}
+              onBlur={handleFieldBlur}
               placeholder="Phone Number"
               variants={fadeUp}
               custom={0.15}
@@ -246,7 +362,9 @@ const AdvisorForm = () => {
             <select
               name="time"
               value={formData.time}
-              onChange={handleChange}
+              onChange={handleFieldChange}
+              onFocus={() => handleFieldFocus("time")}
+              onBlur={handleFieldBlur}
               className="h-14 w-full rounded-xl border border-white/10 bg-white/5 px-5 text-white outline-none transition-all duration-300 hover:border-cyan-400/50 focus:border-cyan-400 focus:bg-white/[0.07] focus:shadow-[0_0_20px_rgba(34,211,238,0.15)]"
             >
               <option value="" className="bg-[#0a0e14] text-slate-400">
@@ -266,7 +384,9 @@ const AdvisorForm = () => {
             rows={5}
             name="message"
             value={formData.message}
-            onChange={handleChange}
+            onChange={handleFieldChange}
+            onFocus={() => handleFieldFocus("message")}
+            onBlur={handleFieldBlur}
             placeholder="Message"
             variants={fadeUp}
             custom={0.25}

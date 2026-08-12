@@ -1,5 +1,8 @@
 import React from "react";
 
+// Adjust this relative path to match this file's actual location in your src/ tree.
+import useSectionTracking from "../../hooks/useSectionTracking";
+
 const concerns = [
   {
     number: "01",
@@ -40,8 +43,16 @@ const concerns = [
 ];
 
 const UnderstandingYou = () => {
+  // "understanding-treatment" matches the section-naming convention used
+  // across the site. section_index 1 because this is the second section
+  // on the Home page (right after "hero").
+  const sectionRef = useSectionTracking({
+    sectionName: "understanding-treatment",
+    sectionIndex: 1,
+  });
+
   return (
-    <section className="relative overflow-hidden bg-[#0A0F12] py-28">
+    <section ref={sectionRef} className="relative overflow-hidden bg-[#0A0F12] py-28">
       {/* ========================= LOCAL ANIMATION KEYFRAMES ========================= */}
       <style>{`
         @keyframes uy-breathe {

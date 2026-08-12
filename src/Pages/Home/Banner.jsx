@@ -1,5 +1,19 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { ArrowRight, ShieldCheck, Sparkles } from "lucide-react";
+
+// Adjust these relative paths to match this file's actual location in your src/ tree.
+import useSectionTracking from "../../hooks/useSectionTracking";
+import { trackAdvisorClick } from "../../analytics/trackers";
+
+
+// GA4 helper. Only anonymous event metadata is sent.
+const trackGA4Event = (eventName, params = {}) => {
+  if (typeof window === "undefined") return;
+  if (typeof window.gtag === "function") {
+    window.gtag("event", eventName, params);
+  }
+};
+
 
 const Sparkle = ({ className, size = 10, delay = "0s", duration = "4s" }) => (
   <div
@@ -25,8 +39,60 @@ const Sparkle = ({ className, size = 10, delay = "0s", duration = "4s" }) => (
 );
 
 const Banner = () => {
+  // "hero" matches the section-naming convention used across the site.
+  // section_index 0 because this is the first section on the Home page.
+  const sectionRef = useSectionTracking({ sectionName: "hero", sectionIndex: 0 });
+  const heroScrollMilestones = useRef(new Set());
+
+  useEffect(() => {
+    const hero = document.getElementById("hero");
+    if (!hero) return undefined;
+
+    const onScroll = () => {
+      const rect = hero.getBoundingClientRect();
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      const totalScrollable = Math.max(rect.height + viewportHeight, 1);
+      const travelled = viewportHeight - rect.top;
+      const progress = Math.max(0, Math.min(1, travelled / totalScrollable));
+
+      [25, 50, 75, 100].forEach((milestone) => {
+        if (progress >= milestone / 100 && !heroScrollMilestones.current.has(milestone)) {
+          heroScrollMilestones.current.add(milestone);
+          trackGA4Event("hero_scroll", {
+            section_name: "hero",
+            scroll_percent: milestone,
+            page_path: window.location.pathname,
+          });
+        }
+      });
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const handleCtaClick = () => {
+    // This CTA scrolls the visitor to the advisor/enquiry form, so the
+    // most useful GA4 intent event is advisor_click.
+    trackGA4Event("hero_cta_click", {
+      button_name: "Request a Consultation",
+      button_location: "hero",
+      section_name: "hero",
+      page_path: window.location.pathname,
+    });
+
+    trackAdvisorClick({
+      buttonName: "Request a Consultation",
+      buttonLocation: "hero",
+      sectionName: "hero",
+      pagePath: window.location.pathname,
+    });
+  };
+
   return (
-    <section className="relative overflow-hidden bg-[#05080A]">
+    <section id="hero" ref={sectionRef} className="relative overflow-hidden bg-[#05080A]">
       {/* ========================= LOCAL ANIMATION KEYFRAMES ========================= */}
       <style>{`
         @keyframes lbbl-twinkle {
@@ -188,6 +254,7 @@ const Banner = () => {
           <div className="flex flex-wrap items-center gap-5 mt-12">
             <a
               href="#enquiry"
+              onClick={handleCtaClick}
               className="group relative flex items-center gap-3 overflow-hidden rounded-xl bg-gradient-to-b from-cyan-300 to-cyan-400 px-8 py-4 text-sm font-semibold text-[#041317] shadow-[0_8px_30px_rgba(34,211,238,0.3)] transition duration-300 hover:scale-[1.03] hover:shadow-[0_10px_45px_rgba(34,211,238,0.5)]"
             >
               {/* Sheen sweep on hover */}

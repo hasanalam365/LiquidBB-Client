@@ -1,12 +1,8 @@
 import React from 'react'
 import Banner from './Banner'
-import WhyChooseIt from './WhyChooseIt'
-import WhoChoose from './WhoChoose'
 import Benefits from './Benefits'
-import StudentVoice from './StudentVoice'
 import EnquiryNow from './EnquiryNow'
 import AdvisorForm from './AdvisorForm'
-import WhoIsThis from './WhoIsThis'
 import HowItWorks from './HowItWorks'
 import ExpectedResult from './ExpectedResult'
 import FAQ from './FAQ'
@@ -21,6 +17,8 @@ import PageNavButtons from '../../Shared/PageNavButtons/PageNavButtons'
 const Homes = () => {
 
   const isHomePage=true
+
+  
 
   return (
     <div>
@@ -42,9 +40,7 @@ const Homes = () => {
       <FAQ/>
       
       
-      {/* <WhoChoose/> */}
-      {/* <Benefits/>
-      <StudentVoice/> */}
+     
       <AdvisorForm/> 
 <PageNavButtons isHomePage={isHomePage}/>
     </div>
