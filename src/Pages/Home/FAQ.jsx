@@ -2,6 +2,12 @@ import React, { useState, useRef, useLayoutEffect } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown, ChevronUp, Minus, Plus } from "lucide-react";
 
+// Adjust these relative paths to match this file's actual location in your src/ tree.
+import useSectionTracking from "../../hooks/useSectionTracking";
+import { trackEvent } from "../../analytics/analytics";
+import { EVENTS } from "../../analytics/events";
+import { trackFaqOpen, trackFaqClose } from "../../analytics/trackers";
+
 const STICKY_HEADER_OFFSET = 90;
 
 const faqData = [
@@ -118,6 +124,14 @@ const FAQ = () => {
   const [openQuestion, setOpenQuestion] = useState({});
   const categoryRefs = useRef([]);
 
+  // "faq" matches the section-naming convention used across the site.
+  // section_index 11 is a placeholder — adjust to match this section's
+  // real position in the page.
+  const sectionRef = useSectionTracking({
+    sectionName: "faq",
+    sectionIndex: 11,
+  });
+
   useLayoutEffect(() => {
     if (openCategory === null) return;
     const el = categoryRefs.current[openCategory];
@@ -133,19 +147,49 @@ const FAQ = () => {
     if (isOpening) {
       setOpenQuestion({});
     }
+
+    trackEvent(isOpening ? EVENTS.FAQ_OPEN : EVENTS.FAQ_CLOSE, {
+      faq_level: "category",
+      faq_id: String(index),
+      faq_question: faqData[index]?.category,
+      section_name: "faq",
+      page_path: window.location.pathname,
+    });
   };
 
   const toggleQuestion = (categoryIndex, questionIndex) => {
     const key = `${categoryIndex}-${questionIndex}`;
+    const isOpening = !openQuestion[key];
+
     setOpenQuestion((prev) => ({
       ...prev,
       [key]: !prev[key],
     }));
+
+    const questionText =
+      faqData[categoryIndex]?.questions[questionIndex]?.q;
+
+    if (isOpening) {
+      trackFaqOpen({
+        faqId: key,
+        faqQuestion: questionText,
+        sectionName: "faq",
+        pagePath: window.location.pathname,
+      });
+    } else {
+      trackFaqClose({
+        faqId: key,
+        faqQuestion: questionText,
+        sectionName: "faq",
+        pagePath: window.location.pathname,
+      });
+    }
   };
 
   return (
     <section
       id="faq"
+      ref={sectionRef}
       className="relative py-24 overflow-hidden bg-[#05080C]"
       style={{ overflowAnchor: "none" }}
     >

@@ -2,6 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
+// Adjust this relative path to match this file's actual location in your src/ tree.
+import useSectionTracking from "../../hooks/useSectionTracking";
+import { trackAdvisorClick } from "../../analytics/trackers";
+
 /* ================= Motion presets ================= */
 
 const fadeUp = {
@@ -16,8 +20,28 @@ const fadeUp = {
 const viewport = { once: true, margin: "-60px" };
 
 const EnquiryNow = () => {
+  // "enquiry-now" matches the section-naming convention used across the
+  // site. section_index 6 — adjust if this isn't the last section on
+  // the page.
+  const sectionRef = useSectionTracking({
+    sectionName: "enquiry-now",
+    sectionIndex: 6,
+  });
+
+  const handleCtaClick = () => {
+    trackAdvisorClick({
+      buttonName: "Enquire Now",
+      buttonLocation: "enquiry-now",
+      sectionName: "enquiry-now",
+      pagePath: window.location.pathname,
+    });
+  };
+
   return (
-    <section className="relative overflow-hidden bg-[#05080C] py-28">
+    <section
+      ref={sectionRef}
+      className="relative overflow-hidden bg-[#05080C] py-28"
+    >
       {/* ========================= LOCAL ANIMATION KEYFRAMES ========================= */}
       <style>{`
         @keyframes enq-breathe {
@@ -139,6 +163,7 @@ const EnquiryNow = () => {
         >
           <motion.a
             href="#enquiry"
+            onClick={handleCtaClick}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}

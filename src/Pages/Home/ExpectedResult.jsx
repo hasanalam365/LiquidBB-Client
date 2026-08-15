@@ -1,6 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+// Adjust this relative path to match this file's actual location in your src/ tree.
+import useSectionTracking from "../../hooks/useSectionTracking";
+
 const results = [
   {
     title: "Improved Contour",
@@ -104,8 +107,19 @@ const ResultCard = ({ item, delay }) => (
 );
 
 const ExpectedResult = () => {
+  // "expected-results" matches the section-naming convention used
+  // across the site. section_index 8 is a placeholder — adjust to
+  // match this section's real position in the page.
+  const sectionRef = useSectionTracking({
+    sectionName: "expected-results",
+    sectionIndex: 8,
+  });
+
   return (
-    <section className="relative py-24 overflow-hidden bg-[#05080C]">
+    <section
+      ref={sectionRef}
+      className="relative py-24 overflow-hidden bg-[#05080C]"
+    >
       {/* ========================= LOCAL ANIMATION KEYFRAMES ========================= */}
       <style>{`
         @keyframes exr-breathe {

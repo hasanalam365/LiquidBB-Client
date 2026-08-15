@@ -2,6 +2,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
 
+// Adjust this relative path to match this file's actual location in your src/ tree.
+import useSectionTracking from "../../hooks/useSectionTracking";
+
 const suitablePoints = [
   "People wanting more balanced body proportions and a silhouette that feels in harmony.",
   "People concerned about hip dips who'd like a smoother, more continuous line.",
@@ -61,8 +64,19 @@ const listItem = {
 const viewport = { once: true, margin: "-60px" };
 
 const Suitability = () => {
+  // "suitability" matches the section-naming convention used across the
+  // site. section_index 4 — adjust if this section sits elsewhere on
+  // the page relative to "benefits" (index 3).
+  const sectionRef = useSectionTracking({
+    sectionName: "suitability",
+    sectionIndex: 4,
+  });
+
   return (
-    <section className="relative py-24 overflow-hidden bg-[#0A0F12]">
+    <section
+      ref={sectionRef}
+      className="relative py-24 overflow-hidden bg-[#0A0F12]"
+    >
       {/* ========================= LOCAL ANIMATION KEYFRAMES ========================= */}
       <style>{`
         @keyframes sut-breathe {

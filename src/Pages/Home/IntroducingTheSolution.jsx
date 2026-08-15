@@ -2,6 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { CheckCircle2, Sparkles, ShieldCheck } from "lucide-react";
 
+// Adjust this relative path to match this file's actual location in your src/ tree.
+import useSectionTracking from "../../hooks/useSectionTracking";
+import { trackAdvisorClick } from "../../analytics/trackers";
+
 /* ================= Shared motion presets ================= */
 
 const fadeUp = {
@@ -43,8 +47,29 @@ const benefits = [
 ];
 
 const IntroducingTheSolution = () => {
+  // "introducing-solution" matches the section-naming convention used
+  // across the site. section_index 2 because this is the third section
+  // on the Home page (after "hero" and "understanding-treatment").
+  const sectionRef = useSectionTracking({
+    sectionName: "introducing-solution",
+    sectionIndex: 2,
+  });
+
+  const handleCtaClick = () => {
+    trackAdvisorClick({
+      buttonName: "Request a Consultation",
+      buttonLocation: "introducing-solution",
+      sectionName: "introducing-solution",
+      pagePath: window.location.pathname,
+    });
+  };
+
   return (
-    <section id="about" className="relative overflow-hidden bg-[#0A0F12] py-28">
+    <section
+      id="about"
+      ref={sectionRef}
+      className="relative overflow-hidden bg-[#0A0F12] py-28"
+    >
       {/* ========================= LOCAL ANIMATION KEYFRAMES ========================= */}
       <style>{`
         @keyframes its-breathe {
@@ -385,6 +410,7 @@ const IntroducingTheSolution = () => {
 
               <motion.a
                 href="#enquiry"
+                onClick={handleCtaClick}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}

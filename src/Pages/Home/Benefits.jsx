@@ -11,6 +11,11 @@ import {
   ChevronDown,
 } from "lucide-react";
 
+// Adjust this relative path to match this file's actual location in your src/ tree.
+import useSectionTracking from "../../hooks/useSectionTracking";
+import { trackEvent } from "../../analytics/analytics";
+import { EVENTS } from "../../analytics/events";
+
 const benefits = [
   {
     icon: Sparkles,
@@ -65,12 +70,39 @@ const benefits = [
 const Benefits = () => {
   const [openCards, setOpenCards] = useState({});
 
-  const toggleCard = (index) => {
-    setOpenCards((prev) => ({ ...prev, [index]: !prev[index] }));
+  // "benefits" matches the section-naming convention used across the
+  // site. section_index 3 because this is the fourth section on the
+  // Home page (after "hero", "understanding-treatment" and
+  // "introducing-solution").
+  const sectionRef = useSectionTracking({
+    sectionName: "benefits",
+    sectionIndex: 3,
+  });
+
+  const toggleCard = (index, title) => {
+    setOpenCards((prev) => {
+      const willOpen = !prev[index];
+
+      // Card open/close is only a meaningful interaction on mobile,
+      // where the description is collapsed by default.
+      trackEvent(EVENTS.BENEFIT_CARD_TOGGLE, {
+        card_title: title,
+        card_index: index,
+        action: willOpen ? "open" : "close",
+        section_name: "benefits",
+        page_path: window.location.pathname,
+      });
+
+      return { ...prev, [index]: willOpen };
+    });
   };
 
   return (
-    <section id="benefits" className="relative py-24 overflow-hidden bg-[#0A0F12]">
+    <section
+      id="benefits"
+      ref={sectionRef}
+      className="relative py-24 overflow-hidden bg-[#0A0F12]"
+    >
       {/* ========================= LOCAL ANIMATION KEYFRAMES ========================= */}
       <style>{`
         @keyframes bnf-breathe {
@@ -163,7 +195,7 @@ const Benefits = () => {
             return (
               <div
                 key={item.title}
-                onClick={() => toggleCard(index)}
+                onClick={() => toggleCard(index, item.title)}
                 className="group relative cursor-pointer overflow-hidden rounded-2xl border border-cyan-400/20 bg-white/[0.03] p-6 shadow-[0_2px_20px_rgba(0,0,0,.4)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/60 hover:shadow-[0_0_45px_rgba(34,211,238,.25)] sm:cursor-default"
               >
                 {/* Corner glow that appears on hover */}

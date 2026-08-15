@@ -8,6 +8,9 @@ import {
   CalendarCheck2,
 } from 'lucide-react';
 
+// Adjust this relative path to match this file's actual location in your src/ tree.
+import useSectionTracking from '../../hooks/useSectionTracking';
+
 const steps = [
   {
     icon: MessagesSquare,
@@ -132,8 +135,20 @@ const HowItWorks = () => {
   const activeCount = visible.filter(Boolean).length;
   const fillPct = steps.length > 1 ? (activeCount / steps.length) * 100 : 0;
 
+  // "how-it-works" matches the section-naming convention used across the
+  // site. section_index 7 is a placeholder — adjust to match this
+  // section's real position in the page.
+  const sectionRef = useSectionTracking({
+    sectionName: 'how-it-works',
+    sectionIndex: 7,
+  });
+
   return (
-    <section id="how-it-works" className="relative w-full px-4 py-24 overflow-hidden bg-[#05080C] sm:px-8">
+    <section
+      id="how-it-works"
+      ref={sectionRef}
+      className="relative w-full px-4 py-24 overflow-hidden bg-[#05080C] sm:px-8"
+    >
       {/* ========================= LOCAL ANIMATION KEYFRAMES ========================= */}
       <style>{`
         @keyframes hiw-breathe {

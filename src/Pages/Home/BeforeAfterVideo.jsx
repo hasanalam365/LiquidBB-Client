@@ -2,6 +2,11 @@ import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Play, Pause, Volume2, VolumeX } from "lucide-react";
 
+// Adjust this relative path to match this file's actual location in your src/ tree.
+import useSectionTracking from "../../hooks/useSectionTracking";
+import { trackEvent } from "../../analytics/analytics";
+import { EVENTS, videoMilestones } from "../../analytics/events";
+
 /* ================================================================
    Replace this with your actual mp4 URL.
    Optionally add a poster image (a still frame) for faster perceived
@@ -28,16 +33,96 @@ const BeforeAfterVideo = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
 
+  // "before-after-video" matches the section-naming convention used
+  // across the site. section_index 5 — adjust if this section sits
+  // elsewhere on the page relative to "suitability" (index 4).
+  const sectionRef = useSectionTracking({
+    sectionName: "before-after-video",
+    sectionIndex: 5,
+  });
+
+  const videoNameRef = useRef("liquid_bbl_before_after");
+  const hasStartedRef = useRef(false);
+  const reachedMilestonesRef = useRef(new Set());
+
   const togglePlay = () => {
     const video = videoRef.current;
     if (!video) return;
     if (video.paused) {
       video.play();
-      setIsPlaying(true);
     } else {
       video.pause();
-      setIsPlaying(false);
     }
+  };
+
+  const handlePlay = () => {
+    setIsPlaying(true);
+
+    if (!hasStartedRef.current) {
+      hasStartedRef.current = true;
+
+      trackEvent(EVENTS.VIDEO_START, {
+        video_name: videoNameRef.current,
+        section_name: "before-after-video",
+        page_path: window.location.pathname,
+      });
+    } else {
+      trackEvent(EVENTS.VIDEO_RESUME, {
+        video_name: videoNameRef.current,
+        section_name: "before-after-video",
+        page_path: window.location.pathname,
+      });
+    }
+  };
+
+  const handlePause = () => {
+    setIsPlaying(false);
+
+    const video = videoRef.current;
+
+    // Looping video: skip firing pause when it's actually the end-of-loop
+    // restart, not a genuine user pause.
+    if (video && video.currentTime < video.duration) {
+      trackEvent(EVENTS.VIDEO_PAUSE, {
+        video_name: videoNameRef.current,
+        section_name: "before-after-video",
+        page_path: window.location.pathname,
+      });
+    }
+  };
+
+  const handleTimeUpdate = () => {
+    const video = videoRef.current;
+    if (!video || !video.duration) return;
+
+    const percent = (video.currentTime / video.duration) * 100;
+
+    videoMilestones.forEach((milestone) => {
+      if (
+        percent >= milestone &&
+        !reachedMilestonesRef.current.has(milestone)
+      ) {
+        reachedMilestonesRef.current.add(milestone);
+
+        trackEvent(EVENTS.VIDEO_PROGRESS, {
+          video_name: videoNameRef.current,
+          percent_played: milestone,
+          section_name: "before-after-video",
+          page_path: window.location.pathname,
+        });
+
+        if (milestone === 100) {
+          trackEvent(EVENTS.VIDEO_COMPLETE, {
+            video_name: videoNameRef.current,
+            section_name: "before-after-video",
+            page_path: window.location.pathname,
+          });
+
+          // Video loops — allow the next pass to be tracked again.
+          reachedMilestonesRef.current = new Set();
+        }
+      }
+    });
   };
 
   const toggleMute = (e) => {
@@ -46,10 +131,20 @@ const BeforeAfterVideo = () => {
     if (!video) return;
     video.muted = !video.muted;
     setIsMuted(video.muted);
+
+    trackEvent(EVENTS.VIDEO_MUTE_TOGGLE, {
+      video_name: videoNameRef.current,
+      action: video.muted ? "mute" : "unmute",
+      section_name: "before-after-video",
+      page_path: window.location.pathname,
+    });
   };
 
   return (
-    <section className="relative overflow-hidden bg-[#0A0F12] py-28">
+    <section
+      ref={sectionRef}
+      className="relative overflow-hidden bg-[#0A0F12] py-28"
+    >
       {/* ========================= LOCAL ANIMATION KEYFRAMES ========================= */}
       <style>{`
         @keyframes bav-breathe {
@@ -189,8 +284,9 @@ const BeforeAfterVideo = () => {
                 playsInline
                 loop
                 className="object-cover w-full h-full"
-                onPlay={() => setIsPlaying(true)}
-                onPause={() => setIsPlaying(false)}
+                onPlay={handlePlay}
+                onPause={handlePause}
+                onTimeUpdate={handleTimeUpdate}
               />
 
               {/* Dim overlay when paused, for the play button to stand out */}

@@ -25,6 +25,9 @@ export const EVENTS = {
   FAQ_OPEN: "faq_open",
   FAQ_CLOSE: "faq_close",
 
+  // Benefit cards (mobile accordion)
+  BENEFIT_CARD_TOGGLE: "benefit_card_toggle",
+
   // CTA / Contact
   CONTACT_CLICK: "contact_click",
   EMAIL_CLICK: "email_click",

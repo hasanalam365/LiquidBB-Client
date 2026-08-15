@@ -1,69 +1,83 @@
 import React from "react";
 import {
-  Clock,
-  Droplet,
-  HeartPulse,
-  ClipboardList,
-  Ban,
-  Briefcase,
-  Dumbbell,
-  CalendarCheck2,
+  ShieldCheck,
+  BadgeCheck,
+  Syringe,
+  FileCheck2,
+  UserCheck,
+  Building2,
+  AlertTriangle,
+  PhoneCall,
 } from "lucide-react";
 
-const recoveryPoints = [
+// Adjust this relative path to match this file's actual location in your src/ tree.
+import useSectionTracking from "../../hooks/useSectionTracking";
+
+const safetyPoints = [
   {
-    icon: Clock,
-    title: "Immediately Afterwards",
+    icon: UserCheck,
+    title: "Qualified Practitioners",
     description:
-      "It's completely normal for the treated area to look and feel a little fuller than the final result, and for the skin to feel tight. You'll be able to leave the clinic the same day. We'll check that you're comfortable and go over your aftercare instructions before you head home.",
+      "Every treatment is carried out by a trained, qualified medical professional with specific experience in body contouring. You're never treated by anyone without the proper clinical background to do so safely.",
   },
   {
-    icon: Droplet,
-    title: "Normal Swelling",
+    icon: FileCheck2,
+    title: "Thorough Medical Screening",
     description:
-      "Some swelling is expected in a normal part of the process as the fillers settle and the body responds. This is expected and usually subsides over the first week. The swelling contributes to the initial fullness, which is why the final shape only becomes clear once everything has settled.",
+      "Before any treatment, your medical history, current medications and general health are carefully reviewed. If anything raises a concern, we'll always be upfront about it — your safety comes before any procedure.",
   },
   {
-    icon: HeartPulse,
-    title: "Bruising & Tenderness",
+    icon: BadgeCheck,
+    title: "Licensed, Regulated Products",
     description:
-      "Mild bruising and tenderness around the injection points are common and nothing to worry about. They typically fade on their own within a week to ten days. Gentle comfort measures and simple advice will help you through this short phase.",
+      "Only licensed dermal fillers from reputable, regulated manufacturers are used. Each product has a traceable batch history, so you can be confident in exactly what's being placed in your body.",
   },
   {
-    icon: ClipboardList,
-    title: "Aftercare Advice",
+    icon: Building2,
+    title: "Clinical Setting & Hygiene",
     description:
-      "You'll receive clear, written guidance specific to your care for the short period, staying hydrated and keeping the skin clean. Following these simple steps helps your results settle beautifully.",
+      "Treatments take place in a clean, medical-grade clinical environment, following strict hygiene and sterilisation protocols at every stage — from preparation through to aftercare.",
   },
   {
-    icon: Ban,
-    title: "Activities to Avoid",
+    icon: Syringe,
+    title: "Careful, Measured Technique",
     description:
-      "For a short time afterwards we advise avoiding strenuous exercise, prolonged pressure on the area (such as sitting directly on the treated area) and any hot environments like saunas. Your practitioner will let you know exactly what to avoid so you can plan with confidence.",
+      "Filler is placed gradually and precisely, layer by layer, rather than in large volumes at once. This measured approach reduces risk and allows your practitioner to continually reassess as they work.",
   },
   {
-    icon: Briefcase,
-    title: "Returning to Work",
+    icon: AlertTriangle,
+    title: "Honest Risk Information",
     description:
-      "Most people feel comfortable returning to work within a few days, depending on the nature of their role. If your work is physically demanding, we may suggest a little longer. We'll always tailor our advice to your day-to-day life.",
+      "Every treatment carries some risk, and we won't downplay that. Possible side effects and rare complications are explained clearly during your consultation, so your decision is fully informed.",
   },
   {
-    icon: Dumbbell,
-    title: "Resuming Exercise",
+    icon: ShieldCheck,
+    title: "Informed Consent, Always",
     description:
-      "Gentle movement is encouraged soon after treatment, but strenuous exercise is best paused for around a week or so, as advised. Easing back into activity gradually helps the filler settle and supports a smooth recovery.",
+      "Nothing proceeds until you've had time to ask questions, understand your options and feel genuinely comfortable. Consent is an ongoing conversation, not a form signed in a rush.",
   },
   {
-    icon: CalendarCheck2,
-    title: "Follow-up Care",
+    icon: PhoneCall,
+    title: "Support After Treatment",
     description:
-      "A review appointment is arranged once the area has fully settled, so we can assess your results and answer any questions. If anything is on your mind in the meantime, you're always welcome to contact us — you won't be left to wonder.",
+      "If anything feels wrong or simply concerns you after your appointment, you're never left to figure it out alone. Direct aftercare support is available so help is always within reach.",
   },
 ];
 
-const RecoveryLooks = () => {
+const YourSafety = () => {
+  // "your-safety" matches the section-naming convention used across
+  // the site. section_index 10 is a placeholder — adjust to match this
+  // section's real position in the page.
+  const sectionRef = useSectionTracking({
+    sectionName: "your-safety",
+    sectionIndex: 10,
+  });
+
   return (
-    <section className="relative py-24 overflow-hidden bg-[#05080C]">
+    <section
+      ref={sectionRef}
+      className="relative py-24 overflow-hidden bg-[#05080C]"
+    >
 
       {/* Background Glow */}
 
@@ -88,29 +102,28 @@ const RecoveryLooks = () => {
           <div className="flex items-center justify-center gap-2 mb-5">
             <div className="h-[2px] w-8 bg-cyan-400" />
             <span className="text-[11px] font-semibold uppercase tracking-[4px] text-cyan-400">
-              Recovery & Aftercare
+              Safety & Standards
             </span>
             <div className="h-[2px] w-8 bg-cyan-400" />
           </div>
 
           <h2 className="text-4xl font-bold leading-tight text-white lg:text-5xl">
-            What Recovery Looks Like
+            Your Safety Comes First
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-8 text-slate-300/85">
-            Knowing what to expect afterwards is just as important as
-            understanding the treatment itself. Recovery from a Liquid BBL is
-            gentle and straightforward, and a little guidance goes a long
-            way. Here's an honest, practical look at the days and weeks that
-            follow.
+            Enhancement should never come at the cost of your wellbeing. From
+            the products we use to the people who treat you, every part of
+            the process is built around clinical safety and honest,
+            informed care.
           </p>
 
         </div>
 
-        {/* Recovery Grid */}
+        {/* Safety Grid */}
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {recoveryPoints.map((item) => {
+          {safetyPoints.map((item) => {
             const Icon = item.icon;
 
             return (
@@ -140,4 +153,4 @@ const RecoveryLooks = () => {
   );
 };
 
-export default RecoveryLooks;
+export default YourSafety;

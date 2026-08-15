@@ -10,6 +10,9 @@ import {
   CalendarCheck2,
 } from "lucide-react";
 
+// Adjust this relative path to match this file's actual location in your src/ tree.
+import useSectionTracking from "../../hooks/useSectionTracking";
+
 const recoveryPoints = [
   {
     icon: Clock,
@@ -62,8 +65,19 @@ const recoveryPoints = [
 ];
 
 const RecoveryLooks = () => {
+  // "recovery-looks" matches the section-naming convention used across
+  // the site. section_index 9 is a placeholder — adjust to match this
+  // section's real position in the page.
+  const sectionRef = useSectionTracking({
+    sectionName: "recovery-looks",
+    sectionIndex: 9,
+  });
+
   return (
-    <section className="relative py-24 overflow-hidden bg-[#05080C]">
+    <section
+      ref={sectionRef}
+      className="relative py-24 overflow-hidden bg-[#05080C]"
+    >
 
       {/* Background Glow */}
 
